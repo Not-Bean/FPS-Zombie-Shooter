@@ -5,9 +5,13 @@ using UnityEngine;
 
 public class PlayerControler : MonoBehaviour
 {
+    [SerializeField] GameObject shootPoint;
+    [SerializeField] GameObject bullet;
 
     public float health;
     public bool dead;
+    public int fireCool;
+    int shootCool;
 
     public void Damage(float damage)
     {
@@ -28,5 +32,24 @@ public class PlayerControler : MonoBehaviour
             
             // do dead stuff here
         }
+    }
+
+    private void FixedUpdate()
+    {
+        if (shootCool >= 0)
+        {
+            shootCool--;
+        }
+    }
+
+    public void OnShoot()
+    {
+        if (shootCool <= 0)
+        {
+            GameObject shot = Instantiate(bullet, shootPoint.transform.position, shootPoint.transform.rotation);
+            shot.GetComponent<Rigidbody>().velocity = shootPoint.transform.forward * 60;
+            shootCool = fireCool;
+        }
+
     }
 }
