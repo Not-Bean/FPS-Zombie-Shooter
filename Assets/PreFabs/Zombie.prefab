@@ -151,5 +151,5 @@ MonoBehaviour:
   speed: 4
   health: 10
   bulletDamage: 10
-  followDist: 25
+  followDist: 80
   strength: 1
