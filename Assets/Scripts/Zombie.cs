@@ -44,7 +44,6 @@ public class Zombie : MonoBehaviour
     {
         if (Vector3.Distance(player.transform.position, gameObject.transform.position) < followDist)
         {
-            Debug.Log("here");
             rb.MovePosition(Vector3.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime));
         }
 

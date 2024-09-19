@@ -7,11 +7,21 @@ public class PlayerControler : MonoBehaviour
 {
     [SerializeField] GameObject shootPoint;
     [SerializeField] GameObject bullet;
+    [SerializeField] GameObject healthBar;
+    [SerializeField] GameObject Death;
 
     public float health;
     public bool dead;
     public int fireCool;
     int shootCool;
+
+    float maxHealth;
+
+
+    private void Start()
+    {
+        maxHealth = health;
+    }
 
     public void Damage(float damage)
     {
@@ -21,6 +31,12 @@ public class PlayerControler : MonoBehaviour
 
     private void Update()
     {
+        if ( health >= 0)
+        {
+            healthBar.transform.localScale = new Vector3(10 / maxHealth * health, 1, 5);
+        }
+        
+
         if (health < 0)
         {
             dead = true;
@@ -28,9 +44,8 @@ public class PlayerControler : MonoBehaviour
 
         if (dead)
         {
-            Debug.Log("Player Is Dead");
             
-            // do dead stuff here
+            Death.SetActive(true);
         }
     }
 
