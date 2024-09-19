@@ -16,6 +16,13 @@ public class Zombie : MonoBehaviour
     GameObject spawner;
 
     GameObject player;
+    Rigidbody rb;
+
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+        rb = GetComponent<Rigidbody>();
+    }
 
     private void Update()
     {
@@ -25,10 +32,7 @@ public class Zombie : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if (Vector3.Distance(player.transform.position, gameObject.transform.position) < followDist)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
-        }
+        
     }
 
     public void SpawnerSet(GameObject spawn)
@@ -38,9 +42,13 @@ public class Zombie : MonoBehaviour
 
     private void FixedUpdate()
     {
-        
+        if (Vector3.Distance(player.transform.position, gameObject.transform.position) < followDist)
+        {
+            Debug.Log("here");
+            rb.MovePosition(Vector3.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime));
+        }
 
-        
+
 
         if (attackPlayer)
         {
@@ -79,10 +87,7 @@ public class Zombie : MonoBehaviour
     }
 
 
-    private void Start()
-    {
-        player = GameObject.FindGameObjectWithTag("Player");
-    }
+    
 
 
 
