@@ -6,6 +6,7 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     [SerializeField] GameObject zombie;
+    [SerializeField] GameObject scoreKeeper;
 
     public int startingAmount;
     public int spawnDelay;
@@ -45,5 +46,6 @@ public class Spawner : MonoBehaviour
     public void dead(GameObject dead)
     {
         zombies.Remove(dead);
+        scoreKeeper.GetComponent<Kills>().AddKill();
     }
 }
