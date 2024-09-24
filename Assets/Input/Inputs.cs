@@ -35,6 +35,33 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Move"",
+                    ""type"": ""Value"",
+                    ""id"": ""4e4468ab-0117-4c2a-a15b-c5c8bd6890ca"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Jump"",
+                    ""type"": ""Button"",
+                    ""id"": ""9b1f2cba-b4a1-40e9-a888-3293f74160d6"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Sprint"",
+                    ""type"": ""Button"",
+                    ""id"": ""3fa33ede-9d3b-4b58-87a8-408045c729b0"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press(behavior=2)"",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -48,6 +75,83 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
                     ""action"": ""Shoot"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""WASD"",
+                    ""id"": ""b8627868-000d-4d1a-921f-f60d488691ec"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""596e13f2-abe8-4bc7-83e7-5e35b6dff0e0"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""ce67605d-47a9-4f1f-9477-218d5bf4353e"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""074ae530-867b-4a20-aaa6-557f22c0c8e9"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""2e54213f-13ab-478d-88e3-121e70b1399c"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b0427dd2-3623-4612-8e7d-28134b9cb7a5"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c7bab80f-ecd8-45e7-8220-b7a94271647b"",
+                    ""path"": ""<Keyboard>/shift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Sprint"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -57,6 +161,9 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
         // KeyBoard&Mouse
         m_KeyBoardMouse = asset.FindActionMap("KeyBoard&Mouse", throwIfNotFound: true);
         m_KeyBoardMouse_Shoot = m_KeyBoardMouse.FindAction("Shoot", throwIfNotFound: true);
+        m_KeyBoardMouse_Move = m_KeyBoardMouse.FindAction("Move", throwIfNotFound: true);
+        m_KeyBoardMouse_Jump = m_KeyBoardMouse.FindAction("Jump", throwIfNotFound: true);
+        m_KeyBoardMouse_Sprint = m_KeyBoardMouse.FindAction("Sprint", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -119,11 +226,17 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_KeyBoardMouse;
     private List<IKeyBoardMouseActions> m_KeyBoardMouseActionsCallbackInterfaces = new List<IKeyBoardMouseActions>();
     private readonly InputAction m_KeyBoardMouse_Shoot;
+    private readonly InputAction m_KeyBoardMouse_Move;
+    private readonly InputAction m_KeyBoardMouse_Jump;
+    private readonly InputAction m_KeyBoardMouse_Sprint;
     public struct KeyBoardMouseActions
     {
         private @Inputs m_Wrapper;
         public KeyBoardMouseActions(@Inputs wrapper) { m_Wrapper = wrapper; }
         public InputAction @Shoot => m_Wrapper.m_KeyBoardMouse_Shoot;
+        public InputAction @Move => m_Wrapper.m_KeyBoardMouse_Move;
+        public InputAction @Jump => m_Wrapper.m_KeyBoardMouse_Jump;
+        public InputAction @Sprint => m_Wrapper.m_KeyBoardMouse_Sprint;
         public InputActionMap Get() { return m_Wrapper.m_KeyBoardMouse; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -136,6 +249,15 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
             @Shoot.started += instance.OnShoot;
             @Shoot.performed += instance.OnShoot;
             @Shoot.canceled += instance.OnShoot;
+            @Move.started += instance.OnMove;
+            @Move.performed += instance.OnMove;
+            @Move.canceled += instance.OnMove;
+            @Jump.started += instance.OnJump;
+            @Jump.performed += instance.OnJump;
+            @Jump.canceled += instance.OnJump;
+            @Sprint.started += instance.OnSprint;
+            @Sprint.performed += instance.OnSprint;
+            @Sprint.canceled += instance.OnSprint;
         }
 
         private void UnregisterCallbacks(IKeyBoardMouseActions instance)
@@ -143,6 +265,15 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
             @Shoot.started -= instance.OnShoot;
             @Shoot.performed -= instance.OnShoot;
             @Shoot.canceled -= instance.OnShoot;
+            @Move.started -= instance.OnMove;
+            @Move.performed -= instance.OnMove;
+            @Move.canceled -= instance.OnMove;
+            @Jump.started -= instance.OnJump;
+            @Jump.performed -= instance.OnJump;
+            @Jump.canceled -= instance.OnJump;
+            @Sprint.started -= instance.OnSprint;
+            @Sprint.performed -= instance.OnSprint;
+            @Sprint.canceled -= instance.OnSprint;
         }
 
         public void RemoveCallbacks(IKeyBoardMouseActions instance)
@@ -163,5 +294,8 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
     public interface IKeyBoardMouseActions
     {
         void OnShoot(InputAction.CallbackContext context);
+        void OnMove(InputAction.CallbackContext context);
+        void OnJump(InputAction.CallbackContext context);
+        void OnSprint(InputAction.CallbackContext context);
     }
 }
