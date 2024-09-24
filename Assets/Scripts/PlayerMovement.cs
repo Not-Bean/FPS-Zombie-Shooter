@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed;
+    public float walkSpeed;
+    public float sprintSpeed;
     public float groundDrag;
     public float jumpForce;
     public float jumpCooldown;
@@ -15,11 +18,12 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask whatIsGround;
     bool grounded;
     public Transform orientation;
+    bool sprinting;
 
-    float horizontalInput;
-    float verticalInput;
+    float moveSpeed;
 
     Vector3 moveDirection;
+    Vector2 inputDirection;
 
     Rigidbody rb;
     // Start is called before the first frame update
@@ -29,21 +33,42 @@ public class PlayerMovement : MonoBehaviour
         rb.freezeRotation = true;
         readyToJump = true;
     }
-    private void MyInput()
-    {
-        horizontalInput = Input.GetAxisRaw("Horizontal");
-        verticalInput = Input.GetAxisRaw("Vertical");
 
-        if (Input.GetKey(jumpkey) && readyToJump && grounded)
+
+
+
+    public void OnMove(InputValue value)
+    {
+        inputDirection = value.Get<Vector2>();
+    }
+
+    public void OnJump(InputValue value)
+    {
+        if (readyToJump && grounded)
         {
             readyToJump = false;
             Jump();
             Invoke(nameof(Resetjump), jumpCooldown);
         }
     }
+
+    public void OnSprint(InputValue value)
+    {
+        if (sprinting)
+        {
+            moveSpeed = walkSpeed;
+            sprinting = false;
+        }
+        else
+        {
+            moveSpeed = sprintSpeed;
+            sprinting = true;
+        }
+    }
+
     private void MovePlayer()
     {
-        moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
+        moveDirection = orientation.forward * inputDirection.y + orientation.right * inputDirection.x;
 
         if (grounded)
         {
@@ -63,7 +88,6 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
-        MyInput();
         SpeedControl();
         if (grounded)
         {
