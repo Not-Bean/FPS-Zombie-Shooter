@@ -15,6 +15,10 @@ public class PlayerControler : MonoBehaviour
     public int fireCool;
     int shootCool;
 
+    public int ammoCount;
+    public int loadedAmmo;
+    public int magSize;
+
     float maxHealth;
 
 
@@ -59,12 +63,31 @@ public class PlayerControler : MonoBehaviour
 
     public void OnShoot()
     {
-        if (shootCool <= 0)
+        if (shootCool <= 0 && loadedAmmo > 0)
         {
+            loadedAmmo--;
             GameObject shot = Instantiate(bullet, shootPoint.transform.position, shootPoint.transform.rotation);
             shot.GetComponent<Rigidbody>().velocity = shootPoint.transform.forward * 60;
             shootCool = fireCool;
         }
+        else if (loadedAmmo <= 0 && shootCool <= 0)
+        {
+            OnReload();
+        }
 
+    }
+
+    public void OnReload()
+    {
+        if (ammoCount < magSize - loadedAmmo)
+        {
+            loadedAmmo = ammoCount;
+            ammoCount = 0;
+        }
+        else
+        {
+            ammoCount -= magSize - loadedAmmo;
+            loadedAmmo = magSize;
+        }
     }
 }

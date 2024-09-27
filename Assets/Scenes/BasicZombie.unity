@@ -1977,6 +1977,9 @@ MonoBehaviour:
   health: 10
   dead: 0
   fireCool: 5
+  ammoCount: 1000
+  loadedAmmo: 10
+  magSize: 10
 --- !u!114 &289022670
 MonoBehaviour:
   m_ObjectHideFlags: 0
