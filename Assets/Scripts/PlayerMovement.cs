@@ -40,6 +40,7 @@ public class PlayerMovement : MonoBehaviour
     public void OnMove(InputValue value)
     {
         inputDirection = value.Get<Vector2>();
+        
     }
 
     public void OnJump(InputValue value)
@@ -69,7 +70,6 @@ public class PlayerMovement : MonoBehaviour
     private void MovePlayer()
     {
         moveDirection = orientation.forward * inputDirection.y + orientation.right * inputDirection.x;
-
         if (grounded)
         {
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
