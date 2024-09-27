@@ -32,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
         readyToJump = true;
+        moveSpeed = walkSpeed;
     }
 
 
