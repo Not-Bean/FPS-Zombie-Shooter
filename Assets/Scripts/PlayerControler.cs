@@ -63,6 +63,7 @@ public class PlayerControler : MonoBehaviour
 
     public void OnShoot()
     {
+
         if (shootCool <= 0 && loadedAmmo > 0)
         {
             loadedAmmo--;
