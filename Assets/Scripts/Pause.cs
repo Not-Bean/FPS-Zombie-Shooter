@@ -9,8 +9,13 @@ using UnityEngine.UI;
 public class Pause : MonoBehaviour
 {
     [SerializeField] GameObject PauseScreen;
-
+    PlayerControler playerControl;
     bool isPaused = false;
+
+    private void Start()
+    {
+        playerControl = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControler>();
+    }
 
     public void MainMenu()
     {
@@ -21,16 +26,24 @@ public class Pause : MonoBehaviour
     {
         if (isPaused)
         {
+            playerControl.ShootBlock(false); 
             isPaused = false;
             PauseScreen.SetActive(false);
             Time.timeScale = 1;
+
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
         else
         {
+            playerControl.ShootBlock(true);
             isPaused = true;
 
             PauseScreen.SetActive(true);
             Time.timeScale = 0;
+
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
     }
 

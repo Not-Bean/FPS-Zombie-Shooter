@@ -14,6 +14,7 @@ public class PlayerControler : MonoBehaviour
     public bool dead;
     public int fireCool;
     int shootCool;
+    bool canShoot = true;
 
     public int ammoCount;
     public int loadedAmmo;
@@ -63,19 +64,26 @@ public class PlayerControler : MonoBehaviour
 
     public void OnShoot()
     {
-
-        if (shootCool <= 0 && loadedAmmo > 0)
+        if (canShoot)
         {
-            loadedAmmo--;
-            GameObject shot = Instantiate(bullet, shootPoint.transform.position, shootPoint.transform.rotation);
-            shot.GetComponent<Rigidbody>().velocity = shootPoint.transform.forward * 60;
-            shootCool = fireCool;
-        }
-        else if (loadedAmmo <= 0 && shootCool <= 0)
-        {
-            OnReload();
-        }
 
+            if (shootCool <= 0 && loadedAmmo > 0)
+            {
+                loadedAmmo--;
+                GameObject shot = Instantiate(bullet, shootPoint.transform.position, shootPoint.transform.rotation);
+                shot.GetComponent<Rigidbody>().velocity = shootPoint.transform.forward * 60;
+                shootCool = fireCool;
+            }
+            else if (loadedAmmo <= 0 && shootCool <= 0)
+            {
+                OnReload();
+            }
+        }
+    }
+
+    public void ShootBlock(bool value)
+    {
+        canShoot = value;
     }
 
     public void OnReload()
