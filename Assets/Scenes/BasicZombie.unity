@@ -2222,9 +2222,11 @@ MonoBehaviour:
   bullet: {fileID: 9189788620926266782, guid: d34d343f4dba2e24abc526cdb83494a5, type: 3}
   healthBar: {fileID: 918797104}
   Death: {fileID: 106006408}
+  gun: {fileID: 784958324}
   health: 10
   dead: 0
-  fireCool: 5
+  fireCool: 10
+  ReloadCooldown: 60
   ammoCount: 1000
   loadedAmmo: 10
   magSize: 10
@@ -4025,6 +4027,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 740197832}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &784958324 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1608d50073ef006479ae2135a8c8a21d, type: 3}
+  m_PrefabInstance: {fileID: 1276048233}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &792227748
 GameObject:
   m_ObjectHideFlags: 0
@@ -4976,8 +4983,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 385e25cddcb69cb4e995179ae6afa6ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensx: 800
-  sensy: 800
   orientation: {fileID: 1347004234}
 --- !u!1 &973953066
 GameObject:
@@ -5758,7 +5763,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1052323826
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6947,7 +6952,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1244621296}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 289022671}
+        m_TargetAssemblyTypeName: Pause, Assembly-CSharp
+        m_MethodName: MainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1244621296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8453,7 +8470,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1564960361
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11406,7 +11423,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2059201194}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 289022671}
+        m_TargetAssemblyTypeName: Pause, Assembly-CSharp
+        m_MethodName: OnPause
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2059201194
 MonoBehaviour:
   m_ObjectHideFlags: 0
