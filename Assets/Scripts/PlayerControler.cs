@@ -9,13 +9,17 @@ public class PlayerControler : MonoBehaviour
     [SerializeField] GameObject bullet;
     [SerializeField] GameObject healthBar;
     [SerializeField] GameObject Death;
+    [SerializeField] GameObject gun;
 
     public float health;
     public bool dead;
     public int fireCool;
     int shootCool;
     bool canShoot = true;
-
+    bool gunSpin;
+    int rotationCount;
+    public int ReloadCooldown;
+    int reloadCool;
     public int ammoCount;
     public int loadedAmmo;
     public int magSize;
@@ -26,6 +30,7 @@ public class PlayerControler : MonoBehaviour
     private void Start()
     {
         maxHealth = health;
+        
     }
 
     public void Damage(float damage)
@@ -60,11 +65,27 @@ public class PlayerControler : MonoBehaviour
         {
             shootCool--;
         }
+        if (reloadCool > 0)
+        {
+            reloadCool--;
+        }
+
+
+        if (gunSpin)
+        {
+            gun.transform.Rotate(new Vector3(0, 0, 6));
+            rotationCount++;
+            if(rotationCount >= 60)
+            {
+                rotationCount = 0;
+                gunSpin = false;
+            }
+        }
     }
 
     public void OnShoot()
     {
-        if (canShoot)
+        if (canShoot && reloadCool <= 0)
         {
 
             if (shootCool <= 0 && loadedAmmo > 0)
@@ -88,15 +109,22 @@ public class PlayerControler : MonoBehaviour
 
     public void OnReload()
     {
-        if (ammoCount < magSize - loadedAmmo)
+        
+        if (reloadCool <= 0)
         {
-            loadedAmmo = ammoCount;
-            ammoCount = 0;
+            gunSpin = true;
+            reloadCool = ReloadCooldown;
+            if (ammoCount < magSize - loadedAmmo)
+            {
+                loadedAmmo = ammoCount;
+                ammoCount = 0;
+            }
+            else
+            {
+                ammoCount -= magSize - loadedAmmo;
+                loadedAmmo = magSize;
+            }
         }
-        else
-        {
-            ammoCount -= magSize - loadedAmmo;
-            loadedAmmo = magSize;
-        }
+        
     }
 }

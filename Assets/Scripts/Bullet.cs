@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    int loadtime;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +19,10 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     private void FixedUpdate()
     {
-        
+        loadtime++;
+        if (loadtime > 600)
+        {
+            Destroy(gameObject );
+        }
     }
 }

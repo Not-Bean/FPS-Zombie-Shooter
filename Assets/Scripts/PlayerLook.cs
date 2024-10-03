@@ -13,10 +13,20 @@ public class PlayerLook : MonoBehaviour {
 
     private void Start()
     {
-        var sens = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().SensitivityGet();
+        try
+        {
+            var sens = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().SensitivityGet();
 
-        sensx = sens * 1000 + 500;
-        sensy = sens * 1000 + 500;
+            sensx = sens * 1000 + 500;
+            sensy = sens * 1000 + 500;
+        }
+        catch 
+        {
+            Debug.LogWarning("ERROR NO GAME MANAGER FOUND (Expected when game not started from the main menu SAFE TO INGROE)");
+            sensx = 0.5f * 1000 + 500;
+            sensy = 0.5f * 1000 + 500;
+        }
+
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
