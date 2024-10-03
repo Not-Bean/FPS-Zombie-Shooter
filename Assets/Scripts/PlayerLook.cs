@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerLook : MonoBehaviour {
-    public float sensx;
-    public float sensy;
+    float sensx;
+    float sensy;
 
     public Transform orientation;
 
@@ -13,6 +13,11 @@ public class PlayerLook : MonoBehaviour {
 
     private void Start()
     {
+        var sens = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().SensitivityGet();
+
+        sensx = sens * 1000 + 500;
+        sensy = sens * 1000 + 500;
+
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
