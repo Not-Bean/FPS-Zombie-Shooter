@@ -3,9 +3,13 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField] Image greenWheel;
+    [SerializeField] Image redWheel;
+
     public float walkSpeed;
     public float sprintSpeed;
     public float groundDrag;
@@ -19,7 +23,9 @@ public class PlayerMovement : MonoBehaviour
     bool grounded;
     public Transform orientation;
     bool sprinting;
-
+    float stamina;
+    bool staminaExhausted;
+    public float maxStamina;
     float moveSpeed;
 
     Vector3 moveDirection;
@@ -33,6 +39,7 @@ public class PlayerMovement : MonoBehaviour
         rb.freezeRotation = true;
         readyToJump = true;
         moveSpeed = walkSpeed;
+        stamina = maxStamina;
     }
 
 
@@ -66,10 +73,51 @@ public class PlayerMovement : MonoBehaviour
             moveSpeed = sprintSpeed;
             sprinting = true;
         }
+
+        
+
+
     }
 
     private void MovePlayer()
     {
+        if (sprinting && moveDirection != Vector3.zero && !staminaExhausted)
+        {
+            if (stamina > 0)
+            {
+                stamina -= 30 * Time.deltaTime;
+            }
+            else
+            {
+                greenWheel.enabled = false;
+                staminaExhausted = true;
+            }
+            redWheel.fillAmount = (stamina / maxStamina + 0.07f);
+        }
+        else
+        {
+            if (stamina < maxStamina)
+            {
+                stamina += 30 * Time.deltaTime;
+            }
+            else
+            {
+                greenWheel.enabled = true;
+                staminaExhausted = false;
+                if (sprinting)
+                {
+                    moveSpeed = sprintSpeed;
+                }
+            }
+
+            redWheel.fillAmount = (stamina / maxStamina);
+        }
+
+        if (staminaExhausted)
+        {
+            moveSpeed = walkSpeed;
+        }
+
         moveDirection = orientation.forward * inputDirection.y + orientation.right * inputDirection.x;
         if (grounded)
         {
@@ -79,7 +127,12 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
         }
+
+
         
+
+        greenWheel.fillAmount = (stamina / maxStamina);
+
     }
     // Update is called once per frame
     void FixedUpdate()
