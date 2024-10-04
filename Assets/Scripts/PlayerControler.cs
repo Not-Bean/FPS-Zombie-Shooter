@@ -30,7 +30,10 @@ public class PlayerControler : MonoBehaviour
 
     float maxHealth;
 
-    
+    private void Awake()
+    {
+        Application.targetFrameRate = 1000;
+    }
 
     private void Start()
     {

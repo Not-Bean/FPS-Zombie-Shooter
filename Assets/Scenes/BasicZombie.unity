@@ -2198,7 +2198,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   greenWheel: {fileID: 778393591}
   redWheel: {fileID: 418259060}
-  walkSpeed: 7
+  walkSpeed: 6
   sprintSpeed: 10
   groundDrag: 5
   jumpForce: 10
