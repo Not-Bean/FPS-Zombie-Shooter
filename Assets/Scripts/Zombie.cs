@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
+
+[RequireComponent(typeof(StudioEventEmitter))]
 
 public class Zombie : MonoBehaviour
 {
@@ -17,11 +20,14 @@ public class Zombie : MonoBehaviour
 
     GameObject player;
     Rigidbody rb;
+    private StudioEventEmitter emitter; 
 
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         rb = GetComponent<Rigidbody>();
+        emitter = AudioManager.instance.InitializeEventEmitter(FMODEvents.instance.Zombie, this.gameObject);
+        emitter.Play();
     }
 
     public void SpawnerSet(GameObject spawn)
@@ -35,6 +41,7 @@ public class Zombie : MonoBehaviour
         {
             spawner.GetComponent<Spawner>().dead(gameObject);
             Destroy(gameObject);
+            emitter.Stop();
         }
 
         if (Vector3.Distance(player.transform.position, gameObject.transform.position) < followDist)

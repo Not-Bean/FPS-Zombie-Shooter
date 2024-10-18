@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using FMOD.Studio;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -32,6 +33,10 @@ public class PlayerMovement : MonoBehaviour
     Vector2 inputDirection;
 
     Rigidbody rb;
+    
+    //audio
+    private EventInstance playerFootsteps; 
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +45,7 @@ public class PlayerMovement : MonoBehaviour
         readyToJump = true;
         moveSpeed = walkSpeed;
         stamina = maxStamina;
+        playerFootsteps = AudioManager.instance.CreateInstance(FMODEvents.instance.playerFootsteps);
     }
 
 
@@ -138,6 +144,7 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         MovePlayer();
+        UpdateSound(); 
     }
     private void Update()
     {
@@ -169,5 +176,22 @@ public class PlayerMovement : MonoBehaviour
     private void Resetjump()
     {
         readyToJump = true;
+    }
+
+    private void UpdateSound()
+    {
+        if (rb.velocity.x !=0 && grounded)
+        {
+            PLAYBACK_STATE playbackState; 
+            playerFootsteps.getPlaybackState(out playbackState);
+            if (playbackState.Equals(PLAYBACK_STATE.STOPPED))
+            {
+                playerFootsteps.start();
+            }
+        }
+        else
+        {
+            playerFootsteps.stop(STOP_MODE.ALLOWFADEOUT);
+        }
     }
 }

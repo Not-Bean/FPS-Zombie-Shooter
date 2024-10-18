@@ -103,7 +103,7 @@ public class PlayerControler : MonoBehaviour
             if (shootCool <= 0 && loadedAmmo > 0)
             {
                 loadedAmmo--;
-                gameObject.GetComponent<AudioSource>().Play();
+                AudioManager.instance.PlayOneShot(FMODEvents.instance.Shoot,this.transform.position);
                 GameObject shot = Instantiate(bullet, shootPoint.transform.position, shootPoint.transform.rotation);
                 shot.GetComponent<Rigidbody>().velocity = shootPoint.transform.forward * 60;
                 shootCool = fireCool;
