@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{a81b0a1d-bbc7-4990-a713-0d1d93a84454}">
+		<property name="assetPath">
+			<value>barrett-m107-sound-effect-245967.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>2.9039999999999999</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{0c1e99f6-5a0a-409b-aa73-33e820d30768}</destination>
+		</relationship>
+	</object>
+</objects>
