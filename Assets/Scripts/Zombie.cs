@@ -12,6 +12,7 @@ public class Zombie : MonoBehaviour
     public float bulletDamage;
     public int followDist;
     public float strength;
+    int dropChance;
 
     int clock;
 
@@ -45,18 +46,24 @@ public class Zombie : MonoBehaviour
 
     private void Update()
     {
-        if (health <= 0)
+        if (health <= 0) // Death Code
         {
             spawner.GetComponent<Spawner>().dead(gameObject);
+
+            if (Random.Range(0,100) < dropChance)
+            {
+                // put item drop code here
+            }
+
             Destroy(gameObject);
             emitter.Stop();
         }
 
-        if (Vector3.Distance(player.transform.position, gameObject.transform.position) < followDist)
+        if (Vector3.Distance(player.transform.position, gameObject.transform.position) < followDist) // Check if player in range
         {
             rb.MovePosition(Vector3.MoveTowards(transform.position, player.transform.position, speed / 100));
         }
-        else if (clock > 60)
+        else if (clock > 60) // Wander if not. (waits 1 second after spawning)
         {
             rb.MovePosition(Vector3.MoveTowards(transform.position, wanderPoint, speed / 100));
         }
@@ -68,12 +75,12 @@ public class Zombie : MonoBehaviour
     {
         clock++;
 
-        if (clock == 60)
+        if (clock == 60) // randomize the clock after first second
         {
             clock += Random.Range(0, 600);
         }
 
-        if (clock % 600 == 0)
+        if (clock % 600 == 0) // Get new wander point 
         {
             wanderPoint.x = transform.position.x + Random.Range(-10, 10);
             wanderPoint.z = transform.position.z + Random.Range(-10, 10);

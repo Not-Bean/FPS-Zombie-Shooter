@@ -8,6 +8,11 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        if (GameObject.FindGameObjectsWithTag("GameManager").Length > 1)
+        {
+            Destroy(gameObject);
+        }
+
         DontDestroyOnLoad(gameObject);
         
     }
