@@ -71,15 +71,6 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Pause"",
-                    ""type"": ""Button"",
-                    ""id"": ""0a59c707-1733-4d3a-a383-2ec531a5d796"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -181,189 +172,6 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
                     ""action"": ""Reload"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""5a01328b-0322-4304-b97b-5461783e2689"",
-                    ""path"": ""<Keyboard>/escape"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Pause"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                }
-            ]
-        },
-        {
-            ""name"": ""Controler"",
-            ""id"": ""ef4ee2ad-6ade-41cf-a4f1-bddfd855984b"",
-            ""actions"": [
-                {
-                    ""name"": ""Shoot"",
-                    ""type"": ""Button"",
-                    ""id"": ""2ac2a69d-b9ba-470a-8816-6f70d5add6e9"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Move"",
-                    ""type"": ""Value"",
-                    ""id"": ""d5ac9697-5471-4d8f-b545-de97eb58702d"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""Jump"",
-                    ""type"": ""Button"",
-                    ""id"": ""09610860-0aa5-4d32-a6a2-9f89c5e5d01e"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Sprint"",
-                    ""type"": ""Button"",
-                    ""id"": ""4b33120d-7332-4fa3-90cb-616fa7c673ee"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": ""Press(behavior=2)"",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Reload"",
-                    ""type"": ""Button"",
-                    ""id"": ""9a09b39f-ff99-45e1-9661-60478bb189b1"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Pause"",
-                    ""type"": ""Button"",
-                    ""id"": ""4afc2e1e-3e7f-4e7e-80ce-ef0d347602c0"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                }
-            ],
-            ""bindings"": [
-                {
-                    ""name"": """",
-                    ""id"": ""41374a81-21c6-44b1-abaf-92f565734f04"",
-                    ""path"": ""<Gamepad>/leftTrigger"",
-                    ""interactions"": ""Press"",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Shoot"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""WASD"",
-                    ""id"": ""e238a96c-8dc3-4cd3-904b-880d2e36f466"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Move"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""9674532d-1a64-4c00-a74e-e8fb905ea8c5"",
-                    ""path"": ""<Gamepad>/leftStick/up"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""094b7882-371f-44d3-a055-e71ec079635c"",
-                    ""path"": ""<Gamepad>/leftStick/down"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""91402003-1179-4fd7-b261-7e8036902d0b"",
-                    ""path"": ""<Gamepad>/leftStick/down"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""f6c6a4fd-41a0-4909-9f17-2240cb78490f"",
-                    ""path"": ""<Gamepad>/leftStick/up"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""95d46ad8-4848-4bbc-8244-dbbddfcd4741"",
-                    ""path"": ""<Gamepad>/buttonSouth"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Jump"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""518901ce-3e9c-44e0-8729-c402c5e01a2c"",
-                    ""path"": ""<Gamepad>/leftTrigger"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Sprint"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""05c84696-194b-4777-ac85-9373edfd96fd"",
-                    ""path"": ""<Gamepad>/buttonEast"",
-                    ""interactions"": ""Press"",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Reload"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""9596728c-3780-41ff-88ab-0e7385a07f21"",
-                    ""path"": ""<Gamepad>/start"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Pause"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -377,15 +185,6 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
         m_KeyBoardMouse_Jump = m_KeyBoardMouse.FindAction("Jump", throwIfNotFound: true);
         m_KeyBoardMouse_Sprint = m_KeyBoardMouse.FindAction("Sprint", throwIfNotFound: true);
         m_KeyBoardMouse_Reload = m_KeyBoardMouse.FindAction("Reload", throwIfNotFound: true);
-        m_KeyBoardMouse_Pause = m_KeyBoardMouse.FindAction("Pause", throwIfNotFound: true);
-        // Controler
-        m_Controler = asset.FindActionMap("Controler", throwIfNotFound: true);
-        m_Controler_Shoot = m_Controler.FindAction("Shoot", throwIfNotFound: true);
-        m_Controler_Move = m_Controler.FindAction("Move", throwIfNotFound: true);
-        m_Controler_Jump = m_Controler.FindAction("Jump", throwIfNotFound: true);
-        m_Controler_Sprint = m_Controler.FindAction("Sprint", throwIfNotFound: true);
-        m_Controler_Reload = m_Controler.FindAction("Reload", throwIfNotFound: true);
-        m_Controler_Pause = m_Controler.FindAction("Pause", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -452,7 +251,6 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
     private readonly InputAction m_KeyBoardMouse_Jump;
     private readonly InputAction m_KeyBoardMouse_Sprint;
     private readonly InputAction m_KeyBoardMouse_Reload;
-    private readonly InputAction m_KeyBoardMouse_Pause;
     public struct KeyBoardMouseActions
     {
         private @Inputs m_Wrapper;
@@ -462,7 +260,6 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
         public InputAction @Jump => m_Wrapper.m_KeyBoardMouse_Jump;
         public InputAction @Sprint => m_Wrapper.m_KeyBoardMouse_Sprint;
         public InputAction @Reload => m_Wrapper.m_KeyBoardMouse_Reload;
-        public InputAction @Pause => m_Wrapper.m_KeyBoardMouse_Pause;
         public InputActionMap Get() { return m_Wrapper.m_KeyBoardMouse; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -487,9 +284,6 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
             @Reload.started += instance.OnReload;
             @Reload.performed += instance.OnReload;
             @Reload.canceled += instance.OnReload;
-            @Pause.started += instance.OnPause;
-            @Pause.performed += instance.OnPause;
-            @Pause.canceled += instance.OnPause;
         }
 
         private void UnregisterCallbacks(IKeyBoardMouseActions instance)
@@ -509,9 +303,6 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
             @Reload.started -= instance.OnReload;
             @Reload.performed -= instance.OnReload;
             @Reload.canceled -= instance.OnReload;
-            @Pause.started -= instance.OnPause;
-            @Pause.performed -= instance.OnPause;
-            @Pause.canceled -= instance.OnPause;
         }
 
         public void RemoveCallbacks(IKeyBoardMouseActions instance)
@@ -529,92 +320,6 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
         }
     }
     public KeyBoardMouseActions @KeyBoardMouse => new KeyBoardMouseActions(this);
-
-    // Controler
-    private readonly InputActionMap m_Controler;
-    private List<IControlerActions> m_ControlerActionsCallbackInterfaces = new List<IControlerActions>();
-    private readonly InputAction m_Controler_Shoot;
-    private readonly InputAction m_Controler_Move;
-    private readonly InputAction m_Controler_Jump;
-    private readonly InputAction m_Controler_Sprint;
-    private readonly InputAction m_Controler_Reload;
-    private readonly InputAction m_Controler_Pause;
-    public struct ControlerActions
-    {
-        private @Inputs m_Wrapper;
-        public ControlerActions(@Inputs wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Shoot => m_Wrapper.m_Controler_Shoot;
-        public InputAction @Move => m_Wrapper.m_Controler_Move;
-        public InputAction @Jump => m_Wrapper.m_Controler_Jump;
-        public InputAction @Sprint => m_Wrapper.m_Controler_Sprint;
-        public InputAction @Reload => m_Wrapper.m_Controler_Reload;
-        public InputAction @Pause => m_Wrapper.m_Controler_Pause;
-        public InputActionMap Get() { return m_Wrapper.m_Controler; }
-        public void Enable() { Get().Enable(); }
-        public void Disable() { Get().Disable(); }
-        public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(ControlerActions set) { return set.Get(); }
-        public void AddCallbacks(IControlerActions instance)
-        {
-            if (instance == null || m_Wrapper.m_ControlerActionsCallbackInterfaces.Contains(instance)) return;
-            m_Wrapper.m_ControlerActionsCallbackInterfaces.Add(instance);
-            @Shoot.started += instance.OnShoot;
-            @Shoot.performed += instance.OnShoot;
-            @Shoot.canceled += instance.OnShoot;
-            @Move.started += instance.OnMove;
-            @Move.performed += instance.OnMove;
-            @Move.canceled += instance.OnMove;
-            @Jump.started += instance.OnJump;
-            @Jump.performed += instance.OnJump;
-            @Jump.canceled += instance.OnJump;
-            @Sprint.started += instance.OnSprint;
-            @Sprint.performed += instance.OnSprint;
-            @Sprint.canceled += instance.OnSprint;
-            @Reload.started += instance.OnReload;
-            @Reload.performed += instance.OnReload;
-            @Reload.canceled += instance.OnReload;
-            @Pause.started += instance.OnPause;
-            @Pause.performed += instance.OnPause;
-            @Pause.canceled += instance.OnPause;
-        }
-
-        private void UnregisterCallbacks(IControlerActions instance)
-        {
-            @Shoot.started -= instance.OnShoot;
-            @Shoot.performed -= instance.OnShoot;
-            @Shoot.canceled -= instance.OnShoot;
-            @Move.started -= instance.OnMove;
-            @Move.performed -= instance.OnMove;
-            @Move.canceled -= instance.OnMove;
-            @Jump.started -= instance.OnJump;
-            @Jump.performed -= instance.OnJump;
-            @Jump.canceled -= instance.OnJump;
-            @Sprint.started -= instance.OnSprint;
-            @Sprint.performed -= instance.OnSprint;
-            @Sprint.canceled -= instance.OnSprint;
-            @Reload.started -= instance.OnReload;
-            @Reload.performed -= instance.OnReload;
-            @Reload.canceled -= instance.OnReload;
-            @Pause.started -= instance.OnPause;
-            @Pause.performed -= instance.OnPause;
-            @Pause.canceled -= instance.OnPause;
-        }
-
-        public void RemoveCallbacks(IControlerActions instance)
-        {
-            if (m_Wrapper.m_ControlerActionsCallbackInterfaces.Remove(instance))
-                UnregisterCallbacks(instance);
-        }
-
-        public void SetCallbacks(IControlerActions instance)
-        {
-            foreach (var item in m_Wrapper.m_ControlerActionsCallbackInterfaces)
-                UnregisterCallbacks(item);
-            m_Wrapper.m_ControlerActionsCallbackInterfaces.Clear();
-            AddCallbacks(instance);
-        }
-    }
-    public ControlerActions @Controler => new ControlerActions(this);
     public interface IKeyBoardMouseActions
     {
         void OnShoot(InputAction.CallbackContext context);
@@ -622,15 +327,5 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnSprint(InputAction.CallbackContext context);
         void OnReload(InputAction.CallbackContext context);
-        void OnPause(InputAction.CallbackContext context);
-    }
-    public interface IControlerActions
-    {
-        void OnShoot(InputAction.CallbackContext context);
-        void OnMove(InputAction.CallbackContext context);
-        void OnJump(InputAction.CallbackContext context);
-        void OnSprint(InputAction.CallbackContext context);
-        void OnReload(InputAction.CallbackContext context);
-        void OnPause(InputAction.CallbackContext context);
     }
 }

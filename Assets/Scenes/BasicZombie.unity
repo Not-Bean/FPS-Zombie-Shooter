@@ -134,7 +134,6 @@ GameObject:
   - component: {fileID: 1108189}
   - component: {fileID: 1108192}
   - component: {fileID: 1108191}
-  - component: {fileID: 1108190}
   m_Layer: 0
   m_Name: railLine1 (6)
   m_TagString: Untagged
@@ -157,27 +156,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1361273242}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1108190
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1108188}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1108191
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -198,7 +176,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e1a243b27038a7f4f8833e77b9fe7a93, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -541,7 +519,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 273bdf05be817d647a2a1fb7f4b9cc2d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -582,7 +560,6 @@ GameObject:
   - component: {fileID: 16966272}
   - component: {fileID: 16966275}
   - component: {fileID: 16966274}
-  - component: {fileID: 16966273}
   m_Layer: 0
   m_Name: railLine1 (20)
   m_TagString: Untagged
@@ -605,27 +582,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1361273242}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &16966273
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 16966271}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &16966274
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -646,7 +602,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e1a243b27038a7f4f8833e77b9fe7a93, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1099,7 +1055,6 @@ GameObject:
   - component: {fileID: 90187099}
   - component: {fileID: 90187102}
   - component: {fileID: 90187101}
-  - component: {fileID: 90187100}
   m_Layer: 0
   m_Name: railLine1 (18)
   m_TagString: Untagged
@@ -1122,27 +1077,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1361273242}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &90187100
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 90187098}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &90187101
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1163,7 +1097,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e1a243b27038a7f4f8833e77b9fe7a93, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1220,7 +1154,7 @@ Transform:
   m_GameObject: {fileID: 91556133}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 45.1, z: -15.189004}
+  m_LocalPosition: {x: 0, y: 38.1, z: -15.189004}
   m_LocalScale: {x: 99.96025, y: 0.48481387, z: -18.549397}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1498,7 +1432,6 @@ GameObject:
   - component: {fileID: 122484325}
   - component: {fileID: 122484328}
   - component: {fileID: 122484327}
-  - component: {fileID: 122484326}
   m_Layer: 0
   m_Name: railLine1 (2)
   m_TagString: Untagged
@@ -1521,27 +1454,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 471667096}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &122484326
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 122484324}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &122484327
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1562,7 +1474,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e1a243b27038a7f4f8833e77b9fe7a93, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2149,7 +2061,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 273bdf05be817d647a2a1fb7f4b9cc2d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2431,7 +2343,6 @@ GameObject:
   - component: {fileID: 227611762}
   - component: {fileID: 227611765}
   - component: {fileID: 227611764}
-  - component: {fileID: 227611763}
   m_Layer: 0
   m_Name: railLine1 (10)
   m_TagString: Untagged
@@ -2454,27 +2365,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1361273242}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &227611763
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 227611761}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &227611764
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2495,7 +2385,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e1a243b27038a7f4f8833e77b9fe7a93, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2615,7 +2505,6 @@ GameObject:
   - component: {fileID: 247912731}
   - component: {fileID: 247912734}
   - component: {fileID: 247912733}
-  - component: {fileID: 247912732}
   m_Layer: 0
   m_Name: railLine1 (3)
   m_TagString: Untagged
@@ -2638,27 +2527,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 471667096}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &247912732
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 247912730}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &247912733
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2679,7 +2547,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e1a243b27038a7f4f8833e77b9fe7a93, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2853,7 +2721,6 @@ GameObject:
   - component: {fileID: 274826714}
   - component: {fileID: 274826717}
   - component: {fileID: 274826716}
-  - component: {fileID: 274826715}
   m_Layer: 0
   m_Name: railLine1 (12)
   m_TagString: Untagged
@@ -2876,27 +2743,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1361273242}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &274826715
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 274826713}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &274826716
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2917,7 +2763,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e1a243b27038a7f4f8833e77b9fe7a93, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3158,7 +3004,7 @@ Transform:
   m_GameObject: {fileID: 289022661}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.372, z: 112.7}
+  m_LocalPosition: {x: -0.72, y: -2.372, z: 109.79}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3304,7 +3150,6 @@ GameObject:
   - component: {fileID: 306362808}
   - component: {fileID: 306362811}
   - component: {fileID: 306362810}
-  - component: {fileID: 306362809}
   m_Layer: 0
   m_Name: railLine1
   m_TagString: Untagged
@@ -3327,27 +3172,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1361273242}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &306362809
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 306362807}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &306362810
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3368,7 +3192,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e1a243b27038a7f4f8833e77b9fe7a93, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3625,7 +3449,6 @@ GameObject:
   - component: {fileID: 378278993}
   - component: {fileID: 378278996}
   - component: {fileID: 378278995}
-  - component: {fileID: 378278994}
   m_Layer: 0
   m_Name: rail2
   m_TagString: Untagged
@@ -3648,27 +3471,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1361273242}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &378278994
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 378278992}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &378278995
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3689,7 +3491,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 0ac1640f763ec774e9f1df672165f6b5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3805,7 +3607,6 @@ GameObject:
   - component: {fileID: 395348065}
   - component: {fileID: 395348068}
   - component: {fileID: 395348067}
-  - component: {fileID: 395348066}
   m_Layer: 0
   m_Name: railLine1 (17)
   m_TagString: Untagged
@@ -3828,27 +3629,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1361273242}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &395348066
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 395348064}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &395348067
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3869,7 +3649,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e1a243b27038a7f4f8833e77b9fe7a93, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4486,7 +4266,6 @@ GameObject:
   - component: {fileID: 440063750}
   - component: {fileID: 440063753}
   - component: {fileID: 440063752}
-  - component: {fileID: 440063751}
   m_Layer: 0
   m_Name: railLine1 (20)
   m_TagString: Untagged
@@ -4509,27 +4288,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 471667096}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &440063751
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 440063749}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &440063752
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4550,7 +4308,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e1a243b27038a7f4f8833e77b9fe7a93, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5061,7 +4819,6 @@ GameObject:
   - component: {fileID: 544425227}
   - component: {fileID: 544425230}
   - component: {fileID: 544425229}
-  - component: {fileID: 544425228}
   m_Layer: 0
   m_Name: railLine1 (5)
   m_TagString: Untagged
@@ -5084,27 +4841,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 471667096}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &544425228
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 544425226}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &544425229
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5125,7 +4861,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e1a243b27038a7f4f8833e77b9fe7a93, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5166,7 +4902,6 @@ GameObject:
   - component: {fileID: 562794611}
   - component: {fileID: 562794614}
   - component: {fileID: 562794613}
-  - component: {fileID: 562794612}
   m_Layer: 0
   m_Name: railLine1 (15)
   m_TagString: Untagged
@@ -5189,27 +4924,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1361273242}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &562794612
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 562794610}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &562794613
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5230,7 +4944,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e1a243b27038a7f4f8833e77b9fe7a93, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5334,7 +5048,7 @@ Transform:
   m_GameObject: {fileID: 596146520}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -38.832005, y: 30.881, z: 1.4841995}
+  m_LocalPosition: {x: -26.83, y: 30.881, z: 1.48}
   m_LocalScale: {x: 2.6026223, y: 31.65164, z: 3.650456}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5486,7 +5200,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 273bdf05be817d647a2a1fb7f4b9cc2d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6203,7 +5917,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 273bdf05be817d647a2a1fb7f4b9cc2d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6493,7 +6207,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 273bdf05be817d647a2a1fb7f4b9cc2d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6534,7 +6248,6 @@ GameObject:
   - component: {fileID: 797968173}
   - component: {fileID: 797968176}
   - component: {fileID: 797968175}
-  - component: {fileID: 797968174}
   m_Layer: 0
   m_Name: railLine1 (19)
   m_TagString: Untagged
@@ -6557,27 +6270,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 471667096}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &797968174
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 797968172}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &797968175
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6598,7 +6290,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e1a243b27038a7f4f8833e77b9fe7a93, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7445,7 +7137,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 273bdf05be817d647a2a1fb7f4b9cc2d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8077,7 +7769,6 @@ GameObject:
   - component: {fileID: 938388239}
   - component: {fileID: 938388242}
   - component: {fileID: 938388241}
-  - component: {fileID: 938388240}
   m_Layer: 0
   m_Name: railLine1 (7)
   m_TagString: Untagged
@@ -8100,27 +7791,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1361273242}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &938388240
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 938388238}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &938388241
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8141,7 +7811,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e1a243b27038a7f4f8833e77b9fe7a93, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8640,7 +8310,6 @@ GameObject:
   - component: {fileID: 973953067}
   - component: {fileID: 973953070}
   - component: {fileID: 973953069}
-  - component: {fileID: 973953068}
   m_Layer: 0
   m_Name: railLine1 (9)
   m_TagString: Untagged
@@ -8663,27 +8332,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1361273242}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &973953068
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 973953066}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &973953069
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8704,7 +8352,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e1a243b27038a7f4f8833e77b9fe7a93, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9120,7 +8768,6 @@ GameObject:
   - component: {fileID: 1002745626}
   - component: {fileID: 1002745629}
   - component: {fileID: 1002745628}
-  - component: {fileID: 1002745627}
   m_Layer: 0
   m_Name: railLine1 (9)
   m_TagString: Untagged
@@ -9143,27 +8790,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 471667096}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1002745627
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1002745625}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1002745628
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9184,7 +8810,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e1a243b27038a7f4f8833e77b9fe7a93, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9289,7 +8915,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 273bdf05be817d647a2a1fb7f4b9cc2d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9330,7 +8956,6 @@ GameObject:
   - component: {fileID: 1034795155}
   - component: {fileID: 1034795158}
   - component: {fileID: 1034795157}
-  - component: {fileID: 1034795156}
   m_Layer: 0
   m_Name: railLine1 (1)
   m_TagString: Untagged
@@ -9353,27 +8978,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 471667096}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1034795156
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1034795154}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1034795157
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9394,7 +8998,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e1a243b27038a7f4f8833e77b9fe7a93, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9435,7 +9039,6 @@ GameObject:
   - component: {fileID: 1037600472}
   - component: {fileID: 1037600475}
   - component: {fileID: 1037600474}
-  - component: {fileID: 1037600473}
   m_Layer: 0
   m_Name: railLine1 (16)
   m_TagString: Untagged
@@ -9458,27 +9061,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1361273242}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1037600473
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1037600471}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1037600474
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9499,7 +9081,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e1a243b27038a7f4f8833e77b9fe7a93, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10003,7 +9585,6 @@ GameObject:
   - component: {fileID: 1090339832}
   - component: {fileID: 1090339835}
   - component: {fileID: 1090339834}
-  - component: {fileID: 1090339833}
   m_Layer: 0
   m_Name: railLine1 (13)
   m_TagString: Untagged
@@ -10026,27 +9607,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1361273242}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1090339833
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1090339831}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1090339834
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10067,7 +9627,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e1a243b27038a7f4f8833e77b9fe7a93, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10108,7 +9668,6 @@ GameObject:
   - component: {fileID: 1129634105}
   - component: {fileID: 1129634108}
   - component: {fileID: 1129634107}
-  - component: {fileID: 1129634106}
   m_Layer: 0
   m_Name: railLine1 (17)
   m_TagString: Untagged
@@ -10131,27 +9690,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 471667096}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1129634106
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1129634104}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1129634107
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10172,7 +9710,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e1a243b27038a7f4f8833e77b9fe7a93, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10218,7 +9756,6 @@ GameObject:
   - component: {fileID: 1143162799}
   - component: {fileID: 1143162802}
   - component: {fileID: 1143162801}
-  - component: {fileID: 1143162800}
   m_Layer: 0
   m_Name: railLine1 (4)
   m_TagString: Untagged
@@ -10241,27 +9778,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 471667096}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1143162800
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1143162798}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1143162801
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10282,7 +9798,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e1a243b27038a7f4f8833e77b9fe7a93, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10428,7 +9944,6 @@ GameObject:
   - component: {fileID: 1162536198}
   - component: {fileID: 1162536201}
   - component: {fileID: 1162536200}
-  - component: {fileID: 1162536199}
   m_Layer: 0
   m_Name: railLine1 (14)
   m_TagString: Untagged
@@ -10451,27 +9966,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1361273242}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1162536199
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1162536197}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1162536200
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10492,7 +9986,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e1a243b27038a7f4f8833e77b9fe7a93, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10667,7 +10161,6 @@ GameObject:
   - component: {fileID: 1193570841}
   - component: {fileID: 1193570844}
   - component: {fileID: 1193570843}
-  - component: {fileID: 1193570842}
   m_Layer: 0
   m_Name: rail1
   m_TagString: Untagged
@@ -10690,27 +10183,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1361273242}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1193570842
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1193570840}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1193570843
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10731,7 +10203,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 0ac1640f763ec774e9f1df672165f6b5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10847,7 +10319,6 @@ GameObject:
   - component: {fileID: 1240722819}
   - component: {fileID: 1240722822}
   - component: {fileID: 1240722821}
-  - component: {fileID: 1240722820}
   m_Layer: 0
   m_Name: railLine1 (3)
   m_TagString: Untagged
@@ -10870,27 +10341,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1361273242}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1240722820
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1240722818}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1240722821
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10911,7 +10361,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e1a243b27038a7f4f8833e77b9fe7a93, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11219,7 +10669,6 @@ GameObject:
   - component: {fileID: 1262905492}
   - component: {fileID: 1262905495}
   - component: {fileID: 1262905494}
-  - component: {fileID: 1262905493}
   m_Layer: 0
   m_Name: railLine1 (15)
   m_TagString: Untagged
@@ -11242,27 +10691,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 471667096}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1262905493
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1262905491}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1262905494
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11283,7 +10711,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e1a243b27038a7f4f8833e77b9fe7a93, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11534,7 +10962,6 @@ GameObject:
   - component: {fileID: 1310894697}
   - component: {fileID: 1310894700}
   - component: {fileID: 1310894699}
-  - component: {fileID: 1310894698}
   m_Layer: 0
   m_Name: railLine1 (2)
   m_TagString: Untagged
@@ -11557,27 +10984,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1361273242}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1310894698
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1310894696}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1310894699
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11598,7 +11004,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e1a243b27038a7f4f8833e77b9fe7a93, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11744,7 +11150,6 @@ GameObject:
   - component: {fileID: 1332049943}
   - component: {fileID: 1332049946}
   - component: {fileID: 1332049945}
-  - component: {fileID: 1332049944}
   m_Layer: 0
   m_Name: railLine1 (11)
   m_TagString: Untagged
@@ -11767,27 +11172,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1361273242}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1332049944
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1332049942}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1332049945
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11808,7 +11192,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e1a243b27038a7f4f8833e77b9fe7a93, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11913,7 +11297,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 273bdf05be817d647a2a1fb7f4b9cc2d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11985,7 +11369,6 @@ GameObject:
   - component: {fileID: 1347642984}
   - component: {fileID: 1347642987}
   - component: {fileID: 1347642986}
-  - component: {fileID: 1347642985}
   m_Layer: 0
   m_Name: rail1
   m_TagString: Untagged
@@ -12008,27 +11391,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 471667096}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1347642985
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1347642983}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1347642986
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12049,7 +11411,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 0ac1640f763ec774e9f1df672165f6b5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -12354,7 +11716,6 @@ GameObject:
   - component: {fileID: 1445721356}
   - component: {fileID: 1445721359}
   - component: {fileID: 1445721358}
-  - component: {fileID: 1445721357}
   m_Layer: 0
   m_Name: railLine1 (6)
   m_TagString: Untagged
@@ -12377,27 +11738,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 471667096}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1445721357
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1445721355}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1445721358
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12418,7 +11758,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e1a243b27038a7f4f8833e77b9fe7a93, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -12459,7 +11799,6 @@ GameObject:
   - component: {fileID: 1445736699}
   - component: {fileID: 1445736702}
   - component: {fileID: 1445736701}
-  - component: {fileID: 1445736700}
   m_Layer: 0
   m_Name: railLine1 (1)
   m_TagString: Untagged
@@ -12482,27 +11821,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1361273242}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1445736700
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1445736698}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1445736701
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12523,7 +11841,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e1a243b27038a7f4f8833e77b9fe7a93, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -12564,7 +11882,6 @@ GameObject:
   - component: {fileID: 1466625955}
   - component: {fileID: 1466625958}
   - component: {fileID: 1466625957}
-  - component: {fileID: 1466625956}
   m_Layer: 0
   m_Name: railLine1 (18)
   m_TagString: Untagged
@@ -12587,27 +11904,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 471667096}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1466625956
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1466625954}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1466625957
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12628,7 +11924,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e1a243b27038a7f4f8833e77b9fe7a93, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -12686,7 +11982,7 @@ Transform:
   m_GameObject: {fileID: 1482993315}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 45.1, z: 18.666004}
+  m_LocalPosition: {x: 0, y: 38.1, z: 18.666004}
   m_LocalScale: {x: 99.96025, y: 0.48481387, z: 18.549397}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12774,7 +12070,6 @@ GameObject:
   - component: {fileID: 1492655572}
   - component: {fileID: 1492655575}
   - component: {fileID: 1492655574}
-  - component: {fileID: 1492655573}
   m_Layer: 0
   m_Name: railLine1 (5)
   m_TagString: Untagged
@@ -12797,27 +12092,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1361273242}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1492655573
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1492655571}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1492655574
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12838,7 +12112,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e1a243b27038a7f4f8833e77b9fe7a93, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -13078,6 +12352,111 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1521458638}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1525503305
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1525503306}
+  - component: {fileID: 1525503309}
+  - component: {fileID: 1525503308}
+  - component: {fileID: 1525503307}
+  m_Layer: 10
+  m_Name: flooring (1)
+  m_TagString: Ground
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1525503306
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1525503305}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 9.08, z: 2.361}
+  m_LocalScale: {x: 101.735756, y: 4.333329, z: 58.143982}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2102254850}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1525503307
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1525503305}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1525503308
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1525503305}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: d082c5bca1ea45e4e9028e991e1f6378, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1525503309
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1525503305}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1532726720
 GameObject:
   m_ObjectHideFlags: 0
@@ -13089,7 +12468,6 @@ GameObject:
   - component: {fileID: 1532726721}
   - component: {fileID: 1532726724}
   - component: {fileID: 1532726723}
-  - component: {fileID: 1532726722}
   m_Layer: 0
   m_Name: railLine1 (8)
   m_TagString: Untagged
@@ -13112,27 +12490,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 471667096}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1532726722
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1532726720}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1532726723
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13153,7 +12510,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e1a243b27038a7f4f8833e77b9fe7a93, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -13566,7 +12923,6 @@ GameObject:
   - component: {fileID: 1629998989}
   - component: {fileID: 1629998992}
   - component: {fileID: 1629998991}
-  - component: {fileID: 1629998990}
   m_Layer: 0
   m_Name: railLine1 (8)
   m_TagString: Untagged
@@ -13589,27 +12945,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1361273242}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1629998990
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1629998988}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1629998991
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13630,7 +12965,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e1a243b27038a7f4f8833e77b9fe7a93, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -13956,7 +13291,6 @@ GameObject:
   - component: {fileID: 1668122303}
   - component: {fileID: 1668122306}
   - component: {fileID: 1668122305}
-  - component: {fileID: 1668122304}
   m_Layer: 0
   m_Name: railLine1 (7)
   m_TagString: Untagged
@@ -13979,27 +13313,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 471667096}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1668122304
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1668122302}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1668122305
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14020,7 +13333,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e1a243b27038a7f4f8833e77b9fe7a93, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14105,7 +13418,6 @@ GameObject:
   - component: {fileID: 1670938293}
   - component: {fileID: 1670938296}
   - component: {fileID: 1670938295}
-  - component: {fileID: 1670938294}
   m_Layer: 0
   m_Name: railLine1 (12)
   m_TagString: Untagged
@@ -14128,27 +13440,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 471667096}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1670938294
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1670938292}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1670938295
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14169,7 +13460,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e1a243b27038a7f4f8833e77b9fe7a93, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14379,7 +13670,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 273bdf05be817d647a2a1fb7f4b9cc2d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14420,7 +13711,6 @@ GameObject:
   - component: {fileID: 1680530045}
   - component: {fileID: 1680530048}
   - component: {fileID: 1680530047}
-  - component: {fileID: 1680530046}
   m_Layer: 0
   m_Name: railLine1 (11)
   m_TagString: Untagged
@@ -14443,27 +13733,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 471667096}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1680530046
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1680530044}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1680530047
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14484,7 +13753,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e1a243b27038a7f4f8833e77b9fe7a93, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14984,7 +14253,7 @@ Transform:
   m_GameObject: {fileID: 1747145488}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.49999982, y: 46, z: 1.7000005}
+  m_LocalPosition: {x: -0.49999982, y: 39, z: 1.7000005}
   m_LocalScale: {x: 104.78121, y: 4.98036, z: 17.048752}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15313,7 +14582,6 @@ GameObject:
   - component: {fileID: 1803413980}
   - component: {fileID: 1803413983}
   - component: {fileID: 1803413982}
-  - component: {fileID: 1803413981}
   m_Layer: 0
   m_Name: railLine1 (10)
   m_TagString: Untagged
@@ -15336,27 +14604,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 471667096}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1803413981
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1803413979}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1803413982
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15377,7 +14624,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e1a243b27038a7f4f8833e77b9fe7a93, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -15418,7 +14665,6 @@ GameObject:
   - component: {fileID: 1804321426}
   - component: {fileID: 1804321429}
   - component: {fileID: 1804321428}
-  - component: {fileID: 1804321427}
   m_Layer: 0
   m_Name: railLine1 (16)
   m_TagString: Untagged
@@ -15441,27 +14687,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 471667096}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1804321427
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1804321425}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1804321428
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15482,7 +14707,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e1a243b27038a7f4f8833e77b9fe7a93, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -15912,7 +15137,7 @@ Transform:
   m_GameObject: {fileID: 1899039551}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 39.170002, y: 31.1, z: 1.4841995}
+  m_LocalPosition: {x: 32.3, y: 31.1, z: 1.4841995}
   m_LocalScale: {x: 2.6026223, y: 31.65164, z: 3.650456}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16696,7 +15921,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 273bdf05be817d647a2a1fb7f4b9cc2d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -17157,7 +16382,6 @@ GameObject:
   - component: {fileID: 2023046533}
   - component: {fileID: 2023046536}
   - component: {fileID: 2023046535}
-  - component: {fileID: 2023046534}
   m_Layer: 0
   m_Name: railLine1 (19)
   m_TagString: Untagged
@@ -17180,27 +16404,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1361273242}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &2023046534
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2023046532}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &2023046535
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17221,7 +16424,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e1a243b27038a7f4f8833e77b9fe7a93, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -17262,7 +16465,6 @@ GameObject:
   - component: {fileID: 2029201924}
   - component: {fileID: 2029201927}
   - component: {fileID: 2029201926}
-  - component: {fileID: 2029201925}
   m_Layer: 0
   m_Name: railLine1 (4)
   m_TagString: Untagged
@@ -17285,27 +16487,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1361273242}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &2029201925
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2029201923}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &2029201926
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17326,7 +16507,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e1a243b27038a7f4f8833e77b9fe7a93, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -17367,7 +16548,6 @@ GameObject:
   - component: {fileID: 2030937333}
   - component: {fileID: 2030937336}
   - component: {fileID: 2030937335}
-  - component: {fileID: 2030937334}
   m_Layer: 0
   m_Name: railLine1 (14)
   m_TagString: Untagged
@@ -17390,27 +16570,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 471667096}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &2030937334
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2030937332}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &2030937335
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17431,7 +16590,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e1a243b27038a7f4f8833e77b9fe7a93, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -18145,7 +17304,6 @@ GameObject:
   - component: {fileID: 2100996538}
   - component: {fileID: 2100996541}
   - component: {fileID: 2100996540}
-  - component: {fileID: 2100996539}
   m_Layer: 0
   m_Name: railLine1 (13)
   m_TagString: Untagged
@@ -18168,27 +17326,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 471667096}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &2100996539
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2100996537}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &2100996540
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -18209,7 +17346,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e1a243b27038a7f4f8833e77b9fe7a93, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -18269,6 +17406,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 797672073}
+  - {fileID: 1525503306}
   - {fileID: 43687904}
   - {fileID: 1482993316}
   - {fileID: 2008838473}
@@ -18320,8 +17458,8 @@ Transform:
   m_GameObject: {fileID: 2108152401}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -1505, y: 21.34, z: 319}
-  m_LocalScale: {x: 2342.4983, y: 2, z: 3155.995}
+  m_LocalPosition: {x: -1579.359, y: 21.34, z: 319}
+  m_LocalScale: {x: 2342.4983, y: 2, z: 3007.6633}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1725913493}
@@ -18673,7 +17811,6 @@ GameObject:
   - component: {fileID: 2136324039}
   - component: {fileID: 2136324042}
   - component: {fileID: 2136324041}
-  - component: {fileID: 2136324040}
   m_Layer: 0
   m_Name: rail2
   m_TagString: Untagged
@@ -18696,27 +17833,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 471667096}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &2136324040
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2136324038}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &2136324041
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -18737,7 +17853,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 0ac1640f763ec774e9f1df672165f6b5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -18778,7 +17894,6 @@ GameObject:
   - component: {fileID: 2143440996}
   - component: {fileID: 2143440999}
   - component: {fileID: 2143440998}
-  - component: {fileID: 2143440997}
   m_Layer: 0
   m_Name: railLine1
   m_TagString: Untagged
@@ -18801,27 +17916,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 471667096}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &2143440997
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2143440995}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &2143440998
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -18842,7 +17936,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e1a243b27038a7f4f8833e77b9fe7a93, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
