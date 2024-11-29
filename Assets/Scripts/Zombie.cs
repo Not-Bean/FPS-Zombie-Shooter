@@ -13,8 +13,12 @@ public class Zombie : MonoBehaviour
     public int followDist;
     public float strength;
 
+    int clock;
+
     bool attackPlayer;
     int attackCool;
+
+    Vector3 wanderPoint;
 
     GameObject spawner;
 
@@ -24,6 +28,10 @@ public class Zombie : MonoBehaviour
 
     private void Start()
     {
+        wanderPoint.x = transform.position.x + Random.Range(-10, 10);
+        wanderPoint.z = transform.position.z + Random.Range(-10, 10);
+        wanderPoint.y = transform.position.y - 1;
+
         player = GameObject.FindGameObjectWithTag("Player");
         rb = GetComponent<Rigidbody>();
         emitter = AudioManager.instance.InitializeEventEmitter(FMODEvents.instance.Zombie, this.gameObject);
@@ -48,12 +56,30 @@ public class Zombie : MonoBehaviour
         {
             rb.MovePosition(Vector3.MoveTowards(transform.position, player.transform.position, speed / 100));
         }
+        else if (clock > 60)
+        {
+            rb.MovePosition(Vector3.MoveTowards(transform.position, wanderPoint, speed / 100));
+        }
     }
         
 
 
     private void FixedUpdate()
     {
+        clock++;
+
+        if (clock == 60)
+        {
+            clock += Random.Range(0, 600);
+        }
+
+        if (clock % 600 == 0)
+        {
+            wanderPoint.x = transform.position.x + Random.Range(-10, 10);
+            wanderPoint.z = transform.position.z + Random.Range(-10, 10);
+            wanderPoint.y = transform.position.y;
+        }
+
         if (attackPlayer)
         {
             if (attackCool <= 0)
@@ -62,6 +88,7 @@ public class Zombie : MonoBehaviour
                 attackCool = 60;
             }
         }
+
 
         if (attackCool >= 0)
         {

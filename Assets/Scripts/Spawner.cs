@@ -11,6 +11,7 @@ public class Spawner : MonoBehaviour
     public int startingAmount;
     public int spawnDelay;
     public int maxZombies;
+    public float spawnRange;
 
     int spawnCool;
 
@@ -21,7 +22,7 @@ public class Spawner : MonoBehaviour
     {
         for (int i = 0; i < startingAmount; i++)
         {
-            GameObject zomb = Instantiate(zombie, new Vector3(Random.Range(-25f, 25f), 0, Random.Range(-25f, 25f)) + transform.position, Quaternion.identity);
+            GameObject zomb = Instantiate(zombie, new Vector3(Random.Range(-spawnRange, spawnRange), 0, Random.Range(-spawnRange, spawnRange)) + transform.position, Quaternion.identity);
             zomb.GetComponent<Zombie>().SpawnerSet(gameObject);
             zombies.Add(zomb);
         }
@@ -32,7 +33,7 @@ public class Spawner : MonoBehaviour
     {
         if (zombies.Count < maxZombies && spawnCool <= 0)
         {
-            GameObject zomb = Instantiate(zombie, new Vector3(Random.Range(-25f, 25f), 0, Random.Range(-25f, 25f)) + transform.position, Quaternion.identity);
+            GameObject zomb = Instantiate(zombie, new Vector3(Random.Range(-spawnRange, spawnRange), 0, Random.Range(-spawnRange, spawnRange)) + transform.position, Quaternion.identity);
             zomb.GetComponent<Zombie>().SpawnerSet(gameObject);
             zombies.Add(zomb);
             spawnCool = spawnDelay;

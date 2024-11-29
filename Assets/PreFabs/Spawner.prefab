@@ -97,6 +97,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zombie: {fileID: 6123035510407386869, guid: 010946898ca8b5c48aa0ae24cf9ec80b, type: 3}
+  scoreKeeper: {fileID: 0}
   startingAmount: 5
   spawnDelay: 30
   maxZombies: 15
+  spawnRange: 2
