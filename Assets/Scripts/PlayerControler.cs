@@ -70,8 +70,8 @@ public class PlayerControler : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //loadedAmmoText.text = loadedAmmo.ToString();
-        //totalAmmoText.text = ammoCount.ToString();
+        loadedAmmoText.text = loadedAmmo.ToString();
+        totalAmmoText.text = ammoCount.ToString();
 
         if (shootCool >= 0)
         {
