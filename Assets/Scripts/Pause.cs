@@ -11,10 +11,15 @@ public class Pause : MonoBehaviour
     [SerializeField] GameObject PauseScreen;
     PlayerControler playerControl;
     public bool isPaused = false;
+    public Button SoundSetting;
+    public Button BackButton;
+    public GameObject VolumeControl;
 
     private void Start()
     {
         playerControl = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControler>();
+        SoundSetting.onClick.AddListener(OnSoundSettings);
+        BackButton.onClick.AddListener(OnBackButton);
     }
 
     public void MainMenu()
@@ -51,6 +56,17 @@ public class Pause : MonoBehaviour
     {
         Debug.Log(value);
     }
+    
+        public void OnBackButton()
+        {
+            VolumeControl.gameObject.SetActive(false);
+        }
+    
+        public void OnSoundSettings()
+        {
+            VolumeControl.gameObject.SetActive(true);
+            PauseScreen.SetActive(false);
+        }
 
     // allows game to be reset to menu from the keyboard
     // usefull for gamecon
