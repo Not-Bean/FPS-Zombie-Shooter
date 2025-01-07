@@ -22,7 +22,7 @@ public class PlayerLook : MonoBehaviour {
         }
         catch 
         {
-            Debug.LogWarning("ERROR NO GAME MANAGER FOUND (Expected when game not started from the main menu SAFE TO INGROE)");
+            Debug.LogWarning("ERROR NO GAME MANAGER FOUND (Expected when game not started from the main menu SAFE TO IGNROE)");
             sensx = 0.5f * 10 + 3;
             sensy = 0.5f * 10 + 3;
         }
