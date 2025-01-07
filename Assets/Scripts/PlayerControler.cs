@@ -4,6 +4,8 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.UI;
+
 
 public class PlayerControler : MonoBehaviour
 {
@@ -14,6 +16,7 @@ public class PlayerControler : MonoBehaviour
     [SerializeField] GameObject gun;
     [SerializeField] TextMeshProUGUI totalAmmoText;
     [SerializeField] TextMeshProUGUI loadedAmmoText;
+    [SerializeField] Image ammoCircle;
 
     public float health;
     public bool dead;
@@ -40,6 +43,7 @@ public class PlayerControler : MonoBehaviour
         maxHealth = health;
         totalAmmoText.text = ammoCount.ToString();
         loadedAmmoText.text = loadedAmmo.ToString();
+        SetAmmo();
     }
 
     public void Damage(float damage)
@@ -72,6 +76,7 @@ public class PlayerControler : MonoBehaviour
     {
         loadedAmmoText.text = loadedAmmo.ToString();
         totalAmmoText.text = ammoCount.ToString();
+        SetAmmo();
 
         if (shootCool >= 0)
         {
@@ -107,12 +112,18 @@ public class PlayerControler : MonoBehaviour
                 GameObject shot = Instantiate(bullet, shootPoint.transform.position, shootPoint.transform.rotation);
                 shot.GetComponent<Rigidbody>().velocity = shootPoint.transform.forward * 60;
                 shootCool = fireCool;
+                SetAmmo();
             }
             else if (loadedAmmo <= 0 && shootCool <= 0)
             {
                 OnReload();
             }
         }
+    }
+
+    void SetAmmo()
+    {
+        ammoCircle.fillAmount = (float)loadedAmmo / magSize;
     }
 
     public void ShootBlock(bool value)
@@ -127,6 +138,7 @@ public class PlayerControler : MonoBehaviour
         {
             gunSpin = true;
             reloadCool = ReloadCooldown;
+            SetAmmo();
             if (ammoCount < magSize - loadedAmmo)
             {
                 loadedAmmo = ammoCount;
