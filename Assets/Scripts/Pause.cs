@@ -12,14 +12,12 @@ public class Pause : MonoBehaviour
     PlayerControler playerControl;
     public bool isPaused = false;
     public Button SoundSetting;
-    public Button BackButton;
     public GameObject VolumeControl;
 
     private void Start()
     {
         playerControl = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControler>();
         SoundSetting.onClick.AddListener(OnSoundSettings);
-        BackButton.onClick.AddListener(OnBackButton);
     }
 
     public void MainMenu()
@@ -38,6 +36,7 @@ public class Pause : MonoBehaviour
 
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
+            VolumeControl.gameObject.SetActive(false);
         }
         else
         {
@@ -56,11 +55,6 @@ public class Pause : MonoBehaviour
     {
         Debug.Log(value);
     }
-    
-        public void OnBackButton()
-        {
-            VolumeControl.gameObject.SetActive(false);
-        }
     
         public void OnSoundSettings()
         {
