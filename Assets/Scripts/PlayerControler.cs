@@ -17,6 +17,7 @@ public class PlayerControler : MonoBehaviour
     [SerializeField] TextMeshProUGUI totalAmmoText;
     [SerializeField] TextMeshProUGUI loadedAmmoText;
     [SerializeField] Image ammoCircle;
+    [SerializeField] Image redCircle;
 
     public float health;
     public bool dead;
@@ -123,7 +124,16 @@ public class PlayerControler : MonoBehaviour
 
     void SetAmmo()
     {
+        float targetFill = (float)loadedAmmo / magSize;
+        
+        ammoCircle.fillAmount = Mathf.MoveTowards(ammoCircle.fillAmount, targetFill, Time.fixedDeltaTime * 1f);
+        redCircle.fillAmount = ammoCircle.fillAmount + 0.07f;
+        
+        /*
+        Generic code for handling target fill (DONT DELETE, KEEP THIS HERE) 
         ammoCircle.fillAmount = (float)loadedAmmo / magSize;
+        redCircle.fillAmount = (float)loadedAmmo / magSize + 0.07f;
+         */
     }
 
     public void ShootBlock(bool value)
