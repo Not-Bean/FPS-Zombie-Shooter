@@ -71,6 +71,15 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""9f69da78-5f36-44c7-abf2-19312cdfbd35"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -172,6 +181,17 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
                     ""action"": ""Reload"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0d9111fe-5d99-4dba-b276-166d12f2b89d"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -185,6 +205,7 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
         m_KeyBoardMouse_Jump = m_KeyBoardMouse.FindAction("Jump", throwIfNotFound: true);
         m_KeyBoardMouse_Sprint = m_KeyBoardMouse.FindAction("Sprint", throwIfNotFound: true);
         m_KeyBoardMouse_Reload = m_KeyBoardMouse.FindAction("Reload", throwIfNotFound: true);
+        m_KeyBoardMouse_Pause = m_KeyBoardMouse.FindAction("Pause", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -251,6 +272,7 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
     private readonly InputAction m_KeyBoardMouse_Jump;
     private readonly InputAction m_KeyBoardMouse_Sprint;
     private readonly InputAction m_KeyBoardMouse_Reload;
+    private readonly InputAction m_KeyBoardMouse_Pause;
     public struct KeyBoardMouseActions
     {
         private @Inputs m_Wrapper;
@@ -260,6 +282,7 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
         public InputAction @Jump => m_Wrapper.m_KeyBoardMouse_Jump;
         public InputAction @Sprint => m_Wrapper.m_KeyBoardMouse_Sprint;
         public InputAction @Reload => m_Wrapper.m_KeyBoardMouse_Reload;
+        public InputAction @Pause => m_Wrapper.m_KeyBoardMouse_Pause;
         public InputActionMap Get() { return m_Wrapper.m_KeyBoardMouse; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -284,6 +307,9 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
             @Reload.started += instance.OnReload;
             @Reload.performed += instance.OnReload;
             @Reload.canceled += instance.OnReload;
+            @Pause.started += instance.OnPause;
+            @Pause.performed += instance.OnPause;
+            @Pause.canceled += instance.OnPause;
         }
 
         private void UnregisterCallbacks(IKeyBoardMouseActions instance)
@@ -303,6 +329,9 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
             @Reload.started -= instance.OnReload;
             @Reload.performed -= instance.OnReload;
             @Reload.canceled -= instance.OnReload;
+            @Pause.started -= instance.OnPause;
+            @Pause.performed -= instance.OnPause;
+            @Pause.canceled -= instance.OnPause;
         }
 
         public void RemoveCallbacks(IKeyBoardMouseActions instance)
@@ -327,5 +356,6 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnSprint(InputAction.CallbackContext context);
         void OnReload(InputAction.CallbackContext context);
+        void OnPause(InputAction.CallbackContext context);
     }
 }
