@@ -6,12 +6,14 @@ using UnityEngine;
 public class InventoryManager : MonoBehaviour
 {
 
-    [SerializeField] GameObject iconPrefab;
+    [SerializeField] GameObject dropPrefab;
+    
+
 
     bool inventoryEnabled;
-    GameObject[,] inventoryIcons = new GameObject[9, 4];
-    int[,] inventoryItems = new int[9,4];
-    int[,] inventoryAmount = new int[9, 4];
+    GameObject[,] inventoryIcons = new GameObject[4, 9];
+    int[,] inventoryItems = new int[4, 9];
+    int[,] inventoryAmount = new int[4, 9];
 
 
     private void Start()
@@ -20,8 +22,8 @@ public class InventoryManager : MonoBehaviour
         {
             for (int x = 0; x < inventoryIcons.GetLength(0); x++)
             {
-                inventoryIcons[x,y] = Instantiate(iconPrefab, transform);
-                inventoryIcons[x,y].transform.position = new Vector3(x * 110 + 520, y * 110 + 375, 0);
+                inventoryIcons[x,y] = Instantiate(dropPrefab, transform);
+                inventoryIcons[x,y].transform.position = new Vector3(x * 110 + 520, y * 110 + 110, 0);
             }
         }
     }
