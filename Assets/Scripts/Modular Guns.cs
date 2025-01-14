@@ -1,0 +1,125 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
+
+public class ModularGuns : MonoBehaviour
+{
+    [SerializeField] GameObject bullet;
+    [SerializeField] GameObject gun;
+    [SerializeField] GameObject crosshair;
+    [SerializeField] TextMeshProUGUI totalAmmoText;
+    [SerializeField] TextMeshProUGUI loadedAmmoText;
+    [SerializeField] int fireCool;
+    int shootCool;
+    [SerializeField] int magSize;
+    [SerializeField] int loadedAmmo;
+    [SerializeField] int ammoCount;
+    int reloadCool;
+    int rotationCount;
+    [SerializeField] int ReloadCooldown;
+    bool canShoot = true;
+    bool gunSpin;
+    [SerializeField] Image ammoCircle;
+    [SerializeField] Image redCircle;
+    [SerializeField] public int damage;
+    
+    [SerializeField] bool isFullAuto;
+    [SerializeField] float fullAutoCooldown;
+    
+
+    void Start()
+    {
+        totalAmmoText.text = ammoCount.ToString();
+        loadedAmmoText.text = loadedAmmo.ToString();
+        SetAmmo();
+    }
+
+    private void FixedUpdate()
+    {
+        loadedAmmoText.text = loadedAmmo.ToString();
+        totalAmmoText.text = ammoCount.ToString();
+        SetAmmo();
+
+        if (shootCool >= 0)
+        {
+            shootCool--;
+        }
+
+        if (reloadCool > 0)
+        {
+            reloadCool--;
+        }
+
+        if (gunSpin)
+        {
+            gun.transform.Rotate(new Vector3(0, 0, 6));
+            rotationCount++;
+            if (rotationCount >= 60)
+            {
+                rotationCount = 0;
+                gunSpin = false;
+            }
+        }
+    }
+
+    public void OnShoot()
+    {
+        if (canShoot && reloadCool <= 0)
+        {
+
+            if (shootCool <= 0 && loadedAmmo > 0)
+            {
+                loadedAmmo--;
+                AudioManager.instance.PlayOneShot(FMODEvents.instance.Shoot,this.transform.position);
+                GameObject shot = Instantiate(bullet, crosshair.transform.position, crosshair.transform.rotation);
+                shot.GetComponent<Rigidbody>().velocity = crosshair.transform.forward * 60;
+                shootCool = fireCool;
+            }
+            else if (loadedAmmo <= 0 && shootCool <= 0)
+            {
+                OnReload();
+            }
+        }
+    }
+    void SetAmmo()
+    {
+        float targetFill = (float)loadedAmmo / magSize;
+        
+        ammoCircle.fillAmount = Mathf.MoveTowards(ammoCircle.fillAmount, targetFill, Time.fixedDeltaTime * 1f);
+        redCircle.fillAmount = ammoCircle.fillAmount + 0.07f;
+        
+        /*
+        Generic code for handling target fill (DONT DELETE, KEEP THIS HERE)
+        ammoCircle.fillAmount = (float)loadedAmmo / magSize;
+        redCircle.fillAmount = (float)loadedAmmo / magSize + 0.07f;
+         */
+    }
+    public void ShootBlock(bool value)
+    {
+        canShoot = value;
+    }
+
+    public void OnReload()
+    {
+        
+        if (reloadCool <= 0)
+        {
+            gunSpin = true;
+            reloadCool = reloadCool;
+            if (ammoCount < magSize - loadedAmmo)
+            {
+                loadedAmmo = ammoCount;
+                ammoCount = 0;
+            }
+            else
+            {
+                ammoCount -= magSize - loadedAmmo;
+                loadedAmmo = magSize;
+            }
+        }
+        
+    }
+}
