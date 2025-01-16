@@ -6500,12 +6500,19 @@ MonoBehaviour:
       Data3: -808637249
       Data4: -1564379738
     Path: event:/SFX/Player/PlayerFootsteps
+  <Reload>k__BackingField:
+    Guid:
+      Data1: 1043390954
+      Data2: 1245968461
+      Data3: 920333486
+      Data4: 22783576
+    Path: event:/SFX/Player/Reload
   <Shoot>k__BackingField:
     Guid:
-      Data1: 2136207014
-      Data2: 1250509097
-      Data3: -1945422968
-      Data4: -82594996
+      Data1: 1266902031
+      Data2: 1246958236
+      Data3: 1842056090
+      Data4: -2135441548
     Path: event:/SFX/Player/Shoot
   <Zombie>k__BackingField:
     Guid:
@@ -12138,8 +12145,8 @@ RectTransform:
   m_GameObject: {fileID: 511884207}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.6, y: 1.6, z: 1.6}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1210237429}
   - {fileID: 418259059}
@@ -19036,7 +19043,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 25}
+  m_AnchoredPosition: {x: 0, y: 54}
   m_SizeDelta: {x: 192, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &918797106
@@ -38858,7 +38865,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2075433159661329697, guid: 5f4bbb034113db9499248133a9d371df, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -50.85
+      value: -114.02
       objectReference: {fileID: 0}
     - target: {fileID: 2075433159661329697, guid: 5f4bbb034113db9499248133a9d371df, type: 3}
       propertyPath: m_LocalRotation.w
@@ -38895,6 +38902,10 @@ PrefabInstance:
     - target: {fileID: 5286281079744364477, guid: 5f4bbb034113db9499248133a9d371df, type: 3}
       propertyPath: parameterName
       value: wind_intensity
+      objectReference: {fileID: 0}
+    - target: {fileID: 5286281079744364477, guid: 5f4bbb034113db9499248133a9d371df, type: 3}
+      propertyPath: parameterValue
+      value: 0.39
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -43817,7 +43828,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2075433159661329697, guid: 5f4bbb034113db9499248133a9d371df, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -52.16
+      value: -114.91
       objectReference: {fileID: 0}
     - target: {fileID: 2075433159661329697, guid: 5f4bbb034113db9499248133a9d371df, type: 3}
       propertyPath: m_LocalRotation.w
