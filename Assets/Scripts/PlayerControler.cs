@@ -148,6 +148,7 @@ public class PlayerControler : MonoBehaviour
         {
             gunSpin = true;
             reloadCool = ReloadCooldown;
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.Reload, this.transform.position);
             SetAmmo();
             if (ammoCount < magSize - loadedAmmo)
             {
