@@ -8,6 +8,8 @@ TagManager:
   - Zombie
   - Bullet
   - GameManager
+  - DropOff
+  - PickUp
   layers:
   - Default
   - TransparentFX
