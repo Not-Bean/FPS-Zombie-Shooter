@@ -11,13 +11,14 @@ public class PlayerControler : MonoBehaviour
 {
     [SerializeField] GameObject shootPoint;
     [SerializeField] GameObject bullet;
-    [SerializeField] GameObject healthBar;
     [SerializeField] GameObject Death;
     [SerializeField] GameObject gun;
     [SerializeField] TextMeshProUGUI totalAmmoText;
     [SerializeField] TextMeshProUGUI loadedAmmoText;
     [SerializeField] Image ammoCircle;
     [SerializeField] Image redCircle;
+    [SerializeField] Image HealthCircle;
+    [SerializeField] Image HealthRedCircle;
 
     public float health;
     public bool dead;
@@ -45,11 +46,13 @@ public class PlayerControler : MonoBehaviour
         totalAmmoText.text = ammoCount.ToString();
         loadedAmmoText.text = loadedAmmo.ToString();
         SetAmmo();
+        SetHealth();
     }
 
     public void Damage(float damage)
     {
         health -= damage;
+        SetHealth();
     }
 
 
@@ -57,7 +60,7 @@ public class PlayerControler : MonoBehaviour
     {
         if ( health >= 0)
         {
-            healthBar.transform.localScale = new Vector3(((10 / maxHealth * health)/1920) * Screen.width , 1, 5);
+            
         }
         
 
@@ -78,6 +81,7 @@ public class PlayerControler : MonoBehaviour
         loadedAmmoText.text = loadedAmmo.ToString();
         totalAmmoText.text = ammoCount.ToString();
         SetAmmo();
+        SetHealth();
 
         if (shootCool >= 0)
         {
@@ -133,6 +137,20 @@ public class PlayerControler : MonoBehaviour
         Generic code for handling target fill (DONT DELETE, KEEP THIS HERE) 
         ammoCircle.fillAmount = (float)loadedAmmo / magSize;
         redCircle.fillAmount = (float)loadedAmmo / magSize + 0.07f;
+         */
+    }
+    
+    void SetHealth()
+    {
+        float targetFill = health / maxHealth;
+
+        HealthCircle.fillAmount = Mathf.MoveTowards(HealthCircle.fillAmount, targetFill, Time.fixedDeltaTime * 1f);
+        HealthRedCircle.fillAmount = HealthCircle.fillAmount + 0.07f;
+
+        /*
+        Generic code for handling target fill (DONT DELETE, KEEP THIS HERE)
+        HealthCircle.fillAmount = health / maxHealth;
+        HealthRedCircle.fillAmount = health / maxHealth + 0.07f;
          */
     }
 
