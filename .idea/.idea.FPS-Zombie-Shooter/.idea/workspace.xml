@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="686c8db9-f316-4b21-aa7c-b92126bfef49" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/NPC Interaction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NPC Interaction.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerLook.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerLook.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +90,7 @@
       <workItem from="1732320445319" duration="14000" />
       <workItem from="1737670326672" duration="119000" />
       <workItem from="1737670715268" duration="392000" />
-      <workItem from="1737671189121" duration="1418000" />
+      <workItem from="1737671189121" duration="1751000" />
     </task>
     <servers />
   </component>

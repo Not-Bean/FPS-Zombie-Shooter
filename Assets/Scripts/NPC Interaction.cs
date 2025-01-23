@@ -80,7 +80,7 @@ public class NPCInteraction : MonoBehaviour
                 Time.timeScale = 1;
                 //Cursor.lockState = CursorLockMode.Locked;
                 findLook.freezeState = false;
-                Cursor.visible = false;
+                //Cursor.visible = false;
             }
         }
     }
@@ -93,7 +93,7 @@ public class NPCInteraction : MonoBehaviour
         //Cursor.lockState = CursorLockMode.None;
         
         findLook.freezeState = true;
-        Cursor.visible = true;
+        //Cursor.visible = true;
         dialogActive = false;
         //uiPanel.SetActive(false);
         StopCoroutine(PlayDialog());
