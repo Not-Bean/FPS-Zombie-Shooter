@@ -60,7 +60,7 @@ public class NPCInteraction : MonoBehaviour
         ui.SetActive(false);
     }
 
-    IEnumerator PlayDialog()
+    IEnumerator PlayDialog(){
         
         for (int i = 0; i < npcDialog.Length; i++)//iterates through the for loop multiple times for some reason
         {
