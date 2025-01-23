@@ -66,7 +66,8 @@ public class NPCInteraction : MonoBehaviour
         {
             Pause();
             uiText.SetText(npcDialog[i]);
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSecondsRealTime(5f);
+            //yield return new WaitForSeconds(5f);
             if (i >= npcDialog.Length - 1)
             {
                 dialogActive = false;
