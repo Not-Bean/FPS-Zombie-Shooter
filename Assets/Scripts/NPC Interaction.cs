@@ -62,26 +62,27 @@ public class NPCInteraction : MonoBehaviour
 
     IEnumerator PlayDialog()
     {
-        npcNameText.text = npcName;
+        Pause();
         
-        MG.ShootBlock(true);
-        p.isPaused = true;
-        Time.timeScale = 1;
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-        
-        for (int i = 0; i < npcDialog.Length; i++)
+        for (int i = 0; i < npcDialog.Length; i++)//iterates through the for loop multiple times for some reason
         {
             uiText.SetText(npcDialog[i]);
             yield return new WaitForSeconds(5f);
             if (i >= npcDialog.Length - 1)
             {
-                Unpause();
+                dialogActive = false;
+                npcNameText.text = npcName;
+                //Pause doesn't properly pause the game
+                MG.ShootBlock(true);
+                p.isPaused = true;
+                Time.timeScale = 1;
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
             }
         }
     }
 
-    void Unpause()
+    void Pause()
     {
         MG.ShootBlock(false);
         p.isPaused = false;
