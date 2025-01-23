@@ -18,12 +18,12 @@ public class NPCInteraction : MonoBehaviour
 
     public Pause p;
     public ModularGuns MG;
-    
+    public PlayerLook findLook;
     void Start()
     {
         ui.SetActive(false);
         uiPanel.SetActive(false);
-        var findLook = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<PlayerLook>();
+        findLook = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<PlayerLook>();
     }
 
     void Update()
