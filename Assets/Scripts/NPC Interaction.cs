@@ -66,7 +66,7 @@ public class NPCInteraction : MonoBehaviour
         {
             Pause();
             uiText.SetText(npcDialog[i]);
-            yield return new WaitForSecondsRealTime(5f);
+            yield return new WaitForSecondsRealtime(5f);
             //yield return new WaitForSeconds(5f);
             if (i >= npcDialog.Length - 1)
             {
@@ -76,8 +76,8 @@ public class NPCInteraction : MonoBehaviour
                 MG.ShootBlock(true);
                 p.isPaused = true;
                 Time.timeScale = 1;
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
             }
         }
     }
@@ -87,8 +87,8 @@ public class NPCInteraction : MonoBehaviour
         MG.ShootBlock(false);
         p.isPaused = false;
         Time.timeScale = 0;
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         dialogActive = false;
         //uiPanel.SetActive(false);
         StopCoroutine(PlayDialog());
