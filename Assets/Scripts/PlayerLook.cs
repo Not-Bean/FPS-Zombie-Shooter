@@ -11,6 +11,8 @@ public class PlayerLook : MonoBehaviour {
     float xrotation;
     float yrotation;
 
+    public bool freezeState = false;
+    float freeze = 0;
     private void Start()
     {
         try
@@ -31,11 +33,17 @@ public class PlayerLook : MonoBehaviour {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
+    
     private void Update()
     {
-        float mousex = Input.GetAxisRaw("Mouse X") * sensx;
-        float mousey = Input.GetAxisRaw("Mouse Y") * sensy;
-
+        float mousex = 0;
+        float mousey = 0;
+        if (!freezeState)
+        {
+            mousex = Input.GetAxisRaw("Mouse X") * sensx;
+            mousey = Input.GetAxisRaw("Mouse Y") * sensy;
+        }
+        
         yrotation += mousex;
         xrotation -= mousey;
         xrotation = Mathf.Clamp(xrotation, -90f, 90f);

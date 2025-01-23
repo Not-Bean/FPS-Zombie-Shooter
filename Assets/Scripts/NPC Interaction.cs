@@ -18,10 +18,12 @@ public class NPCInteraction : MonoBehaviour
 
     public Pause p;
     public ModularGuns MG;
+    
     void Start()
     {
         ui.SetActive(false);
         uiPanel.SetActive(false);
+        var findLook = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<PlayerLook>();
     }
 
     void Update()
@@ -76,7 +78,8 @@ public class NPCInteraction : MonoBehaviour
                 MG.ShootBlock(true);
                 p.isPaused = true;
                 Time.timeScale = 1;
-                Cursor.lockState = CursorLockMode.Locked;
+                //Cursor.lockState = CursorLockMode.Locked;
+                findLook.isPaused = false;
                 Cursor.visible = false;
             }
         }
@@ -87,7 +90,9 @@ public class NPCInteraction : MonoBehaviour
         MG.ShootBlock(false);
         p.isPaused = false;
         Time.timeScale = 0;
-        Cursor.lockState = CursorLockMode.None;
+        //Cursor.lockState = CursorLockMode.None;
+        
+        findLook.isPaused = true;
         Cursor.visible = true;
         dialogActive = false;
         //uiPanel.SetActive(false);
