@@ -61,11 +61,10 @@ public class NPCInteraction : MonoBehaviour
     }
 
     IEnumerator PlayDialog()
-    {
-        Pause();
         
         for (int i = 0; i < npcDialog.Length; i++)//iterates through the for loop multiple times for some reason
         {
+            Pause();
             uiText.SetText(npcDialog[i]);
             yield return new WaitForSeconds(5f);
             if (i >= npcDialog.Length - 1)
@@ -90,7 +89,7 @@ public class NPCInteraction : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         dialogActive = false;
-        uiPanel.SetActive(false);
+        //uiPanel.SetActive(false);
         StopCoroutine(PlayDialog());
     }
 }
