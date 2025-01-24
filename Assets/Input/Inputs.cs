@@ -73,9 +73,36 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
+                    ""name"": ""ClickPress"",
+                    ""type"": ""Button"",
+                    ""id"": ""5cd02230-fb27-4a62-b19c-577a47edce48"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ClickRelease"",
+                    ""type"": ""Button"",
+                    ""id"": ""ec9d8d9b-32db-4695-8c6b-20a63ab63a2d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Inventory"",
+                    ""type"": ""Button"",
+                    ""id"": ""709c80e1-b428-479a-93de-92e415544cd9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
                     ""name"": ""Pause"",
                     ""type"": ""Button"",
-                    ""id"": ""9f69da78-5f36-44c7-abf2-19312cdfbd35"",
+                    ""id"": ""1eba7f7c-f46b-47da-b424-e376634dbc52"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -184,9 +211,42 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""0d9111fe-5d99-4dba-b276-166d12f2b89d"",
+                    ""id"": ""f84d312d-6bc2-4c08-9693-2045e94b40eb"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": ""Press"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ClickPress"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cdd4fd3f-a677-4d74-8bf3-66ac73994132"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": ""Press(behavior=1)"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ClickRelease"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1f7b3b8c-695b-4d24-9ef6-1646968a9859"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": ""Press"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Inventory"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fb307243-bb0c-4aeb-92f3-413dc2fdd1d4"",
                     ""path"": ""<Keyboard>/escape"",
-                    ""interactions"": """",
+                    ""interactions"": ""Press"",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Pause"",
@@ -205,6 +265,9 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
         m_KeyBoardMouse_Jump = m_KeyBoardMouse.FindAction("Jump", throwIfNotFound: true);
         m_KeyBoardMouse_Sprint = m_KeyBoardMouse.FindAction("Sprint", throwIfNotFound: true);
         m_KeyBoardMouse_Reload = m_KeyBoardMouse.FindAction("Reload", throwIfNotFound: true);
+        m_KeyBoardMouse_ClickPress = m_KeyBoardMouse.FindAction("ClickPress", throwIfNotFound: true);
+        m_KeyBoardMouse_ClickRelease = m_KeyBoardMouse.FindAction("ClickRelease", throwIfNotFound: true);
+        m_KeyBoardMouse_Inventory = m_KeyBoardMouse.FindAction("Inventory", throwIfNotFound: true);
         m_KeyBoardMouse_Pause = m_KeyBoardMouse.FindAction("Pause", throwIfNotFound: true);
     }
 
@@ -272,6 +335,9 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
     private readonly InputAction m_KeyBoardMouse_Jump;
     private readonly InputAction m_KeyBoardMouse_Sprint;
     private readonly InputAction m_KeyBoardMouse_Reload;
+    private readonly InputAction m_KeyBoardMouse_ClickPress;
+    private readonly InputAction m_KeyBoardMouse_ClickRelease;
+    private readonly InputAction m_KeyBoardMouse_Inventory;
     private readonly InputAction m_KeyBoardMouse_Pause;
     public struct KeyBoardMouseActions
     {
@@ -282,6 +348,9 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
         public InputAction @Jump => m_Wrapper.m_KeyBoardMouse_Jump;
         public InputAction @Sprint => m_Wrapper.m_KeyBoardMouse_Sprint;
         public InputAction @Reload => m_Wrapper.m_KeyBoardMouse_Reload;
+        public InputAction @ClickPress => m_Wrapper.m_KeyBoardMouse_ClickPress;
+        public InputAction @ClickRelease => m_Wrapper.m_KeyBoardMouse_ClickRelease;
+        public InputAction @Inventory => m_Wrapper.m_KeyBoardMouse_Inventory;
         public InputAction @Pause => m_Wrapper.m_KeyBoardMouse_Pause;
         public InputActionMap Get() { return m_Wrapper.m_KeyBoardMouse; }
         public void Enable() { Get().Enable(); }
@@ -307,6 +376,15 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
             @Reload.started += instance.OnReload;
             @Reload.performed += instance.OnReload;
             @Reload.canceled += instance.OnReload;
+            @ClickPress.started += instance.OnClickPress;
+            @ClickPress.performed += instance.OnClickPress;
+            @ClickPress.canceled += instance.OnClickPress;
+            @ClickRelease.started += instance.OnClickRelease;
+            @ClickRelease.performed += instance.OnClickRelease;
+            @ClickRelease.canceled += instance.OnClickRelease;
+            @Inventory.started += instance.OnInventory;
+            @Inventory.performed += instance.OnInventory;
+            @Inventory.canceled += instance.OnInventory;
             @Pause.started += instance.OnPause;
             @Pause.performed += instance.OnPause;
             @Pause.canceled += instance.OnPause;
@@ -329,6 +407,15 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
             @Reload.started -= instance.OnReload;
             @Reload.performed -= instance.OnReload;
             @Reload.canceled -= instance.OnReload;
+            @ClickPress.started -= instance.OnClickPress;
+            @ClickPress.performed -= instance.OnClickPress;
+            @ClickPress.canceled -= instance.OnClickPress;
+            @ClickRelease.started -= instance.OnClickRelease;
+            @ClickRelease.performed -= instance.OnClickRelease;
+            @ClickRelease.canceled -= instance.OnClickRelease;
+            @Inventory.started -= instance.OnInventory;
+            @Inventory.performed -= instance.OnInventory;
+            @Inventory.canceled -= instance.OnInventory;
             @Pause.started -= instance.OnPause;
             @Pause.performed -= instance.OnPause;
             @Pause.canceled -= instance.OnPause;
@@ -356,6 +443,9 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnSprint(InputAction.CallbackContext context);
         void OnReload(InputAction.CallbackContext context);
+        void OnClickPress(InputAction.CallbackContext context);
+        void OnClickRelease(InputAction.CallbackContext context);
+        void OnInventory(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
     }
 }
