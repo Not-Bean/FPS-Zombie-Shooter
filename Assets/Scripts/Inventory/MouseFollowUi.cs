@@ -24,7 +24,7 @@ public class MouseFollowUi : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "PickUp")
+        if (collision.tag == "InventoryItem")
         {
             hoverObj = collision.gameObject;
         }
@@ -37,7 +37,7 @@ public class MouseFollowUi : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag == "PickUp" && collision.gameObject == hoverObj)
+        if (collision.tag == "InventoryItem" && collision.gameObject == hoverObj)
         {
             hoverObj = null;
         }
@@ -50,6 +50,21 @@ public class MouseFollowUi : MonoBehaviour
 
     public void OnClickPress()
     {
+        if (hoverObj != null)
+        {
+            hoverObj.transform.position = transform.position;
+        }
+    }
 
+    public void OnClickRelease()
+    {
+        if (hoverDrop != null)
+        {
+
+        }
+        else
+        {
+
+        }
     }
 }

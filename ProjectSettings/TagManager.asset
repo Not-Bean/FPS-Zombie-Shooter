@@ -9,7 +9,7 @@ TagManager:
   - Bullet
   - GameManager
   - DropOff
-  - PickUp
+  - InventoryItem
   layers:
   - Default
   - TransparentFX

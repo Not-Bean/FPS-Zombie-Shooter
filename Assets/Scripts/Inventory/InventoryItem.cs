@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PickUp : MonoBehaviour
+public class InventoryItem : MonoBehaviour
 {
     [Tooltip("Unique 4 didgit number for each type of item with values ranging from 0001 - 9999")]
     public int itemId = 0000;

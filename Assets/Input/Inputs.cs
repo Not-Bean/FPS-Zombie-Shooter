@@ -71,6 +71,24 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ClickPress"",
+                    ""type"": ""Button"",
+                    ""id"": ""5cd02230-fb27-4a62-b19c-577a47edce48"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ClickRelease"",
+                    ""type"": ""Button"",
+                    ""id"": ""ec9d8d9b-32db-4695-8c6b-20a63ab63a2d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -172,6 +190,28 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
                     ""action"": ""Reload"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f84d312d-6bc2-4c08-9693-2045e94b40eb"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": ""Press"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ClickPress"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cdd4fd3f-a677-4d74-8bf3-66ac73994132"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": ""Press(behavior=1)"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ClickRelease"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -185,6 +225,8 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
         m_KeyBoardMouse_Jump = m_KeyBoardMouse.FindAction("Jump", throwIfNotFound: true);
         m_KeyBoardMouse_Sprint = m_KeyBoardMouse.FindAction("Sprint", throwIfNotFound: true);
         m_KeyBoardMouse_Reload = m_KeyBoardMouse.FindAction("Reload", throwIfNotFound: true);
+        m_KeyBoardMouse_ClickPress = m_KeyBoardMouse.FindAction("ClickPress", throwIfNotFound: true);
+        m_KeyBoardMouse_ClickRelease = m_KeyBoardMouse.FindAction("ClickRelease", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -251,6 +293,8 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
     private readonly InputAction m_KeyBoardMouse_Jump;
     private readonly InputAction m_KeyBoardMouse_Sprint;
     private readonly InputAction m_KeyBoardMouse_Reload;
+    private readonly InputAction m_KeyBoardMouse_ClickPress;
+    private readonly InputAction m_KeyBoardMouse_ClickRelease;
     public struct KeyBoardMouseActions
     {
         private @Inputs m_Wrapper;
@@ -260,6 +304,8 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
         public InputAction @Jump => m_Wrapper.m_KeyBoardMouse_Jump;
         public InputAction @Sprint => m_Wrapper.m_KeyBoardMouse_Sprint;
         public InputAction @Reload => m_Wrapper.m_KeyBoardMouse_Reload;
+        public InputAction @ClickPress => m_Wrapper.m_KeyBoardMouse_ClickPress;
+        public InputAction @ClickRelease => m_Wrapper.m_KeyBoardMouse_ClickRelease;
         public InputActionMap Get() { return m_Wrapper.m_KeyBoardMouse; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -284,6 +330,12 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
             @Reload.started += instance.OnReload;
             @Reload.performed += instance.OnReload;
             @Reload.canceled += instance.OnReload;
+            @ClickPress.started += instance.OnClickPress;
+            @ClickPress.performed += instance.OnClickPress;
+            @ClickPress.canceled += instance.OnClickPress;
+            @ClickRelease.started += instance.OnClickRelease;
+            @ClickRelease.performed += instance.OnClickRelease;
+            @ClickRelease.canceled += instance.OnClickRelease;
         }
 
         private void UnregisterCallbacks(IKeyBoardMouseActions instance)
@@ -303,6 +355,12 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
             @Reload.started -= instance.OnReload;
             @Reload.performed -= instance.OnReload;
             @Reload.canceled -= instance.OnReload;
+            @ClickPress.started -= instance.OnClickPress;
+            @ClickPress.performed -= instance.OnClickPress;
+            @ClickPress.canceled -= instance.OnClickPress;
+            @ClickRelease.started -= instance.OnClickRelease;
+            @ClickRelease.performed -= instance.OnClickRelease;
+            @ClickRelease.canceled -= instance.OnClickRelease;
         }
 
         public void RemoveCallbacks(IKeyBoardMouseActions instance)
@@ -327,5 +385,7 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnSprint(InputAction.CallbackContext context);
         void OnReload(InputAction.CallbackContext context);
+        void OnClickPress(InputAction.CallbackContext context);
+        void OnClickRelease(InputAction.CallbackContext context);
     }
 }

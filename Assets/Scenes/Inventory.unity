@@ -18619,6 +18619,7 @@ GameObject:
   - component: {fileID: 870569092}
   - component: {fileID: 870569096}
   - component: {fileID: 870569095}
+  - component: {fileID: 870569097}
   m_Layer: 5
   m_Name: Cursor
   m_TagString: Untagged
@@ -18767,6 +18768,36 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &870569097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 870569090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 5621dfba2b27d2f4687953e5453968e5, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: KeyBoard&Mouse
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 963194227}
 --- !u!1 &874263059
 GameObject:
   m_ObjectHideFlags: 0
@@ -35145,8 +35176,8 @@ GameObject:
   - component: {fileID: 1674898600}
   - component: {fileID: 1674898599}
   m_Layer: 5
-  m_Name: Image
-  m_TagString: PickUp
+  m_Name: DemoItem
+  m_TagString: InventoryItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
