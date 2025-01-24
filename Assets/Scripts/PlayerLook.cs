@@ -17,14 +17,14 @@ public class PlayerLook : MonoBehaviour {
         {
             var sens = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().SensitivityGet();
 
-            sensx = sens * 10 + 3;
-            sensy = sens * 10 + 3;
+            sensx = sens * 10 + 1;
+            sensy = sens * 10 + 1;
         }
         catch 
         {
-            Debug.LogWarning("ERROR NO GAME MANAGER FOUND (Expected when game not started from the main menu SAFE TO IGNROE)");
-            sensx = 0.5f * 10 + 3;
-            sensy = 0.5f * 10 + 3;
+            Debug.LogWarning("ERROR NO GAME MANAGER FOUND (Expected when game not started from the main menu SAFE TO IGNORE)");
+            sensx = 0.5f * 10 + 1;
+            sensy = 0.5f * 10 + 1;
         }
 
 

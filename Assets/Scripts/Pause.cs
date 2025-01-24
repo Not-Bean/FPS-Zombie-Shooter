@@ -56,11 +56,11 @@ public class Pause : MonoBehaviour
         Debug.Log(value);
     }
     
-        public void OnSoundSettings()
-        {
-            VolumeControl.gameObject.SetActive(true);
-            PauseScreen.SetActive(false);
-        }
+    public void OnSoundSettings()
+    {
+        VolumeControl.gameObject.SetActive(true);
+        PauseScreen.SetActive(false);
+    }
 
     // allows game to be reset to menu from the keyboard
     // usefull for gamecon
