@@ -19,8 +19,17 @@ public class PlayerControler : MonoBehaviour
     [SerializeField] Image redCircle;
     [SerializeField] Image HealthCircle;
     [SerializeField] Image HealthRedCircle;
+    [SerializeField] Image BloodSplatter = null;
+    [SerializeField] Image hurtRadial = null;
+    
 
     public float health;
+    public float healthTimer = 0.1f;
+    public int regenRate = 1;
+    public bool canRegen = false;
+    private float healCooldown = 3.0f;
+    private float maxHealCooldown = 3.0f;
+    private bool startCooldown = false;
     public bool dead;
     public int fireCool;
     int shootCool;
@@ -52,15 +61,58 @@ public class PlayerControler : MonoBehaviour
     public void Damage(float damage)
     {
         health -= damage;
+        canRegen = false;
+        StartCoroutine(HurtFlash());
+        UpdateHealth();
         SetHealth();
+        healCooldown = maxHealCooldown;
+        startCooldown = true;
     }
 
+    void UpdateHealth()
+    {
+        Color splatterAlpha = BloodSplatter.color;
+        splatterAlpha.a = 1 - (health / maxHealth);
+        BloodSplatter.color = splatterAlpha;
+    }
+
+    IEnumerator HurtFlash()
+    {
+        hurtRadial.enabled = true;
+        //Audio Hurt Sound Here (Oneshot)
+        yield return new WaitForSeconds(healthTimer);
+        hurtRadial.enabled = false;
+    }
 
     private void Update()
     {
+        if (startCooldown)
+        {
+            healCooldown -= Time.deltaTime;
+            if (healCooldown <=0)
+            {
+                canRegen = true;
+                startCooldown = false;
+            }
+        }
+
+        if (canRegen)
+        {
+            if (health <= maxHealth - 0.01)
+            {
+                health += regenRate * Time.deltaTime;
+                UpdateHealth();
+            }
+            else
+            {
+                health = maxHealth;
+                healCooldown = maxHealCooldown;
+                canRegen = false;
+            }
+        }
         if ( health >= 0)
         {
-            
+
         }
         
 
