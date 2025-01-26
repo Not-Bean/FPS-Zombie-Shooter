@@ -10,7 +10,8 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] Image greenWheel;
     [SerializeField] Image redWheel;
-
+    [SerializeField] GameObject StaminaUI;
+    
     public float walkSpeed;
     public float sprintSpeed;
     public float groundDrag;
@@ -28,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
     bool staminaExhausted;
     public float maxStamina;
     float moveSpeed;
+    
 
     Vector3 moveDirection;
     Vector2 inputDirection;
@@ -46,6 +48,7 @@ public class PlayerMovement : MonoBehaviour
         moveSpeed = walkSpeed;
         stamina = maxStamina;
         playerFootsteps = AudioManager.instance.CreateInstance(FMODEvents.instance.playerFootsteps);
+        StaminaUI.SetActive(false);
     }
 
 
@@ -78,6 +81,7 @@ public class PlayerMovement : MonoBehaviour
         {
             moveSpeed = sprintSpeed;
             sprinting = true;
+            StaminaUI.SetActive(true);
         }
 
         
@@ -114,6 +118,11 @@ public class PlayerMovement : MonoBehaviour
                 {
                     moveSpeed = sprintSpeed;
                 }
+            }
+
+            if (stamina >= maxStamina)
+            {
+                StaminaUI.SetActive(false);
             }
 
             redWheel.fillAmount = (stamina / maxStamina);

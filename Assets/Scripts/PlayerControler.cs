@@ -13,6 +13,7 @@ public class PlayerControler : MonoBehaviour
     [SerializeField] GameObject bullet;
     [SerializeField] GameObject Death;
     [SerializeField] GameObject gun;
+    [SerializeField] GameObject HealthUI;
     [SerializeField] TextMeshProUGUI totalAmmoText;
     [SerializeField] TextMeshProUGUI loadedAmmoText;
     [SerializeField] Image ammoCircle;
@@ -56,6 +57,7 @@ public class PlayerControler : MonoBehaviour
         loadedAmmoText.text = loadedAmmo.ToString();
         SetAmmo();
         SetHealth();
+        HealthUI.SetActive(false);
     }
 
     public void Damage(float damage)
@@ -67,6 +69,7 @@ public class PlayerControler : MonoBehaviour
         SetHealth();
         healCooldown = maxHealCooldown;
         startCooldown = true;
+        HealthUI.SetActive(true);
     }
 
     void UpdateHealth()
@@ -79,7 +82,7 @@ public class PlayerControler : MonoBehaviour
     IEnumerator HurtFlash()
     {
         hurtRadial.enabled = true;
-        //Audio Hurt Sound Here (Oneshot)
+        //Audio Hurt Sound Here (Oneshot use multi-instruments)
         yield return new WaitForSeconds(healthTimer);
         hurtRadial.enabled = false;
     }
@@ -108,6 +111,7 @@ public class PlayerControler : MonoBehaviour
                 health = maxHealth;
                 healCooldown = maxHealCooldown;
                 canRegen = false;
+                HealthUI.SetActive(false);
             }
         }
         if ( health >= 0)
@@ -119,6 +123,7 @@ public class PlayerControler : MonoBehaviour
         if (health <= 0)
         {
             dead = true;
+            AudioManager.instance.MuteAll(true);
         }
 
         if (dead)
@@ -241,6 +246,7 @@ public class PlayerControler : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
             SceneManager.LoadScene(0);
+            
         }
     }
 }
