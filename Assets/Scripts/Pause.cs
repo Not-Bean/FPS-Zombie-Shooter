@@ -9,14 +9,13 @@ using UnityEngine.UI;
 public class Pause : MonoBehaviour
 {
     [SerializeField] GameObject PauseScreen;
-    ModularGuns MG;
     public bool isPaused = false;
     public Button SoundSetting;
     public GameObject VolumeControl;
 
     private void Start()
     {
-        MG = GameObject.FindGameObjectWithTag("Player").GetComponent<ModularGuns>();
+        //MG = GameObject.FindGameObjectWithTag("Player").GetComponent<ModularGuns>();
         SoundSetting.onClick.AddListener(OnSoundSettings);  
     }
 
@@ -29,7 +28,7 @@ public class Pause : MonoBehaviour
     {
         if (isPaused)
         {
-            MG.ShootBlock(true);
+            //MG.ShootBlock(true);
             isPaused = false;
             PauseScreen.SetActive(false);
             Time.timeScale = 1;
@@ -40,7 +39,7 @@ public class Pause : MonoBehaviour
         }
         else
         {
-            MG.ShootBlock(false);
+            //MG.ShootBlock(false);
             isPaused = true;
 
             PauseScreen.SetActive(true);

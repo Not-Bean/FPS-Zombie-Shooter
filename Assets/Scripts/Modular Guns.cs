@@ -8,8 +8,8 @@ using UnityEngine.UI;
 public class ModularGuns : MonoBehaviour
 {
     [SerializeField] GameObject bullet;
-    [SerializeField] GameObject gun;
-    [SerializeField] GameObject crosshair;
+    [SerializeField] GameObject gunModel;
+    [SerializeField] GameObject shootPoint;
     [SerializeField] TextMeshProUGUI totalAmmoText;
     [SerializeField] TextMeshProUGUI loadedAmmoText;
     [SerializeField] int fireCool;
@@ -55,7 +55,7 @@ public class ModularGuns : MonoBehaviour
 
         if (gunSpin)
         {
-            gun.transform.Rotate(new Vector3(0, 0, 6));
+            gunModel.transform.Rotate(new Vector3(0, 0, 6));
             rotationCount++;
             if (rotationCount >= 60)
             {
@@ -74,8 +74,8 @@ public class ModularGuns : MonoBehaviour
             {
                 loadedAmmo--;
                 AudioManager.instance.PlayOneShot(FMODEvents.instance.Shoot,this.transform.position);
-                GameObject shot = Instantiate(bullet, crosshair.transform.position, crosshair.transform.rotation);
-                shot.GetComponent<Rigidbody>().velocity = crosshair.transform.forward * 60;
+                GameObject shot = Instantiate(bullet, shootPoint.transform.position, shootPoint.transform.rotation);
+                shot.GetComponent<Rigidbody>().velocity = shootPoint.transform.forward * 60;
                 shootCool = fireCool;
             }
             else if (loadedAmmo <= 0 && shootCool <= 0)
