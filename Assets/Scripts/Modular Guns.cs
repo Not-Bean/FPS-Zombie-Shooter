@@ -29,7 +29,7 @@ public class ModularGuns : MonoBehaviour
     [SerializeField] bool isFullAuto;
     [SerializeField] float fullAutoCooldown;
     
-
+    [SerializeField] private ParticleSystem ps;
     void Start()
     {
         totalAmmoText.text = ammoCount.ToString();
@@ -77,6 +77,7 @@ public class ModularGuns : MonoBehaviour
                 GameObject shot = Instantiate(bullet, crosshair.transform.position, crosshair.transform.rotation);
                 shot.GetComponent<Rigidbody>().velocity = crosshair.transform.forward * 60;
                 shootCool = fireCool;
+                ps.Play();
             }
             else if (loadedAmmo <= 0 && shootCool <= 0)
             {
