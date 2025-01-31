@@ -8255,6 +8255,13 @@ MonoBehaviour:
       Data3: 920333486
       Data4: 22783576
     Path: event:/SFX/Player/Reload
+  <Hurt>k__BackingField:
+    Guid:
+      Data1: -1652463377
+      Data2: 1182785377
+      Data3: -1217796681
+      Data4: -735257342
+    Path: event:/SFX/Player/Hurt
   <Shoot>k__BackingField:
     Guid:
       Data1: 1266902031
@@ -58961,7 +58968,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -124.4, y: 0.5}
+  m_AnchoredPosition: {x: -128.14055, y: 3.2567596}
   m_SizeDelta: {x: 400, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &956503274
@@ -58986,8 +58993,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: XXXX
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8716841a541a23143a484800c4f349f3, type: 2}
+  m_sharedMaterial: {fileID: -8451323368386933264, guid: 8716841a541a23143a484800c4f349f3, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -59047,7 +59054,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: -9.31612, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -59266,7 +59273,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   orientation: {fileID: 1347004234}
-  freezeState: 0
 --- !u!114 &963194230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88427,7 +88433,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -126, y: 23.5}
+  m_AnchoredPosition: {x: -108.54597, y: 30.959465}
   m_SizeDelta: {x: 400, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1850984789
@@ -88452,8 +88458,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: XX
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8716841a541a23143a484800c4f349f3, type: 2}
+  m_sharedMaterial: {fileID: -8451323368386933264, guid: 8716841a541a23143a484800c4f349f3, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
