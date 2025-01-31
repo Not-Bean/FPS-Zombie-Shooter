@@ -82,7 +82,7 @@ public class PlayerControler : MonoBehaviour
     IEnumerator HurtFlash()
     {
         hurtRadial.enabled = true;
-        //Audio Hurt Sound Here (Oneshot use multi-instruments)
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.Hurt,this.transform.position);
         yield return new WaitForSeconds(healthTimer);
         hurtRadial.enabled = false;
     }
