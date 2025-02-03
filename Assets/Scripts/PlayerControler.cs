@@ -11,15 +11,26 @@ public class PlayerControler : MonoBehaviour
 {
     [SerializeField] GameObject shootPoint;
     [SerializeField] GameObject bullet;
-    [SerializeField] GameObject healthBar;
     [SerializeField] GameObject Death;
     [SerializeField] GameObject gun;
+    [SerializeField] GameObject HealthUI;
     [SerializeField] TextMeshProUGUI totalAmmoText;
     [SerializeField] TextMeshProUGUI loadedAmmoText;
     [SerializeField] Image ammoCircle;
     [SerializeField] Image redCircle;
+    [SerializeField] Image HealthCircle;
+    [SerializeField] Image HealthRedCircle;
+    [SerializeField] Image BloodSplatter = null;
+    [SerializeField] Image hurtRadial = null;
+    
 
     public float health;
+    public float healthTimer = 0.1f;
+    public int regenRate = 1;
+    public bool canRegen = false;
+    private float healCooldown = 3.0f;
+    private float maxHealCooldown = 3.0f;
+    private bool startCooldown = false;
     public bool dead;
     public int fireCool;
     int shootCool;
@@ -45,25 +56,74 @@ public class PlayerControler : MonoBehaviour
         totalAmmoText.text = ammoCount.ToString();
         loadedAmmoText.text = loadedAmmo.ToString();
         SetAmmo();
+        SetHealth();
+        HealthUI.SetActive(false);
     }
 
     public void Damage(float damage)
     {
         health -= damage;
+        canRegen = false;
+        StartCoroutine(HurtFlash());
+        UpdateHealth();
+        SetHealth();
+        healCooldown = maxHealCooldown;
+        startCooldown = true;
+        HealthUI.SetActive(true);
     }
 
+    void UpdateHealth()
+    {
+        Color splatterAlpha = BloodSplatter.color;
+        splatterAlpha.a = 1 - (health / maxHealth);
+        BloodSplatter.color = splatterAlpha;
+    }
+
+    IEnumerator HurtFlash()
+    {
+        hurtRadial.enabled = true;
+        //Audio Hurt Sound Here (Oneshot use multi-instruments)
+        yield return new WaitForSeconds(healthTimer);
+        hurtRadial.enabled = false;
+    }
 
     private void Update()
     {
+        if (startCooldown)
+        {
+            healCooldown -= Time.deltaTime;
+            if (healCooldown <=0)
+            {
+                canRegen = true;
+                startCooldown = false;
+            }
+        }
+
+        if (canRegen)
+        {
+            if (health <= maxHealth - 0.01)
+            {
+                health += regenRate * Time.deltaTime;
+                UpdateHealth();
+            }
+            else
+            {
+                health = maxHealth;
+                healCooldown = maxHealCooldown;
+                canRegen = false;
+                HealthUI.SetActive(false);
+            }
+        }
         if ( health >= 0)
         {
-            healthBar.transform.localScale = new Vector3(((10 / maxHealth * health)/1920) * Screen.width , 1, 5);
+
         }
         
 
         if (health <= 0)
         {
             dead = true;
+            AudioManager.instance.MuteAll(true);
         }
 
         if (dead)
@@ -78,6 +138,7 @@ public class PlayerControler : MonoBehaviour
         loadedAmmoText.text = loadedAmmo.ToString();
         totalAmmoText.text = ammoCount.ToString();
         SetAmmo();
+        SetHealth();
 
         if (shootCool >= 0)
         {
@@ -135,6 +196,20 @@ public class PlayerControler : MonoBehaviour
         redCircle.fillAmount = (float)loadedAmmo / magSize + 0.07f;
          */
     }
+    
+    void SetHealth()
+    {
+        float targetFill = health / maxHealth;
+
+        HealthCircle.fillAmount = Mathf.MoveTowards(HealthCircle.fillAmount, targetFill, Time.fixedDeltaTime * 1f);
+        HealthRedCircle.fillAmount = HealthCircle.fillAmount + 0.07f;
+
+        /*
+        Generic code for handling target fill (DONT DELETE, KEEP THIS HERE)
+        HealthCircle.fillAmount = health / maxHealth;
+        HealthRedCircle.fillAmount = health / maxHealth + 0.07f;
+         */
+    }
 
     public void ShootBlock(bool value)
     {
@@ -148,6 +223,7 @@ public class PlayerControler : MonoBehaviour
         {
             gunSpin = true;
             reloadCool = ReloadCooldown;
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.Reload, this.transform.position);
             SetAmmo();
             if (ammoCount < magSize - loadedAmmo)
             {
@@ -170,6 +246,7 @@ public class PlayerControler : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
             SceneManager.LoadScene(0);
+            
         }
     }
 }
