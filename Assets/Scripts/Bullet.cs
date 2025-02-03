@@ -13,7 +13,11 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Destroy(gameObject);
+        if (collision.gameObject.tag != "NoBullet")
+        {
+            Destroy(gameObject);
+        }
+        
     }
 
     // Update is called once per frame
