@@ -39,7 +39,6 @@ public class NPCInteraction : MonoBehaviour
             StartCoroutine(PlayDialog());
             //essentially pause the game
             //display the dialog
-            //Fix Bug: dialog boxes overlap and glitch out
         }
     }
     private void OnTriggerStay(Collider Player)
@@ -74,7 +73,6 @@ public class NPCInteraction : MonoBehaviour
             {
                 dialogActive = false;
                 npcNameText.text = npcName;
-                //Pause doesn't properly pause the game
                 MG.ShootBlock(true);
                 p.isPaused = true;
                 Time.timeScale = 1;
