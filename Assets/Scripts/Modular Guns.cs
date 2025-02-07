@@ -28,6 +28,7 @@ public class ModularGuns : MonoBehaviour
     
     [SerializeField] bool isFullAuto;
     [SerializeField] float fullAutoCooldown;
+    int autoCool = -1;
     
 
     void Start()
@@ -53,6 +54,15 @@ public class ModularGuns : MonoBehaviour
             reloadCool--;
         }
 
+        if (autoCool >= 0)
+        {
+            autoCool++;
+            if (autoCool % fullAutoCooldown == 0)
+            {
+                OnShoot();
+            }
+        }
+
         if (gunSpin)
         {
             gunModel.transform.Rotate(new Vector3(0, 0, 6));
@@ -63,6 +73,19 @@ public class ModularGuns : MonoBehaviour
                 gunSpin = false;
             }
         }
+    }
+
+    public void OnClickPress()
+    {
+        if (isFullAuto)
+        {
+            autoCool = 0;
+        }
+    }
+
+    public void OnClickRelease()
+    {
+        autoCool = -1;
     }
 
     public void OnShoot()
