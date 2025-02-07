@@ -42,6 +42,7 @@ public class PlayerControler : MonoBehaviour
     public int ammoCount;
     public int loadedAmmo;
     public int magSize;
+    public ParticleSystem muzzleFlash;
 
     float maxHealth;
 
@@ -170,6 +171,7 @@ public class PlayerControler : MonoBehaviour
             if (shootCool <= 0 && loadedAmmo > 0)
             {
                 loadedAmmo--;
+                muzzleFlash.Play();
                 AudioManager.instance.PlayOneShot(FMODEvents.instance.Shoot,this.transform.position);
                 GameObject shot = Instantiate(bullet, shootPoint.transform.position, shootPoint.transform.rotation);
                 shot.GetComponent<Rigidbody>().velocity = shootPoint.transform.forward * 60;
