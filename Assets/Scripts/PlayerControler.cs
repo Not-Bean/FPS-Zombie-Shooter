@@ -9,10 +9,8 @@ using UnityEngine.UI;
 
 public class PlayerControler : MonoBehaviour
 {
-    [SerializeField] GameObject shootPoint;
-    [SerializeField] GameObject bullet;
+    
     [SerializeField] GameObject Death;
-    [SerializeField] GameObject gun;
     [SerializeField] GameObject HealthUI;
     [SerializeField] TextMeshProUGUI totalAmmoText;
     [SerializeField] TextMeshProUGUI loadedAmmoText;
@@ -32,8 +30,6 @@ public class PlayerControler : MonoBehaviour
     private float maxHealCooldown = 3.0f;
     private bool startCooldown = false;
     public bool dead;
-    public int fireCool;
-    int shootCool;
     bool canShoot = true;
     bool gunSpin;
     int rotationCount;
@@ -54,9 +50,6 @@ public class PlayerControler : MonoBehaviour
     private void Start()
     {
         maxHealth = health;
-        totalAmmoText.text = ammoCount.ToString();
-        loadedAmmoText.text = loadedAmmo.ToString();
-        SetAmmo();
         SetHealth();
         HealthUI.SetActive(false);
     }
@@ -136,32 +129,12 @@ public class PlayerControler : MonoBehaviour
 
     private void FixedUpdate()
     {
-        loadedAmmoText.text = loadedAmmo.ToString();
-        totalAmmoText.text = ammoCount.ToString();
-        SetAmmo();
+
         SetHealth();
 
-        if (shootCool >= 0)
-        {
-            shootCool--;
-        }
-        if (reloadCool > 0)
-        {
-            reloadCool--;
-        }
+        
 
 
-        if (gunSpin)
-        {
-            gun.transform.Rotate(new Vector3(0, 0, 6));
-            rotationCount++;
-            if(rotationCount >= 60)
-            {
-                rotationCount = 0;
-                gunSpin = false;
-            }
-        }
-    }
 
     public void OnShoot()
     {
@@ -185,7 +158,9 @@ public class PlayerControler : MonoBehaviour
         }
     }
 
-    void SetAmmo()
+  
+
+    public void SetAmmo(int loadedAmmo, int magSize)
     {
         float targetFill = (float)loadedAmmo / magSize;
         
@@ -218,28 +193,7 @@ public class PlayerControler : MonoBehaviour
         canShoot = value;
     }
 
-    public void OnReload()
-    {
-        
-        if (reloadCool <= 0)
-        {
-            gunSpin = true;
-            reloadCool = ReloadCooldown;
-            AudioManager.instance.PlayOneShot(FMODEvents.instance.Reload, this.transform.position);
-            SetAmmo();
-            if (ammoCount < magSize - loadedAmmo)
-            {
-                loadedAmmo = ammoCount;
-                ammoCount = 0;
-            }
-            else
-            {
-                ammoCount -= magSize - loadedAmmo;
-                loadedAmmo = magSize;
-            }
-        }
-        
-    }
+    
 
     public void OnJump()
     {

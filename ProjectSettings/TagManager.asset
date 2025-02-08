@@ -8,6 +8,7 @@ TagManager:
   - Zombie
   - Bullet
   - GameManager
+  - Gun
   - DropOff
   - InventoryItem
   layers:
@@ -19,7 +20,7 @@ TagManager:
   - UI
   - SOMETHING
   - Bullet
-  - 
+  - NoBullet
   - 
   - whatIsGround
   - Pause
