@@ -132,31 +132,9 @@ public class PlayerControler : MonoBehaviour
 
         SetHealth();
 
-        
+    }  
 
 
-
-    public void OnShoot()
-    {
-        if (canShoot && reloadCool <= 0)
-        {
-
-            if (shootCool <= 0 && loadedAmmo > 0)
-            {
-                loadedAmmo--;
-                muzzleFlash.Play();
-                AudioManager.instance.PlayOneShot(FMODEvents.instance.Shoot,this.transform.position);
-                GameObject shot = Instantiate(bullet, shootPoint.transform.position, shootPoint.transform.rotation);
-                shot.GetComponent<Rigidbody>().velocity = shootPoint.transform.forward * 60;
-                shootCool = fireCool;
-                SetAmmo();
-            }
-            else if (loadedAmmo <= 0 && shootCool <= 0)
-            {
-                OnReload();
-            }
-        }
-    }
 
   
 
