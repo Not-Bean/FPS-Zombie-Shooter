@@ -6824,6 +6824,13 @@ MonoBehaviour:
       Data3: -808637249
       Data4: -1564379738
     Path: event:/SFX/Player/PlayerFootsteps
+  <Reload>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
   <Shoot>k__BackingField:
     Guid:
       Data1: 2136207014
@@ -6838,6 +6845,13 @@ MonoBehaviour:
       Data3: -662415455
       Data4: 1535557208
     Path: event:/SFX/Zombie/Zombies
+  <ZombieDeath>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!1 &242958949
 GameObject:
   m_ObjectHideFlags: 0
@@ -8261,6 +8275,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   greenWheel: {fileID: 778393591}
   redWheel: {fileID: 418259060}
+  StaminaUI: {fileID: 511884207}
   walkSpeed: 6
   sprintSpeed: 10
   groundDrag: 5
@@ -8288,14 +8303,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootPoint: {fileID: 2011691978}
   bullet: {fileID: 9189788620926266782, guid: d34d343f4dba2e24abc526cdb83494a5, type: 3}
-  healthBar: {fileID: 918797104}
   Death: {fileID: 106006408}
   gun: {fileID: 784958324}
+  HealthUI: {fileID: 0}
   totalAmmoText: {fileID: 956503274}
   loadedAmmoText: {fileID: 1850984789}
   ammoCircle: {fileID: 1626481599}
   redCircle: {fileID: 1867974228}
+  HealthCircle: {fileID: 918797106}
+  HealthRedCircle: {fileID: 0}
+  BloodSplatter: {fileID: 0}
+  hurtRadial: {fileID: 0}
   health: 10
+  healthTimer: 0.1
+  regenRate: 1
+  canRegen: 0
   dead: 0
   fireCool: 10
   ReloadCooldown: 60
@@ -19463,6 +19485,69 @@ MonoBehaviour:
   cars:
   - {fileID: 1281660922}
   - {fileID: 830405415}
+--- !u!1 &899419830
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 899419832}
+  - component: {fileID: 899419831}
+  m_Layer: 0
+  m_Name: NavMesh Surface
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &899419831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 899419830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 1
+  m_DefaultArea: 0
+  m_GenerateLinks: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: 96d5cb4805c6980499251e3791f10340, type: 2}
+  m_BuildHeightMesh: 0
+--- !u!4 &899419832
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 899419830}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.753113, y: 0.25398272, z: 51.097378}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &901358888 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4238284119498806, guid: 2c7e85f4b03483447a66947c83fb7468, type: 3}
@@ -46357,3 +46442,4 @@ SceneRoots:
   - {fileID: 1067149159}
   - {fileID: 421916192}
   - {fileID: 6441608352454875692}
+  - {fileID: 899419832}
