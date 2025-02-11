@@ -13,6 +13,7 @@ public class ChangeScene : MonoBehaviour
     public void PlayGame()
     {
         SceneManager.LoadSceneAsync(1);
+        AudioManager.instance.PauseAllSounds(false);
     }
 
     public void Options()

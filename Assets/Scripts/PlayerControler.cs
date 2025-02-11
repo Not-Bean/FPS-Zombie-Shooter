@@ -116,13 +116,14 @@ public class PlayerControler : MonoBehaviour
         if (health <= 0)
         {
             dead = true;
-            AudioManager.instance.MuteAll(true);
+            AudioManager.instance.PauseAllSounds(true);
         }
 
         if (dead)
         {
             
             Death.SetActive(true);
+            
         }
     }
 
@@ -176,9 +177,11 @@ public class PlayerControler : MonoBehaviour
     {
         if (dead)
         {
+            AudioManager.instance.PauseAllSounds(false);
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
             SceneManager.LoadScene(0);
+            
             
         }
     }

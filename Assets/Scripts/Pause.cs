@@ -28,7 +28,9 @@ public class Pause : MonoBehaviour
     {
         if (isPaused)
         {
+            //its backwards for some reason
             //MG.ShootBlock(true);
+            AudioManager.instance.PauseAllSounds(false);
             isPaused = false;
             PauseScreen.SetActive(false);
             Time.timeScale = 1;
@@ -41,6 +43,7 @@ public class Pause : MonoBehaviour
         {
             //MG.ShootBlock(false);
             isPaused = true;
+            AudioManager.instance.PauseAllSounds(true);
 
             PauseScreen.SetActive(true);
             Time.timeScale = 0;
