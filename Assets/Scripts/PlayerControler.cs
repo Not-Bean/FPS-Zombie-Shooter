@@ -38,7 +38,6 @@ public class PlayerControler : MonoBehaviour
     public int ammoCount;
     public int loadedAmmo;
     public int magSize;
-    public ParticleSystem muzzleFlash;
 
     float maxHealth;
 

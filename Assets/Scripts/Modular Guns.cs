@@ -28,6 +28,8 @@ public class ModularGuns : MonoBehaviour
     
     [SerializeField] bool isFullAuto;
     [SerializeField] float fullAutoCooldown;
+    public ParticleSystem muzzleFlash;
+    
     int autoCool = -1;
     
 
@@ -95,6 +97,7 @@ public class ModularGuns : MonoBehaviour
 
             if (shootCool <= 0 && loadedAmmo > 0)
             {
+                muzzleFlash.Play();
                 loadedAmmo--;
                 AudioManager.instance.PlayOneShot(FMODEvents.instance.Shoot,this.transform.position);
                 GameObject shot = Instantiate(bullet, shootPoint.transform.position, shootPoint.transform.rotation);
@@ -131,6 +134,7 @@ public class ModularGuns : MonoBehaviour
         if (reloadCool <= 0)
         {
             gunSpin = true;
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.Reload,this.transform.position);
             reloadCool = reloadCool;
             if (ammoCount < magSize - loadedAmmo)
             {
