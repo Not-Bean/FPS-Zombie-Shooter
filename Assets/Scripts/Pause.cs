@@ -9,7 +9,10 @@ using UnityEngine.UI;
 public class Pause : MonoBehaviour
 {
     [SerializeField] GameObject PauseScreen;
+    [SerializeField] GameObject InventoryScreen;
+    PlayerControler playerControl;
     public bool isPaused = false;
+    bool inventoryEnabled = false;
     public Button SoundSetting;
     public GameObject VolumeControl;
 
@@ -35,28 +38,62 @@ public class Pause : MonoBehaviour
             PauseScreen.SetActive(false);
             Time.timeScale = 1;
 
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
+            UiClose();
+
             VolumeControl.gameObject.SetActive(false);
         }
-        else
+        else if (!inventoryEnabled)
         {
             //MG.ShootBlock(false);
             isPaused = true;
             AudioManager.instance.PauseAllSounds(true);
 
+            UiOpen();
+
             PauseScreen.SetActive(true);
             Time.timeScale = 0;
 
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
+            
+        }
+        else
+        {
+            InventoryScreen.SetActive(false);
+            Time.timeScale = 1;
+            UiClose();
         }
     }
 
-    public void Sensitivity(float value)
+    public void OnInventory()
     {
-        Debug.Log(value);
+        if (inventoryEnabled)
+        {
+            InventoryScreen.SetActive(false);
+            Time.timeScale = 1;
+            UiClose();
+        }
+        else if (!isPaused)
+        {
+            InventoryScreen.SetActive(true);
+            Time.timeScale = 0;
+            UiOpen();
+        }
     }
+
+
+    void UiOpen()
+    {
+        playerControl.ShootBlock(false);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+
+    void UiClose()
+    {
+        playerControl.ShootBlock(true);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+
     
     public void OnSoundSettings()
     {
