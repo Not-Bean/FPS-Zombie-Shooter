@@ -9,6 +9,7 @@ public class PickupCollider : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+
             Destroy(transform.parent.gameObject);
         }
     }

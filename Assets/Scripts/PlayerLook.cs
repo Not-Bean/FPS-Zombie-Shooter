@@ -11,31 +11,39 @@ public class PlayerLook : MonoBehaviour {
     float xrotation;
     float yrotation;
 
+    public bool freezeState = false;
+    float freeze = 0;
     private void Start()
     {
         try
         {
             var sens = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().SensitivityGet();
 
-            sensx = sens * 10 + 1;
-            sensy = sens * 10 + 1;
+            sensx = sens * 10 + 5;
+            sensy = sens * 10 + 5;
         }
         catch 
         {
             Debug.LogWarning("ERROR NO GAME MANAGER FOUND (Expected when game not started from the main menu SAFE TO IGNORE)");
-            sensx = 0.5f * 10 + 1;
-            sensy = 0.5f * 10 + 1;
+            sensx = 0.5f * 10 + 5;
+            sensy = 0.5f * 10 + 5;
         }
 
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
+    
     private void Update()
     {
-        float mousex = Input.GetAxisRaw("Mouse X") * sensx;
-        float mousey = Input.GetAxisRaw("Mouse Y") * sensy;
-
+        float mousex = 0;
+        float mousey = 0;
+        if (!freezeState)
+        {
+            mousex = Input.GetAxisRaw("Mouse X") * sensx;
+            mousey = Input.GetAxisRaw("Mouse Y") * sensy;
+        }
+        
         yrotation += mousex;
         xrotation -= mousey;
         xrotation = Mathf.Clamp(xrotation, -90f, 90f);

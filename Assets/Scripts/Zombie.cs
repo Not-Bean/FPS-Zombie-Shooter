@@ -49,6 +49,7 @@ public class Zombie : MonoBehaviour
         if (health <= 0) // Death Code
         {
             spawner.GetComponent<Spawner>().dead(gameObject);
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.ZombieDeath,this.transform.position);
 
             if (Random.Range(0,100) < dropChance)
             {

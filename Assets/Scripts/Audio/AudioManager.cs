@@ -122,4 +122,28 @@ public class AudioManager : MonoBehaviour
     {
         CleanUp();
     }
+    
+    public void MuteAll(bool mute)
+    {
+        float targetVolume = mute ? 0f : 1f;
+
+        masterVolume = targetVolume;
+        musicVolume = targetVolume;
+        ambienceVolume = targetVolume;
+        SFXVolume = targetVolume;
+
+        // Immediately apply the volume changes
+        masterBus.setVolume(masterVolume);
+        musicBus.setVolume(musicVolume);
+        ambienceBus.setVolume(ambienceVolume);
+        sfxBus.setVolume(SFXVolume);
+
+        Debug.Log($"AudioManager: All audio {(mute ? "muted" : "unmuted")}.");
+    }
+    
+    public void PauseAllSounds(bool pause)
+    {
+        masterBus.setPaused(pause);
+        Debug.Log($"AudioManager: All sounds {(pause ? "paused" : "resumed")}.");
+    }
 }

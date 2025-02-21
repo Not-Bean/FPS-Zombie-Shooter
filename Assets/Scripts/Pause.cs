@@ -18,8 +18,8 @@ public class Pause : MonoBehaviour
 
     private void Start()
     {
-        playerControl = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControler>();
-        SoundSetting.onClick.AddListener(OnSoundSettings);
+        //MG = GameObject.FindGameObjectWithTag("Player").GetComponent<ModularGuns>();
+        SoundSetting.onClick.AddListener(OnSoundSettings);  
     }
 
     public void MainMenu()
@@ -31,7 +31,9 @@ public class Pause : MonoBehaviour
     {
         if (isPaused)
         {
-            
+            //its backwards for some reason
+            //MG.ShootBlock(true);
+            AudioManager.instance.PauseAllSounds(false);
             isPaused = false;
             PauseScreen.SetActive(false);
             Time.timeScale = 1;
@@ -42,7 +44,9 @@ public class Pause : MonoBehaviour
         }
         else if (!inventoryEnabled)
         {
+            //MG.ShootBlock(false);
             isPaused = true;
+            AudioManager.instance.PauseAllSounds(true);
 
             UiOpen();
 

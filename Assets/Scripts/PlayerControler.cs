@@ -9,21 +9,27 @@ using UnityEngine.UI;
 
 public class PlayerControler : MonoBehaviour
 {
-    [SerializeField] GameObject shootPoint;
-    [SerializeField] GameObject bullet;
+    
     [SerializeField] GameObject Death;
-    [SerializeField] GameObject gun;
+    [SerializeField] GameObject HealthUI;
     [SerializeField] TextMeshProUGUI totalAmmoText;
     [SerializeField] TextMeshProUGUI loadedAmmoText;
     [SerializeField] Image ammoCircle;
     [SerializeField] Image redCircle;
     [SerializeField] Image HealthCircle;
     [SerializeField] Image HealthRedCircle;
+    [SerializeField] Image BloodSplatter = null;
+    [SerializeField] Image hurtRadial = null;
+    
 
     public float health;
+    public float healthTimer = 0.1f;
+    public int regenRate = 1;
+    public bool canRegen = false;
+    private float healCooldown = 3.0f;
+    private float maxHealCooldown = 3.0f;
+    private bool startCooldown = false;
     public bool dead;
-    public int fireCool;
-    int shootCool;
     bool canShoot = true;
     bool gunSpin;
     int rotationCount;
@@ -43,90 +49,96 @@ public class PlayerControler : MonoBehaviour
     private void Start()
     {
         maxHealth = health;
-        totalAmmoText.text = ammoCount.ToString();
-        loadedAmmoText.text = loadedAmmo.ToString();
-        SetAmmo();
         SetHealth();
+        HealthUI.SetActive(false);
     }
 
     public void Damage(float damage)
     {
         health -= damage;
+        canRegen = false;
+        StartCoroutine(HurtFlash());
+        UpdateHealth();
         SetHealth();
+        healCooldown = maxHealCooldown;
+        startCooldown = true;
+        HealthUI.SetActive(true);
     }
 
+    void UpdateHealth()
+    {
+        Color splatterAlpha = BloodSplatter.color;
+        splatterAlpha.a = 1 - (health / maxHealth);
+        BloodSplatter.color = splatterAlpha;
+    }
+
+    IEnumerator HurtFlash()
+    {
+        hurtRadial.enabled = true;
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.Hurt,this.transform.position);
+        yield return new WaitForSeconds(healthTimer);
+        hurtRadial.enabled = false;
+    }
 
     private void Update()
     {
+        if (startCooldown)
+        {
+            healCooldown -= Time.deltaTime;
+            if (healCooldown <=0)
+            {
+                canRegen = true;
+                startCooldown = false;
+            }
+        }
+
+        if (canRegen)
+        {
+            if (health <= maxHealth - 0.01)
+            {
+                health += regenRate * Time.deltaTime;
+                UpdateHealth();
+            }
+            else
+            {
+                health = maxHealth;
+                healCooldown = maxHealCooldown;
+                canRegen = false;
+                HealthUI.SetActive(false);
+            }
+        }
         if ( health >= 0)
         {
-            
+
         }
         
 
         if (health <= 0)
         {
             dead = true;
+            AudioManager.instance.PauseAllSounds(true);
         }
 
         if (dead)
         {
             
             Death.SetActive(true);
+            
         }
     }
 
     private void FixedUpdate()
     {
-        loadedAmmoText.text = loadedAmmo.ToString();
-        totalAmmoText.text = ammoCount.ToString();
-        SetAmmo();
+
         SetHealth();
 
-        if (shootCool >= 0)
-        {
-            shootCool--;
-        }
-        if (reloadCool > 0)
-        {
-            reloadCool--;
-        }
+    }  
 
 
-        if (gunSpin)
-        {
-            gun.transform.Rotate(new Vector3(0, 0, 6));
-            rotationCount++;
-            if(rotationCount >= 60)
-            {
-                rotationCount = 0;
-                gunSpin = false;
-            }
-        }
-    }
 
-    public void OnShoot()
-    {
-        if (canShoot && reloadCool <= 0)
-        {
+  
 
-            if (shootCool <= 0 && loadedAmmo > 0)
-            {
-                loadedAmmo--;
-                AudioManager.instance.PlayOneShot(FMODEvents.instance.Shoot,this.transform.position);
-                GameObject shot = Instantiate(bullet, shootPoint.transform.position, shootPoint.transform.rotation);
-                shot.GetComponent<Rigidbody>().velocity = shootPoint.transform.forward * 60;
-                shootCool = fireCool;
-                SetAmmo();
-            }
-            else if (loadedAmmo <= 0 && shootCool <= 0)
-            {
-                OnReload();
-            }
-        }
-    }
-
-    void SetAmmo()
+    public void SetAmmo(int loadedAmmo, int magSize)
     {
         float targetFill = (float)loadedAmmo / magSize;
         
@@ -159,36 +171,18 @@ public class PlayerControler : MonoBehaviour
         canShoot = value;
     }
 
-    public void OnReload()
-    {
-        
-        if (reloadCool <= 0)
-        {
-            gunSpin = true;
-            reloadCool = ReloadCooldown;
-            AudioManager.instance.PlayOneShot(FMODEvents.instance.Reload, this.transform.position);
-            SetAmmo();
-            if (ammoCount < magSize - loadedAmmo)
-            {
-                loadedAmmo = ammoCount;
-                ammoCount = 0;
-            }
-            else
-            {
-                ammoCount -= magSize - loadedAmmo;
-                loadedAmmo = magSize;
-            }
-        }
-        
-    }
+    
 
     public void OnJump()
     {
         if (dead)
         {
+            AudioManager.instance.PauseAllSounds(false);
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
             SceneManager.LoadScene(0);
+            
+            
         }
     }
 }
