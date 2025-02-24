@@ -76,6 +76,7 @@ public class NPCInteraction : MonoBehaviour
                 npcNameText.text = npcName;
                 //Pause doesn't properly pause the game
                 MG.ShootBlock(true);
+                p.isPaused = true;
                 Time.timeScale = 1;
                 //Cursor.lockState = CursorLockMode.Locked;
                 findLook.freezeState = false;
@@ -87,6 +88,7 @@ public class NPCInteraction : MonoBehaviour
     void Pause()
     {
         MG.ShootBlock(false);
+        p.isPaused = false;
         Time.timeScale = 0;
         //Cursor.lockState = CursorLockMode.None;
         
