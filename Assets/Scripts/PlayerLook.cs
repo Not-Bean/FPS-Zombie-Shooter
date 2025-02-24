@@ -12,21 +12,22 @@ public class PlayerLook : MonoBehaviour {
     float yrotation;
 
     public bool freezeState = false;
-    float freeze = 0;
+
+
     private void Start()
     {
         try
         {
             var sens = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().SensitivityGet();
 
-            sensx = sens * 10 + 5;
-            sensy = sens * 10 + 5;
+            sensx = sens * 10 + 3;
+            sensy = sens * 10 + 3;
         }
         catch 
         {
             Debug.LogWarning("ERROR NO GAME MANAGER FOUND (Expected when game not started from the main menu SAFE TO IGNORE)");
-            sensx = 0.5f * 10 + 5;
-            sensy = 0.5f * 10 + 5;
+            sensx = 0.5f * 10 + 3;
+            sensy = 0.5f * 10 + 3;
         }
 
 
