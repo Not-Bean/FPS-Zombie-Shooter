@@ -41,14 +41,8 @@ public class Pause : MonoBehaviour
             isInventoryOpen = false;
             PauseOff();
         }
-        else if (!inventoryEnabled)
+        else
         {
-            //MG.ShootBlock(false);
-            isPaused = true;
-            AudioManager.instance.PauseAllSounds(true);
-
-            UiOpen();
-
             PauseScreen.SetActive(true);
             isPauseMenuOpen = true;
             PauseOn();
@@ -94,37 +88,10 @@ public class Pause : MonoBehaviour
     }
 
 
-    public void OnInventory()
+    public void Sensitivity(float value)
     {
-        if (inventoryEnabled)
-        {
-            InventoryScreen.SetActive(false);
-            Time.timeScale = 1;
-            UiClose();
-        }
-        else if (!isPaused)
-        {
-            InventoryScreen.SetActive(true);
-            Time.timeScale = 0;
-            UiOpen();
-        }
+        Debug.Log(value);
     }
-
-
-    void UiOpen()
-    {
-        playerControl.ShootBlock(false);
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-    }
-
-    void UiClose()
-    {
-        playerControl.ShootBlock(true);
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-    }
-
     
     public void OnSoundSettings()
     {
