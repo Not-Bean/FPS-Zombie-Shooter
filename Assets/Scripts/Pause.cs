@@ -9,10 +9,10 @@ using UnityEngine.UI;
 public class Pause : MonoBehaviour
 {
     [SerializeField] GameObject PauseScreen;
-    [SerializeField] GameObject InventoryScreen;
-    PlayerControler playerControl;
-    public bool isPaused = false;
-    bool inventoryEnabled = false;
+    [SerializeField] GameObject InvScreen;
+    [SerializeField] PlayerLook playerLook;
+    bool isPauseMenuOpen = false;
+    bool isInventoryOpen = false;
     public Button SoundSetting;
     public GameObject VolumeControl;
 
@@ -29,71 +29,69 @@ public class Pause : MonoBehaviour
 
     public void OnPause()
     {
-        if (isPaused)
+        if (isPauseMenuOpen)
         {
-            //its backwards for some reason
-            //MG.ShootBlock(true);
-            AudioManager.instance.PauseAllSounds(false);
-            isPaused = false;
             PauseScreen.SetActive(false);
-            Time.timeScale = 1;
-
-            UiClose();
-
-            VolumeControl.gameObject.SetActive(false);
+            isPauseMenuOpen = false;
+            PauseOff();
         }
-        else if (!inventoryEnabled)
+        else if (isInventoryOpen) 
         {
-            //MG.ShootBlock(false);
-            isPaused = true;
-            AudioManager.instance.PauseAllSounds(true);
-
-            UiOpen();
-
-            PauseScreen.SetActive(true);
-            Time.timeScale = 0;
-
-            
+            InvScreen.SetActive(false);
+            isInventoryOpen = false;
+            PauseOff();
         }
         else
         {
-            InventoryScreen.SetActive(false);
-            Time.timeScale = 1;
-            UiClose();
+            PauseScreen.SetActive(true);
+            isPauseMenuOpen = true;
+            PauseOn();
         }
     }
 
     public void OnInventory()
     {
-        if (inventoryEnabled)
+        if (isInventoryOpen)
         {
-            InventoryScreen.SetActive(false);
-            Time.timeScale = 1;
-            UiClose();
+            InvScreen.SetActive(false);
+            isInventoryOpen = false;
+            PauseOff();
         }
-        else if (!isPaused)
+        else if (!isPauseMenuOpen)
         {
-            InventoryScreen.SetActive(true);
-            Time.timeScale = 0;
-            UiOpen();
+            InvScreen.SetActive(true);
+            isInventoryOpen = true;
+            PauseOn();
         }
     }
 
-
-    void UiOpen()
+    void PauseOff()
     {
-        playerControl.ShootBlock(false);
+        //its backwards for some reason
+        //MG.ShootBlock(true);
+        AudioManager.instance.PauseAllSounds(false);
+        Time.timeScale = 1;
+        playerLook.freezeState = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        VolumeControl.gameObject.SetActive(false);
+    }
+    void PauseOn()
+    {
+        //MG.ShootBlock(false);
+        AudioManager.instance.PauseAllSounds(true);
+
+        Time.timeScale = 0;
+        playerLook.freezeState = true;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
 
-    void UiClose()
-    {
-        playerControl.ShootBlock(true);
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-    }
 
+    public void Sensitivity(float value)
+    {
+        Debug.Log(value);
+    }
     
     public void OnSoundSettings()
     {
