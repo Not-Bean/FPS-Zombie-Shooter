@@ -9,7 +9,10 @@ using UnityEngine.UI;
 public class Pause : MonoBehaviour
 {
     [SerializeField] GameObject PauseScreen;
-    public bool isPaused = false;
+    [SerializeField] GameObject InvScreen;
+    [SerializeField] PlayerLook playerLook;
+    bool isPauseMenuOpen = false;
+    bool isInventoryOpen = false;
     public Button SoundSetting;
     public GameObject VolumeControl;
 
@@ -26,29 +29,64 @@ public class Pause : MonoBehaviour
 
     public void OnPause()
     {
-        if (isPaused)
+        if (isPauseMenuOpen)
         {
-            //MG.ShootBlock(true);
-            isPaused = false;
             PauseScreen.SetActive(false);
-            Time.timeScale = 1;
-
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-            VolumeControl.gameObject.SetActive(false);
+            isPauseMenuOpen = false;
+            PauseOff();
+        }
+        else if (isInventoryOpen) 
+        {
+            InvScreen.SetActive(false);
+            isInventoryOpen = false;
+            PauseOff();
         }
         else
         {
-            //MG.ShootBlock(false);
-            isPaused = true;
-
             PauseScreen.SetActive(true);
-            Time.timeScale = 0;
-
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
+            isPauseMenuOpen = true;
+            PauseOn();
         }
     }
+
+    public void OnInventory()
+    {
+        if (isInventoryOpen)
+        {
+            InvScreen.SetActive(false);
+            isInventoryOpen = false;
+            PauseOff();
+        }
+        else if (!isPauseMenuOpen)
+        {
+            InvScreen.SetActive(true);
+            isInventoryOpen = true;
+            PauseOn();
+        }
+    }
+
+    void PauseOff()
+    {
+        //its backwards for some reason
+        //MG.ShootBlock(true);
+        AudioManager.instance.PauseAllSounds(false);
+        Time.timeScale = 1;
+        playerLook.freezeState = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        VolumeControl.gameObject.SetActive(false);
+    }
+    void PauseOn()
+    {
+        //MG.ShootBlock(false);
+        AudioManager.instance.PauseAllSounds(true);
+
+        Time.timeScale = 0;
+        playerLook.freezeState = true;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+
 
     public void Sensitivity(float value)
     {

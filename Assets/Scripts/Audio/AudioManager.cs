@@ -140,4 +140,10 @@ public class AudioManager : MonoBehaviour
 
         Debug.Log($"AudioManager: All audio {(mute ? "muted" : "unmuted")}.");
     }
+    
+    public void PauseAllSounds(bool pause)
+    {
+        masterBus.setPaused(pause);
+        Debug.Log($"AudioManager: All sounds {(pause ? "paused" : "resumed")}.");
+    }
 }

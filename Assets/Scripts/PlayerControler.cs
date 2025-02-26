@@ -38,7 +38,6 @@ public class PlayerControler : MonoBehaviour
     public int ammoCount;
     public int loadedAmmo;
     public int magSize;
-    public ParticleSystem muzzleFlash;
 
     float maxHealth;
 
@@ -117,13 +116,14 @@ public class PlayerControler : MonoBehaviour
         if (health <= 0)
         {
             dead = true;
-            AudioManager.instance.MuteAll(true);
+            AudioManager.instance.PauseAllSounds(true);
         }
 
         if (dead)
         {
             
             Death.SetActive(true);
+            
         }
     }
 
@@ -132,31 +132,9 @@ public class PlayerControler : MonoBehaviour
 
         SetHealth();
 
-        
+    }  
 
 
-
-    public void OnShoot()
-    {
-        if (canShoot && reloadCool <= 0)
-        {
-
-            if (shootCool <= 0 && loadedAmmo > 0)
-            {
-                loadedAmmo--;
-                muzzleFlash.Play();
-                AudioManager.instance.PlayOneShot(FMODEvents.instance.Shoot,this.transform.position);
-                GameObject shot = Instantiate(bullet, shootPoint.transform.position, shootPoint.transform.rotation);
-                shot.GetComponent<Rigidbody>().velocity = shootPoint.transform.forward * 60;
-                shootCool = fireCool;
-                SetAmmo();
-            }
-            else if (loadedAmmo <= 0 && shootCool <= 0)
-            {
-                OnReload();
-            }
-        }
-    }
 
   
 
@@ -199,9 +177,11 @@ public class PlayerControler : MonoBehaviour
     {
         if (dead)
         {
+            AudioManager.instance.PauseAllSounds(false);
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
             SceneManager.LoadScene(0);
+            
             
         }
     }
