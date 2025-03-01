@@ -8382,7 +8382,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee1b935ea152c5d40ace1bbb40815682, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numObjectives: 3
+  numObjectives: 1
   objectiveText:
   - {fileID: 48741787}
   - {fileID: 2078888524}
@@ -8396,11 +8396,11 @@ MonoBehaviour:
   - {fileID: 1735159539}
   - {fileID: 252628777}
   objectiveQuests:
-  - 1
-  - 2
-  - 3
-  - 4
-  - 5
+  - 
+  - 
+  - 
+  - 
+  - 
 --- !u!1 &291894533
 GameObject:
   m_ObjectHideFlags: 0
@@ -46341,6 +46341,18 @@ PrefabInstance:
       propertyPath: MG
       value: 
       objectReference: {fileID: 1135225612}
+    - target: {fileID: 7284369832483019395, guid: 774c4b90e72150a41983bb022d801472, type: 3}
+      propertyPath: newQuest
+      value: go over there
+      objectReference: {fileID: 0}
+    - target: {fileID: 7284369832483019395, guid: 774c4b90e72150a41983bb022d801472, type: 3}
+      propertyPath: questNPC
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7438506696504195840, guid: 774c4b90e72150a41983bb022d801472, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

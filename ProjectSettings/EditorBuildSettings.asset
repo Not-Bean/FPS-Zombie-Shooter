@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Intro Scene.unity
     guid: 9ae5e69624e5d804f9c10b79511aa34c
   - enabled: 1
-    path: Assets/Scenes/BasicZombie.unity
+    path: Assets/Scenes/MainScene_BasicZombie.unity
     guid: c6ffe2697ee49074a8b72926e1c2ed27
   m_configObjects: {}

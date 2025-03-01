@@ -19,11 +19,20 @@ public class NPCInteraction : MonoBehaviour
     public Pause p;
     public ModularGuns MG;
     public PlayerLook findLook;
+
+    public bool questNPC;
+    public bool questCompleted;
+    public ObjectivesScript os;
+    [SerializeField] string newQuest;
+    
+    //MOST FOR LOOPS ARE REDUNDANT BUT WILL STAY UNTIL I FIGURE OUT HOW TO WORK 5 OBJECTIVES AT ONCE
+    
     void Start()
     {
         ui.SetActive(false);
         uiPanel.SetActive(false);
         findLook = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<PlayerLook>();
+        os = GameObject.FindGameObjectWithTag("Player").GetComponent<ObjectivesScript>();
     }
 
     void Update()
@@ -40,6 +49,7 @@ public class NPCInteraction : MonoBehaviour
             //essentially pause the game
             //display the dialog
         }
+        CompleteQuest();
     }
     private void OnTriggerStay(Collider Player)
     {
@@ -69,9 +79,12 @@ public class NPCInteraction : MonoBehaviour
             uiText.SetText(npcDialog[i]);
             yield return new WaitForSecondsRealtime(5f);
             //yield return new WaitForSeconds(5f);
-            if (i >= npcDialog.Length - 1)
+            if (i >= npcDialog.Length - 1)//unfreeze
             {
+                GiveQuest();
+                print("Quest Given");
                 dialogActive = false;
+                uiPanel.SetActive(false);
                 npcNameText.text = npcName;
                 MG.ShootBlock(true);
                 p.isPaused = true;
@@ -79,6 +92,35 @@ public class NPCInteraction : MonoBehaviour
                 //Cursor.lockState = CursorLockMode.Locked;
                 findLook.freezeState = false;
                 //Cursor.visible = false;
+            }
+        }
+    }
+
+    void GiveQuest()
+    {
+        for (int i = 0; i <= os.numObjectives; i++)
+        {
+            if (questNPC)
+            {
+                questCompleted = false;
+                os.objectiveQuests[i] = newQuest;
+            }
+
+        }
+    }
+
+    public void CompleteQuest()//TO ACTIVATE, MAKE "questCompleted" = true
+    {
+        for (int i = 0; i <= os.numObjectives;i++)
+        {
+            if (questCompleted)
+            {
+                os.objectiveQuests[i] = "";
+                questCompleted = false;
+                
+                //
+                //ADD PAYOUT HERE
+                //
             }
         }
     }
