@@ -73,6 +73,7 @@ public class ModularGuns : MonoBehaviour
             {
                 rotationCount = 0;
                 gunSpin = false;
+                canShoot = true;
             }
         }
     }
@@ -133,6 +134,7 @@ public class ModularGuns : MonoBehaviour
         
         if (reloadCool <= 0)
         {
+            canShoot = false;
             gunSpin = true;
             AudioManager.instance.PlayOneShot(FMODEvents.instance.Reload,this.transform.position);
             reloadCool = reloadCool;
