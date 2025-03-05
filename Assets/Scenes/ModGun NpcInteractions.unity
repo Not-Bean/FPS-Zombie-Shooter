@@ -8037,7 +8037,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   greenWheel: {fileID: 778393591}
   redWheel: {fileID: 418259060}
-  StaminaUI: {fileID: 0}
+  StaminaUI: {fileID: 1210237428}
   walkSpeed: 6
   sprintSpeed: 10
   groundDrag: 5
@@ -8068,8 +8068,8 @@ MonoBehaviour:
   totalAmmoText: {fileID: 956503274}
   loadedAmmoText: {fileID: 1850984789}
   ammoCircle: {fileID: 1626481599}
-  redCircle: {fileID: 1867974228}
-  HealthCircle: {fileID: 0}
+  redCircle: {fileID: 0}
+  HealthCircle: {fileID: 918797106}
   HealthRedCircle: {fileID: 0}
   BloodSplatter: {fileID: 0}
   hurtRadial: {fileID: 0}
@@ -8142,12 +8142,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numObjectives: 1
-  objectiveText:
-  - {fileID: 1444325908}
-  objectives:
-  - {fileID: 1444325906}
+  objectiveText: {fileID: 1444325908}
+  objectives: {fileID: 1444325906}
   objectiveQuests:
   - PUT QUEST HERE
+  - ANOTHER QUEST
 --- !u!1 &291894533
 GameObject:
   m_ObjectHideFlags: 0
