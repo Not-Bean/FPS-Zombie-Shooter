@@ -5,12 +5,13 @@ using UnityEngine;
 using TMPro;
 
 
-public class ObjectivesScript : MonoBehaviour
+public class Objectives : MonoBehaviour
 {
-    [SerializeField]public int numObjectives; //number of allowed objectives
-    [SerializeField] public TextMeshProUGUI objectiveText;//objectives and objText are the same objects
-    [SerializeField] public GameObject objectives;
+    public int numObjectives; //number of allowed objectives
+    [SerializeField] public TextMeshProUGUI[] objectiveText;//objectives and objText are the same objects
+    [SerializeField] public GameObject[] objectives;
     public string[] objectiveQuests; //text strings go here
+
 
     //THIS SCRIPT WILL MOST LIKELY USE PICKUP QUESTS
   
@@ -18,7 +19,13 @@ public class ObjectivesScript : MonoBehaviour
     //assign objectives when talking to NPC's
     //be able to complete objectives
     //be able to remove specific objectives from list
-
+    void Start()
+    {
+        for (int i = 0; i < objectives.Length; i++)
+        {
+            objectives[i].SetActive(false);
+        }
+    }
 
 
     void Update()
@@ -34,10 +41,15 @@ public class ObjectivesScript : MonoBehaviour
         for (int i = 0; i <= numObjectives;i++)
         {
             //cycle through the list of objectives and show each active one
-            objectives.SetActive(true);
-            objectiveText.text = objectiveQuests[i];
+            objectives[i].SetActive(true);
+            objectiveText[i].text = objectiveQuests[i];
             //change later to individualized quests^
-
+          
+            for (int j = 4; j >= numObjectives; j--)
+            {
+                //cycles through list backwards to remove unused quest slots
+                objectives[j].SetActive(false);
+            }
         }
     }
 }
