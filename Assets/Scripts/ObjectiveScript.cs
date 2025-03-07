@@ -6,7 +6,7 @@ using TMPro;
 using Random = Unity.Mathematics.Random;
 
 
-public class ObjScript : MonoBehaviour
+public class ObjectivesScript : MonoBehaviour
 {
     public int numObjectives; //number of allowed objectives
     [SerializeField] public TextMeshProUGUI objectiveText;//objectives and objText are the same objects
