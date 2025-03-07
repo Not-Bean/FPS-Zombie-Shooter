@@ -26,7 +26,7 @@ public class NPCInteraction : MonoBehaviour
 
    public bool questNPC;
    public bool questCompleted;
-   public ObjectivesScript os;
+   public ObjScript os;
    [SerializeField] string newQuest;
   
    //MOST FOR LOOPS ARE REDUNDANT BUT WILL STAY UNTIL I FIGURE OUT HOW TO WORK 5 OBJECTIVES AT ONCE
@@ -36,7 +36,7 @@ public class NPCInteraction : MonoBehaviour
        ui.SetActive(false);
        uiPanel.SetActive(false);
        findLook = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<PlayerLook>();
-       os = GameObject.FindGameObjectWithTag("Player").GetComponent<ObjectivesScript>();
+       os = GameObject.FindGameObjectWithTag("Player").GetComponent<ObjScript>();
    }
 
 
