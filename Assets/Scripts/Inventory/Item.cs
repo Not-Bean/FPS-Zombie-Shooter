@@ -9,6 +9,9 @@ public class Item : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHand
     private CanvasGroup canvasGroup;
     private Canvas canvas;
 
+    bool slot;
+    RectTransform oldRectTransform;
+
     private void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
@@ -19,6 +22,8 @@ public class Item : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHand
     public void OnBeginDrag(PointerEventData eventData)
     {
         canvasGroup.blocksRaycasts = false;
+        slot = false;
+        oldRectTransform = rectTransform;
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -29,5 +34,20 @@ public class Item : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHand
     public void OnEndDrag(PointerEventData eventData)
     {
         canvasGroup.blocksRaycasts = true;
+        if(!slot)
+        {
+            rectTransform = oldRectTransform;
+            Debug.Log("not Slot");
+        }
+        else
+        {
+            oldRectTransform = rectTransform;
+            Debug.Log("Slot");
+        }
+    }
+
+    public void Slot(int[] data)
+    {
+        slot = true;
     }
 }
