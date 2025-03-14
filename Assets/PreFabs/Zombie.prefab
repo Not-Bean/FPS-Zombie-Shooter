@@ -238,6 +238,7 @@ Transform:
   m_Children:
   - {fileID: 1095055044993946732}
   - {fileID: 1719639313036500863}
+  - {fileID: 1886533955552371423}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8919968337994755715
@@ -595,3 +596,85 @@ CapsuleCollider:
   m_Height: 1.02
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1001 &2136089264513090868
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4527279557581896839}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: da77f4813b04b5b4f9b56e6a7f8cf2af, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.34
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: da77f4813b04b5b4f9b56e6a7f8cf2af, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.34
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: da77f4813b04b5b4f9b56e6a7f8cf2af, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.34
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: da77f4813b04b5b4f9b56e6a7f8cf2af, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.372
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: da77f4813b04b5b4f9b56e6a7f8cf2af, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.0144
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: da77f4813b04b5b4f9b56e6a7f8cf2af, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.099
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: da77f4813b04b5b4f9b56e6a7f8cf2af, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: da77f4813b04b5b4f9b56e6a7f8cf2af, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: da77f4813b04b5b4f9b56e6a7f8cf2af, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: da77f4813b04b5b4f9b56e6a7f8cf2af, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: da77f4813b04b5b4f9b56e6a7f8cf2af, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: da77f4813b04b5b4f9b56e6a7f8cf2af, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: da77f4813b04b5b4f9b56e6a7f8cf2af, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: da77f4813b04b5b4f9b56e6a7f8cf2af, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: da77f4813b04b5b4f9b56e6a7f8cf2af, type: 3}
+      propertyPath: m_Name
+      value: Zombie Shirt Walk Animation
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: da77f4813b04b5b4f9b56e6a7f8cf2af, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: da77f4813b04b5b4f9b56e6a7f8cf2af, type: 3}
+--- !u!4 &1886533955552371423 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: da77f4813b04b5b4f9b56e6a7f8cf2af, type: 3}
+  m_PrefabInstance: {fileID: 2136089264513090868}
+  m_PrefabAsset: {fileID: 0}

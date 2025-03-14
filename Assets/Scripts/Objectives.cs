@@ -48,7 +48,7 @@ public class Objectives : MonoBehaviour
             for (int j = 4; j >= numObjectives; j--)
             {
                 //cycles through list backwards to remove unused quest slots
-                objectives[j].SetActive(false);
+                //objectives[j].SetActive(false);
             }
         }
     }
