@@ -30,6 +30,10 @@ public class ModularGuns : MonoBehaviour
     [SerializeField] float fullAutoCooldown;
     public ParticleSystem muzzleFlash;
     
+    //omid's addition 
+    public float range = 100f;
+    public GameObject shotorigin;
+    
     int autoCool = -1;
     
 
@@ -100,9 +104,8 @@ public class ModularGuns : MonoBehaviour
             {
                 muzzleFlash.Play();
                 loadedAmmo--;
+                Shoot();
                 AudioManager.instance.PlayOneShot(FMODEvents.instance.Shoot,this.transform.position);
-                GameObject shot = Instantiate(bullet, shootPoint.transform.position, shootPoint.transform.rotation);
-                shot.GetComponent<Rigidbody>().velocity = shootPoint.transform.forward * 60;
                 shootCool = fireCool;
             }
             else if (loadedAmmo <= 0 && shootCool <= 0)
@@ -150,5 +153,17 @@ public class ModularGuns : MonoBehaviour
             }
         }
         
+    }
+
+    void Shoot()
+    {
+        RaycastHit hit;
+
+        if (Physics.Raycast(shootPoint.transform.position, shootPoint.transform.forward, out hit, range))
+        {
+            Debug.DrawLine(shootPoint.transform.position, hit.point, Color.red, 10f);
+            GameObject shot = Instantiate(bullet, shootPoint.transform.position, shootPoint.transform.rotation);
+            shot.GetComponent<Rigidbody>().velocity = shootPoint.transform.forward * 60;
+        }
     }
 }

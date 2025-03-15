@@ -10,6 +10,7 @@ public class FMODEvents : MonoBehaviour
     
     [field: Header("Music")]
     [field: SerializeField] public EventReference music { get; private set; }
+    [field: SerializeField] public EventReference Menumusic { get; private set; }
     
     [field: Header("Player SFX")]
     [field: SerializeField] public EventReference playerFootsteps { get; private set; }
@@ -22,6 +23,10 @@ public class FMODEvents : MonoBehaviour
     [field: Header("Zombie SFX")]
     [field: SerializeField] public EventReference Zombie { get; private set; }
     [field: SerializeField] public EventReference ZombieDeath { get; private set; }
+    
+    [field: Header("UI SFX")]
+    [field: SerializeField] public EventReference UIButtonHover { get; private set; }
+    [field: SerializeField] public EventReference UIButtonClick { get; private set; }
     
     public static FMODEvents instance { get; private set; }
 

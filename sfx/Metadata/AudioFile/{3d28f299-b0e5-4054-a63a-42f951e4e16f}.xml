@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{3d28f299-b0e5-4054-a63a-42f951e4e16f}">
+		<property name="assetPath">
+			<value>Ryerson Cres.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>25.824000000000002</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{0c1e99f6-5a0a-409b-aa73-33e820d30768}</destination>
+		</relationship>
+	</object>
+</objects>

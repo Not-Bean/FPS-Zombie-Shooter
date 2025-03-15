@@ -24,12 +24,16 @@ public class AudioManager : MonoBehaviour
     private Bus musicBus;
     private Bus ambienceBus;
     private Bus sfxBus;
+    private Bus uiBus;
     
     private List<EventInstance> eventInstances; 
     private List<StudioEventEmitter> eventEmitters;
+    private EventInstance mainMenuMusicInstance;
     private EventInstance ambienceEventInstance;
     private EventInstance musicEventInstance;
     public static AudioManager instance { get; private set; }
+    
+    private bool isInMainMenu = true;
 
     private void Awake()
     {
@@ -46,12 +50,12 @@ public class AudioManager : MonoBehaviour
         musicBus = RuntimeManager.GetBus("bus:/Music");
         ambienceBus = RuntimeManager.GetBus("bus:/Ambience");
         sfxBus = RuntimeManager.GetBus("bus:/SFX");
+        uiBus = RuntimeManager.GetBus("bus:/UI");
     }
 
     private void Start()
     {
-        InitializeAmbience(FMODEvents.instance.ambience);
-        InitializeMusic(FMODEvents.instance.music);
+        PlayMainMenuMusic();
     }
 
     private void Update()
@@ -60,6 +64,28 @@ public class AudioManager : MonoBehaviour
         musicBus.setVolume(musicVolume);
         ambienceBus.setVolume(ambienceVolume);
         sfxBus.setVolume(SFXVolume);
+    }
+    public void PlayMainMenuMusic()
+    {
+        mainMenuMusicInstance = RuntimeManager.CreateInstance(FMODEvents.instance.Menumusic); // Replace this with your actual main menu music event
+        mainMenuMusicInstance.start();
+    }
+    
+    public void StopMainMenuMusic()
+    {
+        mainMenuMusicInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        mainMenuMusicInstance.release();
+    }
+    
+    public void PlayAmbienceAndMusic()
+    {
+        isInMainMenu = false;
+
+        ambienceEventInstance = CreateInstance(FMODEvents.instance.ambience);
+        ambienceEventInstance.start();
+
+        musicEventInstance = CreateInstance(FMODEvents.instance.music);
+        musicEventInstance.start();
     }
 
     private void InitializeAmbience(EventReference ambienceEventReference)
@@ -143,7 +169,10 @@ public class AudioManager : MonoBehaviour
     
     public void PauseAllSounds(bool pause)
     {
-        masterBus.setPaused(pause);
+        musicBus.setPaused(pause);
+        ambienceBus.setPaused(pause);
+        sfxBus.setPaused(pause);
+        uiBus.setPaused(false);
         Debug.Log($"AudioManager: All sounds {(pause ? "paused" : "resumed")}.");
     }
 }
