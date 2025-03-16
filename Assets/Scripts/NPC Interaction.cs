@@ -6,6 +6,8 @@ using TMPro;
 
 public class NPCInteraction : MonoBehaviour
 {
+   PlayerControler playerControler;
+
    public bool inRange;
    public bool dialogActive;
    public GameObject ui;
@@ -33,10 +35,12 @@ public class NPCInteraction : MonoBehaviour
   
    void Start()
    {
-       ui.SetActive(false);
-       uiPanel.SetActive(false);
-       findLook = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<PlayerLook>();
-       os = GameObject.FindGameObjectWithTag("Player").GetComponent<Objectives>();
+        playerControler = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControler>();
+
+        ui.SetActive(false);
+        uiPanel.SetActive(false);
+        findLook = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<PlayerLook>();
+        os = GameObject.FindGameObjectWithTag("Player").GetComponent<Objectives>();
    }
 
 
@@ -95,7 +99,7 @@ public class NPCInteraction : MonoBehaviour
                dialogActive = false;
                uiPanel.SetActive(false);
                npcNameText.text = npcName;
-               MG.ShootBlock(true);
+                playerControler.ShootBlock(true);
                //p.isPaused = true;
                Time.timeScale = 1;
                //Cursor.lockState = CursorLockMode.Locked;
@@ -140,7 +144,7 @@ public class NPCInteraction : MonoBehaviour
 
    void Pause()
    {
-       MG.ShootBlock(false);
+       playerControler.ShootBlock(false);
        //p.isPaused = false;
        Time.timeScale = 0;
        //Cursor.lockState = CursorLockMode.None;

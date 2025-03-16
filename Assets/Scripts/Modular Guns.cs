@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class ModularGuns : MonoBehaviour
 {
+    [SerializeField] PlayerControler playerControler;
+
     [SerializeField] GameObject bullet;
     [SerializeField] GameObject gunModel;
     [SerializeField] GameObject shootPoint;
@@ -20,7 +22,8 @@ public class ModularGuns : MonoBehaviour
     int reloadCool;
     int rotationCount;
     [SerializeField] int ReloadCooldown;
-    bool canShoot = true;
+    public bool canShoot = true;
+    public bool canShootExt = true;
     bool gunSpin;
     [SerializeField] Image ammoCircle;
     [SerializeField] Image redCircle;
@@ -42,13 +45,15 @@ public class ModularGuns : MonoBehaviour
         SetAmmo();
     }
 
+
+
     private void FixedUpdate()
     {
         loadedAmmoText.text = loadedAmmo.ToString();
         totalAmmoText.text = ammoCount.ToString();
         SetAmmo();
 
-
+        
 
         if (shootCool >= 0)
         {
@@ -97,7 +102,9 @@ public class ModularGuns : MonoBehaviour
 
     public void OnShoot()
     {
-        if (canShoot && reloadCool <= 0)
+        canShootExt = playerControler.canShoot;
+
+        if (canShootExt && canShoot && reloadCool <= 0)
         {
 
             if (shootCool <= 0 && loadedAmmo > 0)

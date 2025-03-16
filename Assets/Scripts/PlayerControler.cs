@@ -30,7 +30,7 @@ public class PlayerControler : MonoBehaviour
     private float maxHealCooldown = 3.0f;
     private bool startCooldown = false;
     public bool dead;
-    bool canShoot = true;
+    public bool canShoot = true;
     bool gunSpin;
     int rotationCount;
     public int ReloadCooldown;

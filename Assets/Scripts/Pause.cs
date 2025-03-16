@@ -67,8 +67,7 @@ public class Pause : MonoBehaviour
 
     void PauseOff()
     {
-        //its backwards for some reason
-        //MG.ShootBlock(true);
+        GetComponent<PlayerControler>().ShootBlock(true);
         AudioManager.instance.PauseAllSounds(false);
         Time.timeScale = 1;
         playerLook.freezeState = false;
@@ -78,7 +77,7 @@ public class Pause : MonoBehaviour
     }
     void PauseOn()
     {
-        //MG.ShootBlock(false);
+        GetComponent<PlayerControler>().ShootBlock(false);
         AudioManager.instance.PauseAllSounds(true);
 
         Time.timeScale = 0;
