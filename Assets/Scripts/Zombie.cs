@@ -62,12 +62,12 @@ public class Zombie : MonoBehaviour
 
         if (Vector3.Distance(player.transform.position, gameObject.transform.position) < followDist) // Check if player in range
         {
-            transform.LookAt(player.transform.position);
+            transform.LookAt(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z));
             rb.MovePosition(Vector3.MoveTowards(transform.position, player.transform.position, speed / 100));
         }
         else if (clock > 60) // Wander if not. (waits 1 second after spawning)
         {
-            transform.LookAt(wanderPoint);
+            transform.LookAt(new Vector3(wanderPoint.x, transform.position.y, wanderPoint.z));
             rb.MovePosition(Vector3.MoveTowards(transform.position, wanderPoint, speed / 100));
         }
     }
