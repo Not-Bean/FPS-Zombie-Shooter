@@ -30,9 +30,7 @@ public class ModularGuns : MonoBehaviour
     [SerializeField] float fullAutoCooldown;
     public ParticleSystem muzzleFlash;
     
-    //omid's addition 
     public float range = 100f;
-    public GameObject shotorigin;
     
     int autoCool = -1;
     
@@ -49,6 +47,8 @@ public class ModularGuns : MonoBehaviour
         loadedAmmoText.text = loadedAmmo.ToString();
         totalAmmoText.text = ammoCount.ToString();
         SetAmmo();
+
+
 
         if (shootCool >= 0)
         {
@@ -127,10 +127,7 @@ public class ModularGuns : MonoBehaviour
         redCircle.fillAmount = (float)loadedAmmo / magSize + 0.07f;
          */
     }
-    public void ShootBlock(bool value)
-    {
-        canShoot = value;
-    }
+
 
     public void OnReload()
     {
@@ -157,13 +154,9 @@ public class ModularGuns : MonoBehaviour
 
     void Shoot()
     {
-        RaycastHit hit;
-
-        if (Physics.Raycast(shootPoint.transform.position, shootPoint.transform.forward, out hit, range))
-        {
-            Debug.DrawLine(shootPoint.transform.position, hit.point, Color.red, 10f);
-            GameObject shot = Instantiate(bullet, shootPoint.transform.position, shootPoint.transform.rotation);
-            shot.GetComponent<Rigidbody>().velocity = shootPoint.transform.forward * 60;
-        }
+        
+        GameObject shot = Instantiate(bullet, shootPoint.transform.position, shootPoint.transform.rotation);
+        shot.GetComponent<Rigidbody>().velocity = shootPoint.transform.forward * 60;
+        
     }
 }

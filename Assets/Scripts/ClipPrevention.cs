@@ -7,6 +7,7 @@ public class ClipPrevention : MonoBehaviour
     public GameObject clipProjector;
     public float checkDistance;
     public Vector3 newDirection;
+    public LayerMask notBulletMask;
 
     private float lerpPos;
     RaycastHit hit;
@@ -14,7 +15,7 @@ public class ClipPrevention : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Physics.Raycast(clipProjector.transform.position, clipProjector.transform.forward, out hit, checkDistance))
+        if (Physics.Raycast(clipProjector.transform.position, clipProjector.transform.forward, out hit, checkDistance, notBulletMask))
         {
             //get a percentage from 0 to max distance
             lerpPos = 1 - (hit.distance / checkDistance);
