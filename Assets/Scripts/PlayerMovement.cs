@@ -120,7 +120,7 @@ public class PlayerMovement : MonoBehaviour
                 }
             }
 
-            if (stamina >= maxStamina)
+            if (stamina >= maxStamina && !sprinting)
             {
                 StaminaUI.SetActive(false);
             }
