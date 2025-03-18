@@ -17,8 +17,6 @@ public class Objectives : MonoBehaviour
   
     //TODO:
     //assign objectives when talking to NPC's
-    //be able to complete objectives
-    //be able to remove specific objectives from list
     void Start()
     {
         for (int i = 0; i < objectives.Length; i++)

@@ -6,18 +6,24 @@ using UnityEngine;
 
 public class ObjectiveTrigger : MonoBehaviour
 {
-    public bool questCompleted;
-
-
+    //bool questCompleted;
+    public Kills k;
     public Objectives os;
-
+    int goal;
+    int mult = 1;
 
     // Start is called before the first frame update
     void Start()
     {
+        goal = k.kills + (50 * mult);
         os = GameObject.FindGameObjectWithTag("Player").GetComponent<Objectives>();
+        KillCounter();
     }
 
+    void FixedUpdate()
+    {
+        KillCounter();
+    }
 
     void GiveQuest(string quest)
     {
@@ -25,23 +31,19 @@ public class ObjectiveTrigger : MonoBehaviour
         {
             os.objectiveQuests[i] = quest;
         }
-
-
+        
     }
 
 
     public void CompleteQuest()
     {
-
-
         for (int i = 0; i < os.numObjectives; i++)
         {
             os.objectiveQuests[i] = "";
         }
-  
     }
 
-
+/*
     void OnTriggerExit(Collider other)
     {
         if (other.tag == "Player")
@@ -49,5 +51,17 @@ public class ObjectiveTrigger : MonoBehaviour
             CompleteQuest();
             GiveQuest("Leave The Train Station");
         }
+    }
+    RETIRED FUNCTION. USED ON OLD MAP
+*/
+    void KillCounter()
+    {
+        if (k.kills >= goal)
+        {
+            CompleteQuest();
+            mult++;
+            goal *= mult;
+        }
+        GiveQuest("Kill " + goal + " Zombies    " + k.kills + "/" + goal);
     }
 }

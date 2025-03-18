@@ -6,7 +6,7 @@ using UnityEngine;
 public class Kills : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI killText;
-    int kills;
+    public int kills;
 
     public void AddKill()
     {
