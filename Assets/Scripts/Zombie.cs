@@ -25,7 +25,8 @@ public class Zombie : MonoBehaviour
 
     GameObject player;
     Rigidbody rb;
-    private StudioEventEmitter emitter; 
+    private StudioEventEmitter emitter;
+    public GameObject bloodEffect;
 
     private void Start()
     {
@@ -112,6 +113,8 @@ public class Zombie : MonoBehaviour
         if (collision.gameObject.tag == "Bullet")
         {
             health -= bulletDamage;
+            ContactPoint contact = collision.contacts[0];
+            Instantiate(bloodEffect, contact.point, Quaternion.LookRotation(contact.normal));
         }
         if (collision.gameObject.tag == "Player")
         {

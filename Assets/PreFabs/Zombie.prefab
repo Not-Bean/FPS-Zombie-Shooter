@@ -113,6 +113,7 @@ MonoBehaviour:
   bulletDamage: 10
   followDist: 80
   strength: 1
+  bloodEffect: {fileID: 274772910573462620, guid: ce240673cfe108f458b4c4d001ede909, type: 3}
 --- !u!114 &8190702154585704896
 MonoBehaviour:
   m_ObjectHideFlags: 0
