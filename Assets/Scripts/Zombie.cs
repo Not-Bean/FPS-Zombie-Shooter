@@ -146,6 +146,7 @@ public class Zombie : MonoBehaviour
         Instantiate(explosionEffect, transform.position, Quaternion.identity);
         playerControler.Damage(explosionDamage);
         Destroy(gameObject);
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.ZombieExplosion,this.transform.position);
     }
     
 

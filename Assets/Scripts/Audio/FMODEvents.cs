@@ -23,6 +23,7 @@ public class FMODEvents : MonoBehaviour
     [field: Header("Zombie SFX")]
     [field: SerializeField] public EventReference Zombie { get; private set; }
     [field: SerializeField] public EventReference ZombieDeath { get; private set; }
+    [field: SerializeField] public EventReference ZombieExplosion { get; private set; }
     
     [field: Header("UI SFX")]
     [field: SerializeField] public EventReference UIButtonHover { get; private set; }
