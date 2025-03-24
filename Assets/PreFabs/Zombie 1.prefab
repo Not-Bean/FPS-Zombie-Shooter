@@ -109,12 +109,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01aefbdbfab73a144b1e8b2e0d7da025, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
+  speed: 6
   health: 50
   bulletDamage: 10
   followDist: 80
   strength: 1
+  isExplosive: 1
+  explosionRadius: 2
+  explosionDamage: 2
   bloodEffect: {fileID: 274772910573462620, guid: ce240673cfe108f458b4c4d001ede909, type: 3}
+  explosionEffect: {fileID: 1894398152393563016, guid: 2ef38863276817a46b09b38c01f383f3, type: 3}
 --- !u!114 &8190702154585704896
 MonoBehaviour:
   m_ObjectHideFlags: 0

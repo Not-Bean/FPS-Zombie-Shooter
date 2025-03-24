@@ -13,6 +13,9 @@ public class Zombie : MonoBehaviour
     public int followDist;
     public float strength;
     int dropChance;
+    public bool isExplosive = false; // Only explodes if this is true
+    public float explosionRadius = 3f;
+    public float explosionDamage = 25f;
 
     int clock;
 
@@ -24,9 +27,11 @@ public class Zombie : MonoBehaviour
     GameObject spawner;
 
     GameObject player;
+    private PlayerControler playerControler;
     Rigidbody rb;
     private StudioEventEmitter emitter;
     public GameObject bloodEffect;
+    public GameObject explosionEffect;
 
     private void Start()
     {
@@ -38,6 +43,7 @@ public class Zombie : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         emitter = AudioManager.instance.InitializeEventEmitter(FMODEvents.instance.Zombie, this.gameObject);
         emitter.Play();
+        playerControler = player.GetComponent<PlayerControler>();
     }
 
     public void SpawnerSet(GameObject spawn)
@@ -70,6 +76,11 @@ public class Zombie : MonoBehaviour
         {
             transform.LookAt(new Vector3(wanderPoint.x, transform.position.y, wanderPoint.z));
             rb.MovePosition(Vector3.MoveTowards(transform.position, wanderPoint, speed / 100));
+        }
+        
+        if (isExplosive && Vector3.Distance(transform.position, player.transform.position) <= explosionRadius)
+        {
+            Explode();
         }
     }
         
@@ -130,9 +141,13 @@ public class Zombie : MonoBehaviour
         }
     }
 
-
+    private void Explode()
+    {
+        Instantiate(explosionEffect, transform.position, Quaternion.identity);
+        playerControler.Damage(explosionDamage);
+        Destroy(gameObject);
+    }
     
-
 
 
 }
