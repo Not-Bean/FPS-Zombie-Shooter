@@ -315,6 +315,14 @@ MonoBehaviour:
   bulletDamage: 10
   followDist: 80
   strength: 1
+<<<<<<< Updated upstream
+=======
+  isExplosive: 0
+  explosionEffect: {fileID: 8732177135633686063, guid: 380939ef2fd621649aad986955726a84, type: 3}
+  explosionRadius: 10
+  explosionDamage: 50
+  bloodEffect: {fileID: 274772910573462620, guid: ce240673cfe108f458b4c4d001ede909, type: 3}
+>>>>>>> Stashed changes
 --- !u!114 &8190702154585704896
 MonoBehaviour:
   m_ObjectHideFlags: 0

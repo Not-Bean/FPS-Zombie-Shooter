@@ -13,6 +13,11 @@ public class Zombie : MonoBehaviour
     public int followDist;
     public float strength;
     int dropChance;
+    public bool isExplosive = false;
+    public GameObject explosionEffect; // Assign in Inspector
+    public float explosionRadius = 5f;
+    public float explosionDamage = 1f;
+    private PlayerControler playerControler;
 
     int clock;
 
@@ -34,6 +39,7 @@ public class Zombie : MonoBehaviour
         wanderPoint.y = transform.position.y - 1;
 
         player = GameObject.FindGameObjectWithTag("Player");
+        playerControler = player.GetComponent<PlayerControler>();
         rb = GetComponent<Rigidbody>();
         emitter = AudioManager.instance.InitializeEventEmitter(FMODEvents.instance.Zombie, this.gameObject);
         emitter.Play();
@@ -68,6 +74,12 @@ public class Zombie : MonoBehaviour
         {
             rb.MovePosition(Vector3.MoveTowards(transform.position, wanderPoint, speed / 100));
         }
+        
+        if (isExplosive && Vector3.Distance(transform.position, player.transform.position) <= explosionRadius)
+        {
+            Explode();
+        }
+        
     }
         
 
@@ -124,10 +136,11 @@ public class Zombie : MonoBehaviour
             attackPlayer = false;
         }
     }
-
-
-    
-
-
-
+ 
+    private void Explode()
+    {
+        Instantiate(explosionEffect, transform.position, Quaternion.identity);
+        playerControler.Damage(explosionDamage);
+        Destroy(gameObject);
+    }
 }
