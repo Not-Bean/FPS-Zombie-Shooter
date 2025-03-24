@@ -2,34 +2,40 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 
 public class ObjectiveTrigger : MonoBehaviour
 {
     //bool questCompleted;
     public Kills k;
-    public Objectives os;
     int goal;
     int mult = 1;
+    
+    public int numObjectives; //number of allowed objectives
+    [SerializeField] public TextMeshProUGUI objectiveText;//objectives and objText are the same objects
+    [SerializeField] public GameObject objectives;
+    public string objectiveQuests; //text strings go here
 
     // Start is called before the first frame update
     void Start()
     {
-        goal = k.kills + (50 * mult);
-        os = GameObject.FindGameObjectWithTag("Player").GetComponent<Objectives>();
+        goal = k.kills + (50 * mult); 
+        //os = GameObject.FindGameObjectWithTag("Player").GetComponent<Objectives>();
         KillCounter();
     }
 
     void FixedUpdate()
     {
         KillCounter();
+        objectiveText.text = objectiveQuests;
     }
 
     void GiveQuest(string quest)
     {
-        for (int i = 0; i < os.numObjectives; i++)
-        {
-            os.objectiveQuests[i] = quest;
+        for (int i = 0; i < numObjectives; i++)
+        { 
+            objectiveQuests = quest;
         }
         
     }
@@ -37,10 +43,7 @@ public class ObjectiveTrigger : MonoBehaviour
 
     public void CompleteQuest()
     {
-        for (int i = 0; i < os.numObjectives; i++)
-        {
-            os.objectiveQuests[i] = "";
-        }
+        objectiveQuests = "";
     }
 
 /*

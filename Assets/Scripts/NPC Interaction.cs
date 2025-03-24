@@ -6,7 +6,7 @@ using TMPro;
 
 public class NPCInteraction : MonoBehaviour
 {
-   PlayerControler playerControler;
+   PlayerControler playerController;
 
    public bool inRange;
    public bool dialogActive;
@@ -28,19 +28,19 @@ public class NPCInteraction : MonoBehaviour
 
    public bool questNPC;
    public bool questCompleted;
-   public Objectives os;
+   public ObjectiveTrigger os;
    [SerializeField] string newQuest;
   
    //MOST FOR LOOPS ARE REDUNDANT BUT WILL STAY UNTIL I FIGURE OUT HOW TO WORK 5 OBJECTIVES AT ONCE
   
    void Start()
    {
-        playerControler = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControler>();
+        playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControler>();
 
         ui.SetActive(false);
         uiPanel.SetActive(false);
         findLook = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<PlayerLook>();
-        os = GameObject.FindGameObjectWithTag("Player").GetComponent<Objectives>();
+        //os = GameObject.FindGameObjectWithTag("Player").GetComponent<ObjectiveTrigger>();
    }
 
 
@@ -99,7 +99,7 @@ public class NPCInteraction : MonoBehaviour
                dialogActive = false;
                uiPanel.SetActive(false);
                npcNameText.text = npcName;
-                playerControler.ShootBlock(true);
+                playerController.ShootBlock(true);
                //p.isPaused = true;
                Time.timeScale = 1;
                //Cursor.lockState = CursorLockMode.Locked;
@@ -117,7 +117,7 @@ public class NPCInteraction : MonoBehaviour
            if (questNPC)
            {
                questCompleted = false;
-               os.objectiveQuests[i] = newQuest;
+               os.objectiveQuests = newQuest;
            }
 
 
@@ -131,7 +131,7 @@ public class NPCInteraction : MonoBehaviour
        {
            if (questCompleted)
            {
-               os.objectiveQuests[i] = "";
+               os.objectiveQuests = "";
                questCompleted = false;
               
                //
@@ -144,7 +144,7 @@ public class NPCInteraction : MonoBehaviour
 
    void Pause()
    {
-       playerControler.ShootBlock(false);
+       playerController.ShootBlock(false);
        //p.isPaused = false;
        Time.timeScale = 0;
        //Cursor.lockState = CursorLockMode.None;
