@@ -11,6 +11,8 @@ public class ObjectiveTrigger : MonoBehaviour
     public Kills k;
     int goal;
     int mult = 1;
+
+    public int numCompletions;
     
     public int numObjectives; //number of allowed objectives
     [SerializeField] public TextMeshProUGUI objectiveText;//objectives and objText are the same objects
@@ -63,6 +65,7 @@ public class ObjectiveTrigger : MonoBehaviour
         {
             CompleteQuest();
             mult++;
+            numCompletions++;
             goal *= mult;
         }
         GiveQuest("Kill " + goal + " Zombies    " + k.kills + "/" + goal);

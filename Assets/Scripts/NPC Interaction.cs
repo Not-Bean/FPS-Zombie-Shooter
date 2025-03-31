@@ -46,7 +46,7 @@ public class NPCInteraction : MonoBehaviour
 
    void Update()
    {
-       if (inRange && Input.GetKeyDown(KeyCode.E))
+       if (inRange && Input.GetKeyDown(KeyCode.F))
        {
            dialogActive = true;
        }
@@ -59,7 +59,7 @@ public class NPCInteraction : MonoBehaviour
            //essentially pause the game
            //display the dialog
        }
-       CompleteQuest();
+       //CompleteQuest();
    }
    private void OnTriggerStay(Collider Player)
    {
@@ -85,7 +85,6 @@ public class NPCInteraction : MonoBehaviour
 
 
    IEnumerator PlayDialog(){
-      
        for (int i = 0; i < npcDialog.Length; i++)//iterates through the for loop multiple times for some reason
        {
            Pause();
@@ -94,8 +93,7 @@ public class NPCInteraction : MonoBehaviour
            //yield return new WaitForSeconds(5f);
            if (i >= npcDialog.Length - 1)//unfreeze
            {
-               GiveQuest();
-               print("Quest Given");
+               
                dialogActive = false;
                uiPanel.SetActive(false);
                npcNameText.text = npcName;
@@ -107,24 +105,21 @@ public class NPCInteraction : MonoBehaviour
                //Cursor.visible = false;
            }
        }
+       CheckQuest();
    }
 
 
-   void GiveQuest()
+   void CheckQuest()
    {
-       for (int i = 0; i <= os.numObjectives; i++)
+       if (os.numCompletions >= 1)
        {
-           if (questNPC)
-           {
-               questCompleted = false;
-               os.objectiveQuests = newQuest;
-           }
-
-
+           //give the player additional ammo for completing the quest
+           MG.ammoCount += MG.magSize - MG.loadedAmmo + 150;
+           os.numCompletions--;
        }
    }
 
-
+/*
    public void CompleteQuest()//TO ACTIVATE, MAKE "questCompleted" = true
    {
        for (int i = 0; i <= os.numObjectives;i++)
@@ -140,7 +135,7 @@ public class NPCInteraction : MonoBehaviour
            }
        }
    }
-
+*/
 
    void Pause()
    {

@@ -16,9 +16,9 @@ public class ModularGuns : MonoBehaviour
     [SerializeField] TextMeshProUGUI loadedAmmoText;
     [SerializeField] int fireCool;
     int shootCool;
-    [SerializeField] int magSize;
-    [SerializeField] int loadedAmmo;
-    [SerializeField] int ammoCount;
+    [SerializeField]public int magSize;
+    [SerializeField]public int loadedAmmo;
+    [SerializeField]public int ammoCount;
     int reloadCool;
     int rotationCount;
     [SerializeField] int ReloadCooldown;
