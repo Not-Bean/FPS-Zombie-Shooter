@@ -12,9 +12,11 @@ public class Pause : MonoBehaviour
     [SerializeField] GameObject InvScreen;
     [SerializeField] PlayerLook playerLook;
     bool isPauseMenuOpen = false;
-    bool isInventoryOpen = false;
+    public bool isInventoryOpen = false;
     public Button SoundSetting;
     public GameObject VolumeControl;
+    
+    public GameObject[] uiController;
 
     private void Start()
     {
@@ -56,11 +58,14 @@ public class Pause : MonoBehaviour
             InvScreen.SetActive(false);
             isInventoryOpen = false;
             PauseOff();
+            StartUI();
+            //close other ui options
         }
         else if (!isPauseMenuOpen)
         {
             InvScreen.SetActive(true);
             isInventoryOpen = true;
+            StopUI();
             PauseOn();
         }
     }
@@ -103,5 +108,21 @@ public class Pause : MonoBehaviour
     public void OnReset() 
     {
         SceneManager.LoadScene(0);
+    }
+
+    public void StopUI()
+    {
+        for (int i = 0; i < uiController.Length; i++)
+        {
+            uiController[i].SetActive(false);
+        }
+    }
+
+    public void StartUI()
+    {
+        for (int i = 0; i < uiController.Length; i++)
+        {
+            uiController[i].SetActive(true);
+        }
     }
 }
