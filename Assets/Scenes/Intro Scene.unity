@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12980816, g: 0.0942544, b: 0.12404702, a: 1}
+  m_IndirectSpecularColor: {r: 0.111765765, g: 0.081240885, b: 0.1071737, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -401,8 +401,8 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: 7c128980fc5313c40a52e30fe8c5cb3c, type: 3}
-    m_PressedSprite: {fileID: 21300000, guid: 9c27fc49966b6904d878b522be496ffd, type: 3}
+    m_HighlightedSprite: {fileID: 21300000, guid: a807929420644914281b64c1f88d390b, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: 0467c57aa1e113d4f872b0734d002c2b, type: 3}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
@@ -580,8 +580,8 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: 7c128980fc5313c40a52e30fe8c5cb3c, type: 3}
-    m_PressedSprite: {fileID: 21300000, guid: 9c27fc49966b6904d878b522be496ffd, type: 3}
+    m_HighlightedSprite: {fileID: 21300000, guid: a807929420644914281b64c1f88d390b, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: 0467c57aa1e113d4f872b0734d002c2b, type: 3}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
@@ -931,6 +931,13 @@ MonoBehaviour:
       Data3: -1748685696
       Data4: -398781342
     Path: event:/SFX/Zombie/ZombieDeath
+  <ZombieExplosion>k__BackingField:
+    Guid:
+      Data1: 410339883
+      Data2: 1094621107
+      Data3: -1426498136
+      Data4: 1123233273
+    Path: event:/SFX/Zombie/ZombieExplode
   <UIButtonHover>k__BackingField:
     Guid:
       Data1: -145449284
@@ -2309,8 +2316,8 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: 7c128980fc5313c40a52e30fe8c5cb3c, type: 3}
-    m_PressedSprite: {fileID: 21300000, guid: 9c27fc49966b6904d878b522be496ffd, type: 3}
+    m_HighlightedSprite: {fileID: 21300000, guid: a807929420644914281b64c1f88d390b, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: 0467c57aa1e113d4f872b0734d002c2b, type: 3}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
@@ -2670,8 +2677,8 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: 9c27fc49966b6904d878b522be496ffd, type: 3}
-    m_PressedSprite: {fileID: 21300000, guid: 7c128980fc5313c40a52e30fe8c5cb3c, type: 3}
+    m_HighlightedSprite: {fileID: 21300000, guid: 0467c57aa1e113d4f872b0734d002c2b, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: a807929420644914281b64c1f88d390b, type: 3}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:

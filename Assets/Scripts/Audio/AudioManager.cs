@@ -84,8 +84,8 @@ public class AudioManager : MonoBehaviour
         ambienceEventInstance = CreateInstance(FMODEvents.instance.ambience);
         ambienceEventInstance.start();
 
-        musicEventInstance = CreateInstance(FMODEvents.instance.music);
-        musicEventInstance.start();
+        //musicEventInstance = CreateInstance(FMODEvents.instance.music);
+        //musicEventInstance.start();
     }
 
     private void InitializeAmbience(EventReference ambienceEventReference)
