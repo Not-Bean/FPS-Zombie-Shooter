@@ -26,7 +26,9 @@ public class Pause : MonoBehaviour
 
     public void MainMenu()
     {
-        SceneManager.LoadScene(0);
+        PauseOffMenu();
+        SceneManager.LoadScene("Intro Scene");
+        
     }
 
     public void OnPause()
@@ -70,7 +72,7 @@ public class Pause : MonoBehaviour
         }
     }
 
-    void PauseOff()
+    public void PauseOff()
     {
         GetComponent<PlayerControler>().ShootBlock(true);
         AudioManager.instance.PauseAllSounds(false);
@@ -87,6 +89,15 @@ public class Pause : MonoBehaviour
 
         Time.timeScale = 0;
         playerLook.freezeState = true;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+    void PauseOffMenu()
+    {
+        GetComponent<PlayerControler>().ShootBlock(false);
+        AudioManager.instance.PauseAllSounds(false);
+        Time.timeScale = 1;
+        playerLook.freezeState = false;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
@@ -125,4 +136,5 @@ public class Pause : MonoBehaviour
             uiController[i].SetActive(true);
         }
     }
+    
 }

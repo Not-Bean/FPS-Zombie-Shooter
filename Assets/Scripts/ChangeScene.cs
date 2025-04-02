@@ -10,10 +10,10 @@ public class ChangeScene : MonoBehaviour
     public GameObject PlayButton;
     public GameObject QuitButton;
     
+    
     public void PlayGame()
     {
         SceneManager.LoadScene("MainScene");
-        SceneManager.SetActiveScene(SceneManager.GetSceneByName("MainScene"));
         AudioManager.instance.PauseAllSounds(false);
         AudioManager.instance.StopMainMenuMusic();
         AudioManager.instance.PlayAmbienceAndMusic();

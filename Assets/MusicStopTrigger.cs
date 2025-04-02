@@ -9,6 +9,7 @@ public class MusicStopTrigger : MonoBehaviour
             if (AudioManager.instance != null)
             {
                 AudioManager.instance.StopMainMenuMusic();
+                Debug.Log("Menu Music stopped");
                 AudioManager.instance.PlayAmbienceAndMusic(); // Start main scene music
             }
 

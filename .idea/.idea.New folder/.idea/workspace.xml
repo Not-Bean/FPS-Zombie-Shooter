@@ -17,6 +17,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/MusicStopTrigger.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ClipPrevention.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@14.0.8/Shaders/Lit.shader" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/ExecuteEvents.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
@@ -108,7 +109,8 @@
       <workItem from="1741364320055" duration="1271000" />
       <workItem from="1742355225640" duration="552000" />
       <workItem from="1742586092887" duration="1542000" />
-      <workItem from="1743549968479" duration="1674000" />
+      <workItem from="1743549968479" duration="1953000" />
+      <workItem from="1743562554183" duration="4060000" />
     </task>
     <servers />
   </component>
