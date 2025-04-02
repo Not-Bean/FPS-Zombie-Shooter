@@ -12,7 +12,8 @@ public class ChangeScene : MonoBehaviour
     
     public void PlayGame()
     {
-        SceneManager.LoadSceneAsync(1);
+        SceneManager.LoadScene("MainScene");
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName("MainScene"));
         AudioManager.instance.PauseAllSounds(false);
         AudioManager.instance.StopMainMenuMusic();
         AudioManager.instance.PlayAmbienceAndMusic();
