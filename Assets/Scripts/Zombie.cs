@@ -63,8 +63,8 @@ public class Zombie : MonoBehaviour
                 // put item drop code here
             }
 
-            Destroy(gameObject);
             emitter.Stop();
+            Destroy(gameObject);
         }
 
         if (Vector3.Distance(player.transform.position, gameObject.transform.position) < followDist) // Check if player in range

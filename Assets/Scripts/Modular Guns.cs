@@ -11,6 +11,7 @@ public class ModularGuns : MonoBehaviour
 
     [SerializeField] GameObject bullet;
     [SerializeField] GameObject gunModel;
+    public GameObject Galil;
     [SerializeField] GameObject shootPoint;
     [SerializeField] TextMeshProUGUI totalAmmoText;
     [SerializeField] TextMeshProUGUI loadedAmmoText;
@@ -110,6 +111,7 @@ public class ModularGuns : MonoBehaviour
             if (shootCool <= 0 && loadedAmmo > 0)
             {
                 muzzleFlash.Play();
+                StartCoroutine(StartRecoil());
                 loadedAmmo--;
                 Shoot();
                 AudioManager.instance.PlayOneShot(FMODEvents.instance.Shoot,this.transform.position);
@@ -165,5 +167,12 @@ public class ModularGuns : MonoBehaviour
         GameObject shot = Instantiate(bullet, shootPoint.transform.position, shootPoint.transform.rotation);
         shot.GetComponent<Rigidbody>().velocity = shootPoint.transform.forward * 60;
         
+    }
+    
+    IEnumerator StartRecoil()
+    {
+        Galil.GetComponent<Animator>().Play("Recoil");
+        yield return new WaitForSeconds(0.20f);
+        Galil.GetComponent<Animator>().Play("New State");
     }
 }

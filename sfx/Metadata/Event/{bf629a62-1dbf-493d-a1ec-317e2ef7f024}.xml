@@ -5,7 +5,7 @@
 			<value>WastelandMusic</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>0</value>
 		</property>
 		<relationship name="folder">
 			<destination>{9c6f66c9-0b30-44b9-8044-1305617954da}</destination>
@@ -53,17 +53,11 @@
 	<object class="EventAutomatableProperties" id="{bc9917d4-37a3-4ff7-ad2d-475b1564858b}" />
 	<object class="MarkerTrack" id="{ce23ba5f-5ffd-4231-a0d1-c6964d59f505}" />
 	<object class="GroupTrack" id="{ce54781f-49ff-48e6-9cb6-b9e1f8cfa773}">
-		<relationship name="modules">
-			<destination>{fcb30ac1-2f0c-4084-91b8-041d0f4a4b73}</destination>
-		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{16d08cbc-2e1d-412e-aca4-eec220988943}</destination>
 		</relationship>
 	</object>
 	<object class="Timeline" id="{fc5f2560-28fc-4ea2-af86-b4f6cf1bb3c2}">
-		<relationship name="modules">
-			<destination>{fcb30ac1-2f0c-4084-91b8-041d0f4a4b73}</destination>
-		</relationship>
 		<relationship name="markers">
 			<destination>{f9cffea0-2bb2-4c79-932b-e948c8f69118}</destination>
 		</relationship>
@@ -88,14 +82,6 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{7fd11b42-1934-4a7e-a282-0ca9858bf805}" />
-	<object class="SingleSound" id="{fcb30ac1-2f0c-4084-91b8-041d0f4a4b73}">
-		<property name="length">
-			<value>213.89061224489797</value>
-		</property>
-		<relationship name="audioFile">
-			<destination>{bdbf2a36-cca4-4e69-928d-0380f8d8e0e5}</destination>
-		</relationship>
-	</object>
 	<object class="EventMixerGroup" id="{16d08cbc-2e1d-412e-aca4-eec220988943}">
 		<property name="name">
 			<value>Audio 1</value>

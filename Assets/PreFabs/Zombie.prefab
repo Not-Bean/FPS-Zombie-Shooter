@@ -113,7 +113,11 @@ MonoBehaviour:
   bulletDamage: 10
   followDist: 80
   strength: 1
+  isExplosive: 0
+  explosionRadius: 3
+  explosionDamage: 25
   bloodEffect: {fileID: 274772910573462620, guid: ce240673cfe108f458b4c4d001ede909, type: 3}
+  explosionEffect: {fileID: 0}
 --- !u!114 &8190702154585704896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,15 +140,15 @@ MonoBehaviour:
     Path: event:/SFX/Zombie/Zombies
   Event: 
   EventPlayTrigger: 1
-  EventStopTrigger: 0
+  EventStopTrigger: 2
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
   NonRigidbodyVelocity: 0
   Params: []
-  OverrideAttenuation: 1
+  OverrideAttenuation: 0
   OverrideMinDistance: 1
-  OverrideMaxDistance: 6.88
+  OverrideMaxDistance: 20
 --- !u!1 &6124812475995053185
 GameObject:
   m_ObjectHideFlags: 0

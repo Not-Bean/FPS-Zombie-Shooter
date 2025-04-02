@@ -5,7 +5,7 @@
 			<value>Level1Music</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>0</value>
 		</property>
 		<relationship name="folder">
 			<destination>{9fb27b08-1c79-4199-b004-343d8d1c1d73}</destination>
@@ -102,7 +102,6 @@
 	</object>
 	<object class="MixerBusPanner" id="{aa53883a-9baa-4544-ba9e-813ddf5a5d5b}" />
 	<object class="EventSound" id="{b43e7d08-77e8-44f8-9ef1-122b12d15474}">
-		<property name="name" />
 		<relationship name="modulators">
 			<destination>{8f3be5e0-b641-4a63-b4d0-912c93e25206}</destination>
 		</relationship>
@@ -114,7 +113,6 @@
 		<property name="start">
 			<value>1</value>
 		</property>
-		<property name="name" />
 		<relationship name="modulators">
 			<destination>{00a8f2ac-0e79-4fc5-ba62-1a77b082cacc}</destination>
 		</relationship>
