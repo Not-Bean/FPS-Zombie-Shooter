@@ -115,9 +115,11 @@ MonoBehaviour:
   followDist: 80
   strength: 1
   dropChance: 10
+  hasFullAnimations: 1
   isExplosive: 0
   explosionRadius: 3
   explosionDamage: 25
+  anim: {fileID: 4648858922743529601}
   bloodEffect: {fileID: 274772910573462620, guid: ce240673cfe108f458b4c4d001ede909, type: 3}
   explosionEffect: {fileID: 0}
   ammoDrop: {fileID: 7734904896272175092, guid: febfd83a5a4c00f4a9bfc9a4351eb14b, type: 3}
@@ -316,6 +318,11 @@ PrefabInstance:
 --- !u!4 &1613480931139869435 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1f4e39f0046232c4099746434813fd5f, type: 3}
+  m_PrefabInstance: {fileID: 1292116544692174096}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &4648858922743529601 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 1f4e39f0046232c4099746434813fd5f, type: 3}
   m_PrefabInstance: {fileID: 1292116544692174096}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2136089264513090868

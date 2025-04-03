@@ -13,10 +13,13 @@ public class Zombie : MonoBehaviour
     public int followDist;
     public float strength;
     public int dropChance;
+    public bool hasFullAnimations = false;
     public bool isExplosive = false; // Only explodes if this is true
     public float explosionRadius = 3f;
     public float explosionDamage = 25f;
 
+    int deadCool = 1000;
+    bool dead = false;
     int clock;
 
     bool attackPlayer;
@@ -25,6 +28,7 @@ public class Zombie : MonoBehaviour
     Vector3 wanderPoint;
 
     GameObject spawner;
+    public Animator anim;
 
     GameObject player;
     private PlayerControler playerControler;
@@ -45,6 +49,7 @@ public class Zombie : MonoBehaviour
         emitter = AudioManager.instance.InitializeEventEmitter(FMODEvents.instance.Zombie, this.gameObject);
         emitter.Play();
         playerControler = player.GetComponent<PlayerControler>();
+
     }
 
     public void SpawnerSet(GameObject spawn)
@@ -54,7 +59,7 @@ public class Zombie : MonoBehaviour
 
     private void Update()
     {
-        if (health <= 0) // Death Code
+        if (health <= 0 && !dead) // Death Code
         {
             spawner.GetComponent<Spawner>().dead(gameObject);
             AudioManager.instance.PlayOneShot(FMODEvents.instance.ZombieDeath,this.transform.position);
@@ -65,23 +70,46 @@ public class Zombie : MonoBehaviour
             }
 
             emitter.Stop();
-            Destroy(gameObject);
+
+            if(hasFullAnimations)
+            {
+                dead = true;
+                anim.SetBool("isDead", true);
+                deadCool = 300;
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+
         }
 
-        if (Vector3.Distance(player.transform.position, gameObject.transform.position) < followDist) // Check if player in range
+        if (deadCool < 900)
         {
-            transform.LookAt(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z));
-            rb.MovePosition(Vector3.MoveTowards(transform.position, player.transform.position, speed / 100));
+            deadCool--;
+            if (deadCool <= 0)
+            {
+                Destroy(gameObject);
+            }
         }
-        else if (clock > 60) // Wander if not. (waits 1 second after spawning)
+        if (!dead)
         {
-            transform.LookAt(new Vector3(wanderPoint.x, transform.position.y, wanderPoint.z));
-            rb.MovePosition(Vector3.MoveTowards(transform.position, wanderPoint, speed / 100));
-        }
-        
-        if (isExplosive && Vector3.Distance(transform.position, player.transform.position) <= explosionRadius)
-        {
-            Explode();
+
+            if (Vector3.Distance(player.transform.position, gameObject.transform.position) < followDist) // Check if player in range
+            {
+                transform.LookAt(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z));
+                rb.MovePosition(Vector3.MoveTowards(transform.position, player.transform.position, speed / 100));
+            }
+            else if (clock > 60) // Wander if not. (waits 1 second after spawning)
+            {
+                transform.LookAt(new Vector3(wanderPoint.x, transform.position.y, wanderPoint.z));
+                rb.MovePosition(Vector3.MoveTowards(transform.position, wanderPoint, speed / 100));
+            }
+
+            if (isExplosive && Vector3.Distance(transform.position, player.transform.position) <= explosionRadius)
+            {
+                Explode();
+            }
         }
     }
         
@@ -103,12 +131,24 @@ public class Zombie : MonoBehaviour
             wanderPoint.y = transform.position.y;
         }
 
-        if (attackPlayer)
+        if (attackCool <= 0 && !attackPlayer && hasFullAnimations)
+        {
+            anim.SetBool("isAttacking", false);
+        }
+
+        if (attackPlayer && !dead)
         {
             if (attackCool <= 0)
             {
+                if (hasFullAnimations)
+                {
+                    anim.SetBool("isAttacking", true);
+                }
+
                 player.GetComponent<PlayerControler>().Damage(strength);
                 attackCool = 60;
+
+                
             }
         }
 
@@ -122,13 +162,13 @@ public class Zombie : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Bullet")
+        if (collision.gameObject.tag == "Bullet" && !dead)
         {
             health -= bulletDamage;
             ContactPoint contact = collision.contacts[0];
             Instantiate(bloodEffect, contact.point, Quaternion.LookRotation(contact.normal));
         }
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" && !dead)
         {
             attackPlayer = true;
         }
@@ -136,7 +176,7 @@ public class Zombie : MonoBehaviour
 
     private void OnCollisionExit(Collision collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" && !dead)
         {
             attackPlayer = false;
         }
