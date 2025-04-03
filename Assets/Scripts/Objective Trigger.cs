@@ -7,14 +7,16 @@ using TMPro;
 
 public class ObjectiveTrigger : MonoBehaviour
 {
-    //bool questCompleted;
+    public bool start = false;
     public Kills k;
-    int goal;
-    int mult = 1;
-
+    public int goal;
+    public int mult = 1;
+    
+    private int currentKills;
+    
     public int numCompletions;
     
-    public int numObjectives; //number of allowed objectives
+    public int numObjectives = 1; //number of allowed objectives
     [SerializeField] public TextMeshProUGUI objectiveText;//objectives and objText are the same objects
     [SerializeField] public GameObject objectives;
     public string objectiveQuests; //text strings go here
@@ -24,28 +26,31 @@ public class ObjectiveTrigger : MonoBehaviour
     {
         goal = k.kills + (50 * mult); 
         //os = GameObject.FindGameObjectWithTag("Player").GetComponent<Objectives>();
-        KillCounter();
+        //KillCounter();
     }
 
     void FixedUpdate()
     {
+        currentKills = k.kills;
         KillCounter();
         objectiveText.text = objectiveQuests;
+        //os.GiveQuest("Kill " + os.goal + " Zombies    " + os.k.kills + "/" + os.goal);
+        //^this needs to recur a lot
+        if (start)
+        {
+            GiveQuest("Kill " + goal + " Zombies    " + k.kills + "/" + goal);
+        }
     }
 
-    void GiveQuest(string quest)
+    public void GiveQuest(string quest)
     {
-        for (int i = 0; i < numObjectives; i++)
-        { 
-            objectiveQuests = quest;
-        }
-        
+        objectiveQuests = quest;
     }
 
 
     public void CompleteQuest()
     {
-        objectiveQuests = "";
+        objectiveQuests = "Return To John";
     }
 
 /*
@@ -68,6 +73,6 @@ public class ObjectiveTrigger : MonoBehaviour
             numCompletions++;
             goal *= mult;
         }
-        GiveQuest("Kill " + goal + " Zombies    " + k.kills + "/" + goal);
+        //GiveQuest("Kill " + goal + " Zombies    " + k.kills + "/" + goal);
     }
 }

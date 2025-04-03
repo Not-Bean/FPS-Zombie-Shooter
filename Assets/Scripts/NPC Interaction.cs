@@ -26,7 +26,7 @@ public class NPCInteraction : MonoBehaviour
    public PlayerLook findLook;
 
 
-   public bool questNPC;
+   [SerializeField] bool questNPC;
    public bool questCompleted;
    public ObjectiveTrigger os;
    [SerializeField] string newQuest;
@@ -35,6 +35,7 @@ public class NPCInteraction : MonoBehaviour
   
    void Start()
    {
+       npcNameText.text = npcName;
         playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControler>();
 
         ui.SetActive(false);
@@ -42,10 +43,14 @@ public class NPCInteraction : MonoBehaviour
         findLook = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<PlayerLook>();
         //os = GameObject.FindGameObjectWithTag("Player").GetComponent<ObjectiveTrigger>();
    }
-
-
    void Update()
    {
+       questCompleted = false;
+       if (os.k.kills >= os.goal)
+       {
+           os.start = false;
+           questCompleted = true;
+       }
        if (inRange && Input.GetKeyDown(KeyCode.F))
        {
            dialogActive = true;
@@ -61,9 +66,9 @@ public class NPCInteraction : MonoBehaviour
        }
        //CompleteQuest();
    }
-   private void OnTriggerStay(Collider Player)
+   private void OnTriggerStay(Collider player)
    {
-       if (Player.CompareTag("Player"))
+       if (player.CompareTag("Player"))
        {
            inRange = true;
            ui.SetActive(true);
@@ -77,14 +82,34 @@ public class NPCInteraction : MonoBehaviour
    }
 
 
-   private void OnTriggerExit(Collider Player)
+   private void OnTriggerExit(Collider player)
    {
        inRange = false;
        ui.SetActive(false);
    }
 
+   void CheckQuest()
+   {
+       if (os.numCompletions >= 1)
+       {
+           //give the player additional ammo for completing the quest
+           MG.ammoCount += MG.magSize - MG.loadedAmmo + 150;
+           npcDialog[0] = "Thanks for helping me! Your reward is some of my stockpiled ammo";
+           npcDialog[1] = "I Still need time to build the boat. Keep me covered while I keep building it";
+           npcDialog[2] = "Once I'm done you can join me in the boat.";
+       }
+
+       if (os.numCompletions >= 3)
+       {
+           npcDialog[0] = "I've finished building the boat";
+           npcDialog[1] = "It's finally time to leave this stupid island";
+           npcDialog[2] = "Come to the dock, we'll get in the boat there.";
+           os.objectiveQuests = "Leave The Island";
+       }
+   }
 
    IEnumerator PlayDialog(){
+       CheckQuest();
        for (int i = 0; i < npcDialog.Length; i++)//iterates through the for loop multiple times for some reason
        {
            Pause();
@@ -93,7 +118,6 @@ public class NPCInteraction : MonoBehaviour
            //yield return new WaitForSeconds(5f);
            if (i >= npcDialog.Length - 1)//unfreeze
            {
-               
                dialogActive = false;
                uiPanel.SetActive(false);
                npcNameText.text = npcName;
@@ -105,19 +129,30 @@ public class NPCInteraction : MonoBehaviour
                //Cursor.visible = false;
            }
        }
-       CheckQuest();
-   }
 
-
-   void CheckQuest()
-   {
-       if (os.numCompletions >= 1)
+       os.start = true;
+       if (questCompleted && os.numCompletions < 3)
        {
-           //give the player additional ammo for completing the quest
-           MG.ammoCount += MG.magSize - MG.loadedAmmo + 150;
-           os.numCompletions--;
+          os.GiveQuest("Kill " + os.goal + " Zombies    " + os.k.kills + "/" + os.goal);
        }
    }
+
+
+   void Pause()
+   {
+       playerController.ShootBlock(false);
+       //p.isPaused = false;
+       Time.timeScale = 0;
+       //Cursor.lockState = CursorLockMode.None;
+      
+       findLook.freezeState = true;
+       //Cursor.visible = true;
+       dialogActive = false;
+       //uiPanel.SetActive(false);
+       StopCoroutine(PlayDialog());
+   }
+}
+
 
 /*
    public void CompleteQuest()//TO ACTIVATE, MAKE "questCompleted" = true
@@ -136,18 +171,3 @@ public class NPCInteraction : MonoBehaviour
        }
    }
 */
-
-   void Pause()
-   {
-       playerController.ShootBlock(false);
-       //p.isPaused = false;
-       Time.timeScale = 0;
-       //Cursor.lockState = CursorLockMode.None;
-      
-       findLook.freezeState = true;
-       //Cursor.visible = true;
-       dialogActive = false;
-       //uiPanel.SetActive(false);
-       StopCoroutine(PlayDialog());
-   }
-}
