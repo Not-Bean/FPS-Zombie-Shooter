@@ -115,9 +115,11 @@ MonoBehaviour:
   followDist: 80
   strength: 1
   dropChance: 10
+  hasFullAnimations: 1
   isExplosive: 0
   explosionRadius: 3
   explosionDamage: 25
+  anim: {fileID: 8655923733294080901}
   bloodEffect: {fileID: 274772910573462620, guid: ce240673cfe108f458b4c4d001ede909, type: 3}
   explosionEffect: {fileID: 0}
   ammoDrop: {fileID: 7734904896272175092, guid: febfd83a5a4c00f4a9bfc9a4351eb14b, type: 3}
@@ -437,7 +439,7 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 595188405086672605}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 81d8e51d7a3b0704c8accccf8d9628bc, type: 3}
+  m_Avatar: {fileID: 9000000, guid: dc8d72dcf76de09459e2aa04e22679e0, type: 3}
   m_Controller: {fileID: 9100000, guid: 66fbd3497e4fdf74dad084d8ab164f8f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
