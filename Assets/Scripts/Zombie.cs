@@ -12,7 +12,7 @@ public class Zombie : MonoBehaviour
     public float bulletDamage;
     public int followDist;
     public float strength;
-    int dropChance;
+    public int dropChance;
     public bool isExplosive = false; // Only explodes if this is true
     public float explosionRadius = 3f;
     public float explosionDamage = 25f;
@@ -32,6 +32,7 @@ public class Zombie : MonoBehaviour
     private StudioEventEmitter emitter;
     public GameObject bloodEffect;
     public GameObject explosionEffect;
+    public GameObject ammoDrop;
 
     private void Start()
     {
@@ -60,7 +61,7 @@ public class Zombie : MonoBehaviour
 
             if (Random.Range(0,100) < dropChance)
             {
-                // put item drop code here
+                Instantiate<GameObject>(ammoDrop, transform.position, Quaternion.identity);
             }
 
             emitter.Stop();
