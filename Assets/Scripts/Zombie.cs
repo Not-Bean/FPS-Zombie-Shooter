@@ -61,7 +61,7 @@ public class Zombie : MonoBehaviour
     {
         if (health <= 0 && !dead) // Death Code
         {
-            spawner.GetComponent<Spawner>().dead(gameObject);
+            
             AudioManager.instance.PlayOneShot(FMODEvents.instance.ZombieDeath,this.transform.position);
 
             if (Random.Range(0,100) < dropChance)
@@ -71,14 +71,24 @@ public class Zombie : MonoBehaviour
 
             emitter.Stop();
 
-            if(hasFullAnimations)
+            if(hasFullAnimations && !isExplosive)
             {
                 dead = true;
                 anim.SetBool("isDead", true);
+                spawner.GetComponent<Spawner>().dead(gameObject);
+
+                GetComponent<CapsuleCollider>().enabled = false;
+
                 deadCool = 300;
+            }
+            else if (isExplosive)
+            {
+                spawner.GetComponent<Spawner>().dead(gameObject);
+                Explode();
             }
             else
             {
+                spawner.GetComponent<Spawner>().dead(gameObject);
                 Destroy(gameObject);
             }
 
@@ -108,6 +118,8 @@ public class Zombie : MonoBehaviour
 
             if (isExplosive && Vector3.Distance(transform.position, player.transform.position) <= explosionRadius)
             {
+                playerControler.Damage(explosionDamage);
+                spawner.GetComponent<Spawner>().dead(gameObject);
                 Explode();
             }
         }
@@ -185,7 +197,7 @@ public class Zombie : MonoBehaviour
     private void Explode()
     {
         Instantiate(explosionEffect, transform.position, Quaternion.identity);
-        playerControler.Damage(explosionDamage);
+        
         Destroy(gameObject);
         AudioManager.instance.PlayOneShot(FMODEvents.instance.ZombieExplosion,this.transform.position);
     }
