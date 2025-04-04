@@ -83,7 +83,7 @@ public class Zombie : MonoBehaviour
             }
             else if (isExplosive)
             {
-                spawner.GetComponent<Spawner>().dead(gameObject);
+                
                 Explode();
             }
             else
@@ -119,7 +119,7 @@ public class Zombie : MonoBehaviour
             if (isExplosive && Vector3.Distance(transform.position, player.transform.position) <= explosionRadius)
             {
                 playerControler.Damage(explosionDamage);
-                spawner.GetComponent<Spawner>().dead(gameObject);
+                
                 Explode();
             }
         }
@@ -197,7 +197,7 @@ public class Zombie : MonoBehaviour
     private void Explode()
     {
         Instantiate(explosionEffect, transform.position, Quaternion.identity);
-        
+        spawner.GetComponent<Spawner>().dead(gameObject);
         Destroy(gameObject);
         AudioManager.instance.PlayOneShot(FMODEvents.instance.ZombieExplosion,this.transform.position);
     }

@@ -19,7 +19,7 @@ public class Spawner : MonoBehaviour
 
     bool spawning = true;
 
-    List<GameObject> zombies = new List<GameObject> { };
+    public List<GameObject> zombies = new List<GameObject> { };
 
     // Start is called before the first frame update
     void Start()

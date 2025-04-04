@@ -91,15 +91,6 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Inventory"",
-                    ""type"": ""Button"",
-                    ""id"": ""709c80e1-b428-479a-93de-92e415544cd9"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
                     ""name"": ""Pause"",
                     ""type"": ""Button"",
                     ""id"": ""1eba7f7c-f46b-47da-b424-e376634dbc52"",
@@ -242,17 +233,6 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""1f7b3b8c-695b-4d24-9ef6-1646968a9859"",
-                    ""path"": ""<Keyboard>/e"",
-                    ""interactions"": ""Press"",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Inventory"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""fb307243-bb0c-4aeb-92f3-413dc2fdd1d4"",
                     ""path"": ""<Keyboard>/escape"",
                     ""interactions"": ""Press"",
@@ -287,7 +267,6 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
         m_KeyBoardMouse_Reload = m_KeyBoardMouse.FindAction("Reload", throwIfNotFound: true);
         m_KeyBoardMouse_ClickPress = m_KeyBoardMouse.FindAction("ClickPress", throwIfNotFound: true);
         m_KeyBoardMouse_ClickRelease = m_KeyBoardMouse.FindAction("ClickRelease", throwIfNotFound: true);
-        m_KeyBoardMouse_Inventory = m_KeyBoardMouse.FindAction("Inventory", throwIfNotFound: true);
         m_KeyBoardMouse_Pause = m_KeyBoardMouse.FindAction("Pause", throwIfNotFound: true);
         m_KeyBoardMouse_Reset = m_KeyBoardMouse.FindAction("Reset", throwIfNotFound: true);
     }
@@ -358,7 +337,6 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
     private readonly InputAction m_KeyBoardMouse_Reload;
     private readonly InputAction m_KeyBoardMouse_ClickPress;
     private readonly InputAction m_KeyBoardMouse_ClickRelease;
-    private readonly InputAction m_KeyBoardMouse_Inventory;
     private readonly InputAction m_KeyBoardMouse_Pause;
     private readonly InputAction m_KeyBoardMouse_Reset;
     public struct KeyBoardMouseActions
@@ -372,7 +350,6 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
         public InputAction @Reload => m_Wrapper.m_KeyBoardMouse_Reload;
         public InputAction @ClickPress => m_Wrapper.m_KeyBoardMouse_ClickPress;
         public InputAction @ClickRelease => m_Wrapper.m_KeyBoardMouse_ClickRelease;
-        public InputAction @Inventory => m_Wrapper.m_KeyBoardMouse_Inventory;
         public InputAction @Pause => m_Wrapper.m_KeyBoardMouse_Pause;
         public InputAction @Reset => m_Wrapper.m_KeyBoardMouse_Reset;
         public InputActionMap Get() { return m_Wrapper.m_KeyBoardMouse; }
@@ -405,9 +382,6 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
             @ClickRelease.started += instance.OnClickRelease;
             @ClickRelease.performed += instance.OnClickRelease;
             @ClickRelease.canceled += instance.OnClickRelease;
-            @Inventory.started += instance.OnInventory;
-            @Inventory.performed += instance.OnInventory;
-            @Inventory.canceled += instance.OnInventory;
             @Pause.started += instance.OnPause;
             @Pause.performed += instance.OnPause;
             @Pause.canceled += instance.OnPause;
@@ -439,9 +413,6 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
             @ClickRelease.started -= instance.OnClickRelease;
             @ClickRelease.performed -= instance.OnClickRelease;
             @ClickRelease.canceled -= instance.OnClickRelease;
-            @Inventory.started -= instance.OnInventory;
-            @Inventory.performed -= instance.OnInventory;
-            @Inventory.canceled -= instance.OnInventory;
             @Pause.started -= instance.OnPause;
             @Pause.performed -= instance.OnPause;
             @Pause.canceled -= instance.OnPause;
@@ -474,7 +445,6 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
         void OnReload(InputAction.CallbackContext context);
         void OnClickPress(InputAction.CallbackContext context);
         void OnClickRelease(InputAction.CallbackContext context);
-        void OnInventory(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
         void OnReset(InputAction.CallbackContext context);
     }
