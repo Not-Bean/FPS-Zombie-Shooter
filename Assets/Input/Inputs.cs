@@ -107,6 +107,15 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Reset"",
+                    ""type"": ""Button"",
+                    ""id"": ""43486c3b-a298-4765-b23e-349a6a37b9a0"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -252,6 +261,17 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
                     ""action"": ""Pause"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e66a65d8-990d-47a6-9b0b-da9da0512fd0"",
+                    ""path"": ""<Keyboard>/home"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Reset"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -269,6 +289,7 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
         m_KeyBoardMouse_ClickRelease = m_KeyBoardMouse.FindAction("ClickRelease", throwIfNotFound: true);
         m_KeyBoardMouse_Inventory = m_KeyBoardMouse.FindAction("Inventory", throwIfNotFound: true);
         m_KeyBoardMouse_Pause = m_KeyBoardMouse.FindAction("Pause", throwIfNotFound: true);
+        m_KeyBoardMouse_Reset = m_KeyBoardMouse.FindAction("Reset", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -339,6 +360,7 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
     private readonly InputAction m_KeyBoardMouse_ClickRelease;
     private readonly InputAction m_KeyBoardMouse_Inventory;
     private readonly InputAction m_KeyBoardMouse_Pause;
+    private readonly InputAction m_KeyBoardMouse_Reset;
     public struct KeyBoardMouseActions
     {
         private @Inputs m_Wrapper;
@@ -352,6 +374,7 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
         public InputAction @ClickRelease => m_Wrapper.m_KeyBoardMouse_ClickRelease;
         public InputAction @Inventory => m_Wrapper.m_KeyBoardMouse_Inventory;
         public InputAction @Pause => m_Wrapper.m_KeyBoardMouse_Pause;
+        public InputAction @Reset => m_Wrapper.m_KeyBoardMouse_Reset;
         public InputActionMap Get() { return m_Wrapper.m_KeyBoardMouse; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -388,6 +411,9 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
             @Pause.started += instance.OnPause;
             @Pause.performed += instance.OnPause;
             @Pause.canceled += instance.OnPause;
+            @Reset.started += instance.OnReset;
+            @Reset.performed += instance.OnReset;
+            @Reset.canceled += instance.OnReset;
         }
 
         private void UnregisterCallbacks(IKeyBoardMouseActions instance)
@@ -419,6 +445,9 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
             @Pause.started -= instance.OnPause;
             @Pause.performed -= instance.OnPause;
             @Pause.canceled -= instance.OnPause;
+            @Reset.started -= instance.OnReset;
+            @Reset.performed -= instance.OnReset;
+            @Reset.canceled -= instance.OnReset;
         }
 
         public void RemoveCallbacks(IKeyBoardMouseActions instance)
@@ -447,5 +476,6 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
         void OnClickRelease(InputAction.CallbackContext context);
         void OnInventory(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
+        void OnReset(InputAction.CallbackContext context);
     }
 }
