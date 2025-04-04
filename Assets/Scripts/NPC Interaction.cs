@@ -114,6 +114,7 @@ public class NPCInteraction : MonoBehaviour
        {
            Pause();
            uiText.SetText(npcDialog[i]);
+           AudioManager.instance.PlayOneShot(FMODEvents.instance.ScriptNPC,this.transform.position);
            yield return new WaitForSecondsRealtime(5f);
            //yield return new WaitForSeconds(5f);
            if (i >= npcDialog.Length - 1)//unfreeze
@@ -121,7 +122,8 @@ public class NPCInteraction : MonoBehaviour
                dialogActive = false;
                uiPanel.SetActive(false);
                npcNameText.text = npcName;
-                playerController.ShootBlock(true);
+               playerController.ShootBlock(true);
+               AudioManager.instance.PauseAllSounds(false);
                //p.isPaused = true;
                Time.timeScale = 1;
                //Cursor.lockState = CursorLockMode.Locked;
@@ -140,6 +142,7 @@ public class NPCInteraction : MonoBehaviour
 
    void Pause()
    {
+       AudioManager.instance.PauseAllSounds(true);
        playerController.ShootBlock(false);
        //p.isPaused = false;
        Time.timeScale = 0;

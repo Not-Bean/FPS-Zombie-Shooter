@@ -28,6 +28,8 @@ public class FMODEvents : MonoBehaviour
     [field: Header("UI SFX")]
     [field: SerializeField] public EventReference UIButtonHover { get; private set; }
     [field: SerializeField] public EventReference UIButtonClick { get; private set; }
+    [field: SerializeField] public EventReference ScriptNPC { get; private set; }
+    [field: SerializeField] public EventReference CallOverNPC { get; private set; }
     
     public static FMODEvents instance { get; private set; }
 
